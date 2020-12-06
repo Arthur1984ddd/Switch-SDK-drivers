@@ -2633,6 +2633,26 @@ void sx_cq_flush_rdq(struct sx_dev *dev, int dqn)
     }
 }
 
+
+/* use this function to make sure that a CQ and its associated DQ is idle,
+ * which means that no tasklet, not low-priority thread or monitoring thread
+ * runs the CQ/DQ. Currently we use this function is two cases:
+ * 1. when changing a RDQ role from regular to monitoring or vice versa. in
+ *    this case we must make sure that before changing role the CQ is idle so
+ *    there will not be a point in time when two threads handling the same RDQ.
+ * 2. when destroying a SDQ/RDQ. When doing so, we must wait until no thread is
+ *    working on the DQ while it is being destroyed.
+ */
+u8 sx_is_cq_idle(struct sx_dev *dev, int cqn)
+{
+    struct sx_priv *priv = sx_priv(dev);
+    struct cpu_traffic_priority *cpu_tp = &priv->cq_table.cpu_traffic_prio;
+
+    return (!sx_bitmap_test(&cpu_tp->active_high_prio_cq_bitmap, cqn) &&
+            !sx_bitmap_test(&cpu_tp->active_low_prio_cq_bitmap, cqn) &&
+            !sx_bitmap_test(&priv->active_monitor_cq_bitmap, cqn));
+}
+
 /************************************************
  *                  EOF                         *
  ***********************************************/
