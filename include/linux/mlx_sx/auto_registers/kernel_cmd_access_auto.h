@@ -85,6 +85,7 @@ CTRL_CMD_ACCESS_REG_MDFCR, /**< Run access register MDFCR command */
 CTRL_CMD_ACCESS_REG_PAOS, /**< Run access register PAOS command */
 CTRL_CMD_ACCESS_REG_MTUTC, /**< Run access register MTUTC command */
 CTRL_CMD_ACCESS_REG_SFMR, /**< Run access register SFMR command */
+CTRL_CMD_ACCESS_REG_HRDQT, /**< Run access register HRDQT command */
 CTRL_CMD_ACCESS_REG_SMPE, /**< Run access register SMPE command */
 CTRL_CMD_ACCESS_REG_TIQDR, /**< Run access register TIQDR command */
 CTRL_CMD_ACCESS_REG_XRALTB, /**< Run access register XRALTB command */
@@ -92,6 +93,7 @@ CTRL_CMD_ACCESS_REG_TNGEE, /**< Run access register TNGEE command */
 CTRL_CMD_ACCESS_REG_SMPEB, /**< Run access register SMPEB command */
 CTRL_CMD_ACCESS_REG_IBFMR, /**< Run access register IBFMR command */
 CTRL_CMD_ACCESS_REG_PPBS, /**< Run access register PPBS command */
+CTRL_CMD_ACCESS_REG_HGCR, /**< Run access register HGCR command */
 CTRL_CMD_ACCESS_REG_XLKBU, /**< Run access register XLKBU command */
 CTRL_CMD_ACCESS_REG_XRMT, /**< Run access register XRMT command */
 CTRL_CMD_ACCESS_REG_REIV, /**< Run access register REIV command */
@@ -101,10 +103,12 @@ CTRL_CMD_ACCESS_REG_RLCMLE, /**< Run access register RLCMLE command */
 CTRL_CMD_ACCESS_REG_MCQI, /**< Run access register MCQI command */
 CTRL_CMD_ACCESS_REG_CHLTR, /**< Run access register CHLTR command */
 CTRL_CMD_ACCESS_REG_TNGCR, /**< Run access register TNGCR command */
+CTRL_CMD_ACCESS_REG_HAHCR, /**< Run access register HAHCR command */
 CTRL_CMD_ACCESS_REG_RIPS, /**< Run access register RIPS command */
 CTRL_CMD_ACCESS_REG_TNDEM, /**< Run access register TNDEM command */
 CTRL_CMD_ACCESS_REG_TNUMT, /**< Run access register TNUMT command */
 CTRL_CMD_ACCESS_REG_RLCME, /**< Run access register RLCME command */
+CTRL_CMD_ACCESS_REG_HTACG, /**< Run access register HTACG command */
 CTRL_CMD_ACCESS_REG_PEVPB, /**< Run access register PEVPB command */
 CTRL_CMD_ACCESS_REG_SFGC, /**< Run access register SFGC command */
 CTRL_CMD_ACCESS_REG_MCION, /**< Run access register MCION command */

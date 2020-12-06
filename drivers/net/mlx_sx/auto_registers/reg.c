@@ -221,6 +221,11 @@ MLXSW_ITEM8(reg, pecnee, ctcam, 0x17, 0, 1);
  * ----
  *
  */
+/* i
+ * Access: INDEX
+ */
+MLXSW_ITEM8(reg, mtmp, i, 0x0, 7, 1);
+
 /* slot_index
  * Access: INDEX
  */
@@ -230,6 +235,11 @@ MLXSW_ITEM8(reg, mtmp, slot_index, 0x1, 0, 4);
  * Access: INDEX
  */
 MLXSW_ITEM16(reg, mtmp, sensor_index, 0x2, 0, 12);
+
+/* max_operational_temperature
+ * Access: RO
+ */
+MLXSW_ITEM16(reg, mtmp, max_operational_temperature, 0x4, 0, 16);
 
 /* temperature
  * Access: RO
@@ -246,6 +256,16 @@ MLXSW_ITEM8(reg, mtmp, mte, 0x8, 7, 1);
  */
 MLXSW_ITEM8(reg, mtmp, mtr, 0x8, 6, 1);
 
+/* weme
+ * Access: OP
+ */
+MLXSW_ITEM8(reg, mtmp, weme, 0x8, 5, 1);
+
+/* sdme
+ * Access: OP
+ */
+MLXSW_ITEM8(reg, mtmp, sdme, 0x8, 4, 1);
+
 /* max_temperature
  * Access: RO
  */
@@ -255,6 +275,11 @@ MLXSW_ITEM16(reg, mtmp, max_temperature, 0xa, 0, 16);
  * Access: RW
  */
 MLXSW_ITEM8(reg, mtmp, tee, 0xc, 6, 2);
+
+/* sdee
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, mtmp, sdee, 0xc, 4, 2);
 
 /* temperature_threshold_hi
  * Access: RW
@@ -4275,11 +4300,6 @@ MLXSW_ITEM32_INDEXED(reg, xmdr, transaction, 0x20, 0, 32, 4, 0, false);
  * -----
  *
  */
-/* slot_index
- * Access: INDEX
- */
-MLXSW_ITEM8(reg, mdfcr, slot_index, 0x1, 0, 4);
-
 /* device_type
  * Access: INDEX
  */
@@ -4506,6 +4526,35 @@ MLXSW_ITEM8(reg, sfmr, smpe_valid, 0x29, 4, 1);
  * Access: RW
  */
 MLXSW_ITEM16(reg, sfmr, smpe, 0x2a, 0, 16);
+
+/* hrdqt
+ * -----
+ *
+ */
+/* rdq
+ * Access: INDEX
+ */
+MLXSW_ITEM8(reg, hrdqt, rdq, 0x3, 0, 6);
+
+/* tac_en
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hrdqt, tac_en, 0x7, 0, 1);
+
+/* mirror_action
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hrdqt, mirror_action, 0x9, 0, 2);
+
+/* mirror_agent
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hrdqt, mirror_agent, 0xa, 0, 4);
+
+/* host_based_mirror_reason_id
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hrdqt, host_based_mirror_reason_id, 0xb, 0, 8);
 
 /* smpe
  * ----
@@ -4800,6 +4849,15 @@ MLXSW_ITEM16(reg, ppbs, multicast_tunnel_mid, 0x12, 0, 16);
  */
 MLXSW_ITEM16(reg, ppbs, multicast_tunnel_ecmp_size, 0x1a, 0, 13);
 
+/* hgcr
+ * ----
+ *
+ */
+/* truncation_size
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, hgcr, truncation_size, 0x2, 0, 14);
+
 /* xlkbu
  * -----
  *
@@ -4923,7 +4981,7 @@ MLXSW_ITEM8(reg, mocs, opcode, 0x6, 0, 1);
 /* status
  * Access: RO
  */
-MLXSW_ITEM8(reg, mocs, status, 0x7, 0, 1);
+MLXSW_ITEM8(reg, mocs, status, 0x7, 0, 2);
 
 /* hi
  * Access: 
@@ -4994,6 +5052,11 @@ MLXSW_ITEM8(reg, mocs, mocs_sbsrd_cells, 0x20, 5, 1);
  * Access: RW
  */
 MLXSW_ITEM8(reg, mocs, mocs_sbsrd_desc, 0x20, 4, 1);
+
+/* mocs_ceer_port_mask
+ * Access: RW
+ */
+MLXSW_ITEM32_INDEXED(reg, mocs, mocs_ceer_port_mask, 0x20, 0, 32, 4, 0, false);
 
 /* rmftad
  * ------
@@ -5440,6 +5503,50 @@ MLXSW_ITEM32_INDEXED(reg, tngcr, usipv6, 0x30, 0, 32, 4, 0, false);
  */
 MLXSW_ITEM32(reg, tngcr, header0_bit_set, 0x40, 0, 32);
 
+/* hahcr
+ * -----
+ *
+ */
+/* sh
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hahcr, sh, 0x2, 0, 1);
+
+/* type
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, hahcr, type, 0x3, 0, 4);
+
+/* general_fields
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, hahcr, general_fields, 0xc, 0, 32);
+
+/* outer_header_enables
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, hahcr, outer_header_enables, 0x12, 0, 16);
+
+/* outer_header_fields_enable
+ * Access: RW
+ */
+MLXSW_ITEM32_INDEXED(reg, hahcr, outer_header_fields_enable, 0x14, 0, 32, 4, 0, false);
+
+/* inner_header_enables
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, hahcr, inner_header_enables, 0x2e, 0, 16);
+
+/* hi
+ * Access: 
+ */
+MLXSW_ITEM32(reg, hahcr, hi, 0x30, 0, 32);
+
+/* lo
+ * Access: 
+ */
+MLXSW_ITEM32(reg, hahcr, lo, 0x34, 0, 32);
+
 /* rips
  * ----
  *
@@ -5590,6 +5697,125 @@ MLXSW_ITEM8(reg, rlcme, l_vector, 0x3a, 0, 4);
  * Access: RW
  */
 MLXSW_ITEM8(reg, rlcme, l_value, 0x3b, 0, 7);
+
+/* htacg
+ * -----
+ *
+ */
+/* go
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, go, 0x1, 0, 1);
+
+/* grepper_index
+ * Access: INDEX
+ */
+MLXSW_ITEM8(reg, htacg, grepper_index, 0x3, 0, 4);
+
+/* tac_flush
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, tac_flush, 0x7, 0, 2);
+
+/* fields_mirror_reason
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, fields_mirror_reason, 0x13, 0, 8);
+
+/* fields_rdq
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, fields_rdq, 0x14, 0, 6);
+
+/* fields_trap_id
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, htacg, fields_trap_id, 0x16, 0, 10);
+
+/* fields_mirror_tclass
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, fields_mirror_tclass, 0x19, 0, 5);
+
+/* fields_mirror_tx_acl_system_port
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, fields_mirror_tx_acl_system_port, 0x1b, 0, 8);
+
+/* fields_max_egress_buffer_fill_level
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, htacg, fields_max_egress_buffer_fill_level, 0x1e, 0, 16);
+
+/* fields_last_ts
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, fields_last_ts, 0x20, 0, 32);
+
+/* fields_pkt_count
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, fields_pkt_count, 0x24, 0, 32);
+
+/* fields_byte_count_high
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, fields_byte_count_high, 0x2b, 0, 8);
+
+/* fields_byte_count_low
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, fields_byte_count_low, 0x2c, 0, 32);
+
+/* mask_mirror_reason
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, mask_mirror_reason, 0x53, 0, 8);
+
+/* mask_rdq
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, mask_rdq, 0x54, 0, 6);
+
+/* mask_trap_id
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, htacg, mask_trap_id, 0x56, 0, 10);
+
+/* mask_mirror_tclass
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, mask_mirror_tclass, 0x59, 0, 5);
+
+/* mask_mirror_tx_acl_system_port
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, mask_mirror_tx_acl_system_port, 0x5b, 0, 8);
+
+/* mask_max_egress_buffer_fill_level
+ * Access: RW
+ */
+MLXSW_ITEM16(reg, htacg, mask_max_egress_buffer_fill_level, 0x5e, 0, 16);
+
+/* mask_last_ts
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, mask_last_ts, 0x60, 0, 32);
+
+/* mask_pkt_count
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, mask_pkt_count, 0x64, 0, 32);
+
+/* mask_byte_count_high
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, htacg, mask_byte_count_high, 0x6b, 0, 8);
+
+/* mask_byte_count_low
+ * Access: RW
+ */
+MLXSW_ITEM32(reg, htacg, mask_byte_count_low, 0x6c, 0, 32);
 
 /* pevpb
  * -----
@@ -6294,6 +6520,11 @@ MLXSW_ITEM32_INDEXED(reg, mafri, packets_inc, MLXSW_MAFRI_RECORD_BASE_LEN, 0, 32
  */
 MLXSW_ITEM16(reg, mcc, time_elapsed_since_last_cmd, 0x0, 0, 12);
 
+/* activation_delay_sec
+ * Access: RW
+ */
+MLXSW_ITEM8(reg, mcc, activation_delay_sec, 0x2, 0, 8);
+
 /* instruction
  * Access: RW
  */
@@ -6436,6 +6667,16 @@ MLXSW_ITEM16(reg, pmtps, module_type_connected, 0xe, 0, 16);
  * Access: RO
  */
 MLXSW_ITEM32(reg, pmtps, eth_module_c2m, 0x10, 0, 32);
+
+/* ib_width_module_c2m
+ * Access: RO
+ */
+MLXSW_ITEM16(reg, pmtps, ib_width_module_c2m, 0x14, 0, 16);
+
+/* ib_speed_module_c2m
+ * Access: RO
+ */
+MLXSW_ITEM16(reg, pmtps, ib_speed_module_c2m, 0x16, 0, 16);
 
 /* rxltcc
  * ------

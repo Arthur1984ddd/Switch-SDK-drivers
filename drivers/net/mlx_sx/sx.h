@@ -121,7 +121,7 @@
 #define QUANTUM2_PCI_DEV_ID 0xd2f2
 
 /* Quantum2 in flash recovery mode */
-#define QUANTUM2_FLASH_MODE_PCI_DEV_ID 0x251
+#define QUANTUM2_FLASH_MODE_PCI_DEV_ID 0x257
 
 #define TO_FIELD(mask, shift, value) \
     (value & mask) << shift;

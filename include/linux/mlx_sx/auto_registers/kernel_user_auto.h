@@ -183,13 +183,18 @@ struct ku_access_pecnee_reg {
  * ku_mtmp_reg structure is used to store the MTMP register parameters
  */
 struct ku_mtmp_reg {
+    uint8_t i;
     uint8_t slot_index;
     uint16_t sensor_index;
+    uint16_t max_operational_temperature;
     uint16_t temperature;
     uint8_t mte;
     uint8_t mtr;
+    uint8_t weme;
+    uint8_t sdme;
     uint16_t max_temperature;
     uint8_t tee;
+    uint8_t sdee;
     uint16_t temperature_threshold_hi;
     uint16_t temperature_threshold_lo;
     uint32_t sensor_name_hi;
@@ -1784,7 +1789,6 @@ typedef enum sxd_mdfcr_error_id {
  * ku_mdfcr_reg structure is used to store the MDFCR register parameters
  */
 struct ku_mdfcr_reg {
-    uint8_t slot_index;
     sxd_mdfcr_device_type_t device_type;
     uint8_t all;
     uint16_t device_index;
@@ -1911,6 +1915,26 @@ struct ku_sfmr_reg {
 struct ku_access_sfmr_reg {
     struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
     struct ku_sfmr_reg      sfmr_reg; /**< sfmr_reg - sfmr register tlv */
+    uint8_t                 dev_id; /**< dev_id - device id */
+};
+
+/**
+ * ku_hrdqt_reg structure is used to store the HRDQT register parameters
+ */
+struct ku_hrdqt_reg {
+    uint8_t rdq;
+    uint8_t tac_en;
+    uint8_t mirror_action;
+    uint8_t mirror_agent;
+    uint8_t host_based_mirror_reason_id;
+};
+
+/**
+ * ku_access_hrdqt_reg structure is used to store the access register HRDQT command parameters
+ */
+struct ku_access_hrdqt_reg {
+    struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
+    struct ku_hrdqt_reg     hrdqt_reg; /**< hrdqt_reg - hrdqt register tlv */
     uint8_t                 dev_id; /**< dev_id - device id */
 };
 
@@ -2134,6 +2158,22 @@ struct ku_access_ppbs_reg {
     uint8_t                 dev_id; /**< dev_id - device id */
 };
 
+/**
+ * ku_hgcr_reg structure is used to store the HGCR register parameters
+ */
+struct ku_hgcr_reg {
+    uint16_t truncation_size;
+};
+
+/**
+ * ku_access_hgcr_reg structure is used to store the access register HGCR command parameters
+ */
+struct ku_access_hgcr_reg {
+    struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
+    struct ku_hgcr_reg      hgcr_reg; /**< hgcr_reg - hgcr register tlv */
+    uint8_t                 dev_id; /**< dev_id - device id */
+};
+
 #define SXD_XLKBU_VALUE_NUM 16
 
 #define SXD_XLKBU_MASK_NUM 16
@@ -2240,16 +2280,18 @@ struct ku_access_ppad_reg {
 
 
 typedef enum sxd_mocs_type {
-    SXD_MOCS_TYPE_PPCNT_E = 0x1,
+    SXD_MOCS_TYPE_PPCNT_SES1_E = 0x1,
     SXD_MOCS_TYPE_MGPCB_E = 0x2,
     SXD_MOCS_TYPE_PBSR_E = 0x3,
-    SXD_MOCS_TYPE_SBSRD_E = 0x4
+    SXD_MOCS_TYPE_SBSRD_E = 0x4,
+    SXD_MOCS_TYPE_CEER_E = 0x5
 } sxd_mocs_type_t;
 
 
 typedef enum sxd_mocs_status {
     SXD_MOCS_STATUS_IDLE_E = 0x0,
-    SXD_MOCS_STATUS_BUSY_E = 0x1
+    SXD_MOCS_STATUS_BUSY_E = 0x1,
+    SXD_MOCS_STATUS_CANCELED_E = 0x2
 } sxd_mocs_status_t;
 
 typedef struct sxd_mocs_event_tid {
@@ -2281,11 +2323,16 @@ typedef struct sxd_mocs_mocs_sbsrd {
     uint8_t desc;
 } sxd_mocs_mocs_sbsrd_t;
 
+typedef struct sxd_mocs_mocs_ceer {
+    uint32_t port_mask[SXD_MOCS_PORT_MASK_NUM];
+} sxd_mocs_mocs_ceer_t;
+
 union mocs_entry {
     sxd_mocs_mocs_ppcnt_t mocs_ppcnt;
     sxd_mocs_mocs_mgpcb_t mocs_mgpcb;
     sxd_mocs_mocs_pbsr_t mocs_pbsr;
     sxd_mocs_mocs_sbsrd_t mocs_sbsrd;
+    sxd_mocs_mocs_ceer_t mocs_ceer;
 };
 
 /**
@@ -2509,6 +2556,35 @@ struct ku_access_tngcr_reg {
     uint8_t                 dev_id; /**< dev_id - device id */
 };
 
+#define SXD_HAHCR_OUTER_HEADER_FIELDS_ENABLE_NUM 5
+
+typedef struct sxd_hahcr_inner_header_fields_enable {
+    uint32_t hi;
+    uint32_t lo;
+} sxd_hahcr_inner_header_fields_enable_t;
+
+/**
+ * ku_hahcr_reg structure is used to store the HAHCR register parameters
+ */
+struct ku_hahcr_reg {
+    uint8_t sh;
+    uint8_t type;
+    uint32_t general_fields;
+    uint16_t outer_header_enables;
+    uint32_t outer_header_fields_enable[SXD_HAHCR_OUTER_HEADER_FIELDS_ENABLE_NUM];
+    uint16_t inner_header_enables;
+    sxd_hahcr_inner_header_fields_enable_t inner_header_fields_enable;
+};
+
+/**
+ * ku_access_hahcr_reg structure is used to store the access register HAHCR command parameters
+ */
+struct ku_access_hahcr_reg {
+    struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
+    struct ku_hahcr_reg     hahcr_reg; /**< hahcr_reg - hahcr register tlv */
+    uint8_t                 dev_id; /**< dev_id - device id */
+};
+
 #define SXD_RIPS_IPV6_NUM 4
 
 /**
@@ -2625,6 +2701,52 @@ struct ku_rlcme_reg {
 struct ku_access_rlcme_reg {
     struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
     struct ku_rlcme_reg     rlcme_reg; /**< rlcme_reg - rlcme register tlv */
+    uint8_t                 dev_id; /**< dev_id - device id */
+};
+
+typedef struct sxd_htacg_fields {
+    uint8_t mirror_reason;
+    uint8_t rdq;
+    uint16_t trap_id;
+    uint8_t mirror_tclass;
+    uint8_t mirror_tx_acl_system_port;
+    uint16_t max_egress_buffer_fill_level;
+    uint32_t last_ts;
+    uint32_t pkt_count;
+    uint8_t byte_count_high;
+    uint32_t byte_count_low;
+} sxd_htacg_fields_t;
+
+typedef struct sxd_htacg_mask {
+    uint8_t mirror_reason;
+    uint8_t rdq;
+    uint16_t trap_id;
+    uint8_t mirror_tclass;
+    uint8_t mirror_tx_acl_system_port;
+    uint16_t max_egress_buffer_fill_level;
+    uint32_t last_ts;
+    uint32_t pkt_count;
+    uint8_t byte_count_high;
+    uint32_t byte_count_low;
+} sxd_htacg_mask_t;
+
+/**
+ * ku_htacg_reg structure is used to store the HTACG register parameters
+ */
+struct ku_htacg_reg {
+    uint8_t go;
+    uint8_t grepper_index;
+    uint8_t tac_flush;
+    sxd_htacg_fields_t fields;
+    sxd_htacg_mask_t mask;
+};
+
+/**
+ * ku_access_htacg_reg structure is used to store the access register HTACG command parameters
+ */
+struct ku_access_htacg_reg {
+    struct ku_operation_tlv op_tlv; /**< op_tlv - operation tlv struct */
+    struct ku_htacg_reg     htacg_reg; /**< htacg_reg - htacg register tlv */
     uint8_t                 dev_id; /**< dev_id - device id */
 };
 
@@ -3157,6 +3279,7 @@ typedef enum sxd_mcc_control_state {
  */
 struct ku_mcc_reg {
     uint16_t time_elapsed_since_last_cmd;
+    uint8_t activation_delay_sec;
     sxd_mcc_instruction_t instruction;
     uint16_t component_index;
     uint8_t auto_update;
@@ -3205,6 +3328,18 @@ struct ku_access_sfdb_reg {
     uint8_t                 dev_id; /**< dev_id - device id */
 };
 
+
+typedef enum sxd_pmtps_ib_speed_module_c2m {
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_SDR_E = 0x1,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_DDR_E = 0x2,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_QDR_E = 0x4,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_FDR10_E = 0x8,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_FDR_E = 0x10,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_EDR_E = 0x20,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_HDR_E = 0x40,
+    SXD_PMTPS_IB_SPEED_MODULE_C2M_NDR_E = 0x80
+} sxd_pmtps_ib_speed_module_c2m_t;
+
 /**
  * ku_pmtps_reg structure is used to store the PMTPS register parameters
  */
@@ -3214,6 +3349,8 @@ struct ku_pmtps_reg {
     uint16_t module_type_admin;
     uint16_t module_type_connected;
     uint32_t eth_module_c2m;
+    uint16_t ib_width_module_c2m;
+    sxd_pmtps_ib_speed_module_c2m_t ib_speed_module_c2m;
 };
 
 /**
