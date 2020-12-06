@@ -72,25 +72,15 @@ enum sx_dev_event {
 #define SX_PAGE_SIZE  4096
 #define SX_PAGE_SHIFT 12
 
-#define ETHTYPE_ARP               0x0806
-#define ETHTYPE_VLAN              0x8100
-#define ETHTYPE_EMAD              0x8932
-#define ETHTYPE_DONT_CARE_VALUE   0
-#define QPN_DONT_CARE_VALUE       0xffffffff
-#define QPN_MULTICAST_VALUE       0xffffff
-#define DMAC_DONT_CARE_VALUE      0
-#define TID_DONT_CARE_VALUE       0
-#define SYSPORT_DONT_CARE_VALUE   0
-#define FWD_BY_FDB_TRAP_ID        0x01
-#define SWITCHIB_QP0_TRAP_ID      0xf0
-#define SWITCHIB_QP1_TRAP_ID      0xf1
-#define SWITCHIB_OTHER_QP_TRAP_ID 0xf2
-#define PACKET_SAMPLE_TRAP_ID     0x38
-#define ROUTER_QP0_TRAP_ID        0x5e
-#define FDB_TRAP_ID               0x06
-#define ARP_REQUEST_TRAP_ID       0x50
-#define ARP_RESPONSE_TRAP_ID      0x51
-#define MIN_IPTRAP_TRAP_ID        0x1C0 /* TODO define which one will be used */
+#define ETHTYPE_ARP             0x0806
+#define ETHTYPE_VLAN            0x8100
+#define ETHTYPE_EMAD            0x8932
+#define ETHTYPE_DONT_CARE_VALUE 0
+#define QPN_DONT_CARE_VALUE     0xffffffff
+#define QPN_MULTICAST_VALUE     0xffffff
+#define DMAC_DONT_CARE_VALUE    0
+#define TID_DONT_CARE_VALUE     0
+#define SYSPORT_DONT_CARE_VALUE 0
 
 typedef enum l3_synd_type {
     L3_SYND_TYPE_GLOBAL = 0,

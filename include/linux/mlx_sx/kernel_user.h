@@ -52,10 +52,10 @@
  * MPCIR enum is used for opcode in the MPCIR register parameters
  */
 typedef enum sxd_mpcir_op {
-    SXD_MPCIR_OP_NOP_E = 0x0,
-    SXD_MPCIR_OP_ENABLE_E = 0x1,
+    SXD_MPCIR_OP_NOP_E     = 0x0,
+    SXD_MPCIR_OP_ENABLE_E  = 0x1,
     SXD_MPCIR_OP_DISABLE_E = 0x2,
-    SXD_MPCIR_OP_STATUS_E = 0x3,
+    SXD_MPCIR_OP_STATUS_E  = 0x3,
 } sxd_mpcir_op_t;
 
 /**
@@ -108,12 +108,12 @@ typedef enum sxd_mpcir_op {
 #define NUMBER_OF_SDQS 24
 
 enum {
-    SX_SEND_DQ_DB_BASE = 0,
-    SX_RECV_DQ_DB_BASE = 0x200,
-    SX_MAX_LOG_DQ_SIZE = 10,
-    SX_MAX_LOG_CQ_SIZE = 10,
-    SX_CQE_VER_OFFSET = 4,
-    SX_DBELL_CQ_CI_OFFSET = 0x400,
+    SX_SEND_DQ_DB_BASE     = 0,
+    SX_RECV_DQ_DB_BASE     = 0x200,
+    SX_MAX_LOG_DQ_SIZE     = 10,
+    SX_MAX_LOG_CQ_SIZE     = 10,
+    SX_CQE_VER_OFFSET      = 4,
+    SX_DBELL_CQ_CI_OFFSET  = 0x400,
     SX_DBELL_CQ_ARM_OFFSET = 0x800
 };
 
@@ -715,12 +715,12 @@ enum ku_l2_type {
  * swid types.
  */
 enum ku_swid_type {
-    KU_SWID_TYPE_DISABLED = 0,    /**< Disabled */
-    KU_SWID_TYPE_INFINIBAND = 1,  /**< IB */
-    KU_SWID_TYPE_ETHERNET = 2,    /**< Eth */
+    KU_SWID_TYPE_DISABLED    = 0, /**< Disabled */
+    KU_SWID_TYPE_INFINIBAND  = 1, /**< IB */
+    KU_SWID_TYPE_ETHERNET    = 2, /**< Eth */
     KU_SWID_TYPE_ROUTER_PORT = 8, /**< RP */
-    KU_SWID_TYPE_MIN = KU_SWID_TYPE_DISABLED,         /**< Minimum enum value */
-    KU_SWID_TYPE_MAX = KU_SWID_TYPE_ROUTER_PORT         /**< Maximum enum value */
+    KU_SWID_TYPE_MIN         = KU_SWID_TYPE_DISABLED, /**< Minimum enum value */
+    KU_SWID_TYPE_MAX         = KU_SWID_TYPE_ROUTER_PORT /**< Maximum enum value */
 };
 
 /**
@@ -728,20 +728,20 @@ enum ku_swid_type {
  * return values from command IFC.
  */
 enum ku_command_ifc_ret_status {
-    COMMAND_IFC_RET_STATUS_OK = 0X00,             /**< OK */
+    COMMAND_IFC_RET_STATUS_OK             = 0X00, /**< OK */
     COMMAND_IFC_RET_STATUS_INTERNAL_ERROR = 0X01, /**< Internal error */
-    COMMAND_IFC_RET_STATUS_BAD_OP = 0X02,         /**< Bad operation */
-    COMMAND_IFC_RET_STATUS_BAD_PARAM = 0X03,      /**< Bad parameter */
-    COMMAND_IFC_RET_STATUS_BAD_SYS_STATE = 0X04,  /**< Bad system state */
-    COMMAND_IFC_RET_STATUS_BAD_RESOURCE = 0X05,   /**< Bad resource */
-    COMMAND_IFC_RET_STATUS_RESOURCE_BUSY = 0X06,  /**< Resource busy */
-    COMMAND_IFC_RET_STATUS_EXCEED_LIM = 0X08,     /**< Exceeds limitation */
-    COMMAND_IFC_RET_STATUS_BAD_RES_STATE = 0X09,  /**< Bad res state */
-    COMMAND_IFC_RET_STATUS_BAD_INDEX = 0X0A,      /**< Bad index */
-    COMMAND_IFC_RET_STATUS_BAD_NVMEM = 0X0B,      /**< Bad NVMEM */
-    COMMAND_IFC_RET_STATUS_BAD_PKT = 0X30,        /**< Bad packet */
-    COMMAND_IFC_RET_STATUS_MIN = COMMAND_IFC_RET_STATUS_OK,            /**< Minimum enum value */
-    COMMAND_IFC_RET_STATUS_MAX = COMMAND_IFC_RET_STATUS_BAD_PKT            /**< Maximum enum value */
+    COMMAND_IFC_RET_STATUS_BAD_OP         = 0X02, /**< Bad operation */
+    COMMAND_IFC_RET_STATUS_BAD_PARAM      = 0X03, /**< Bad parameter */
+    COMMAND_IFC_RET_STATUS_BAD_SYS_STATE  = 0X04, /**< Bad system state */
+    COMMAND_IFC_RET_STATUS_BAD_RESOURCE   = 0X05, /**< Bad resource */
+    COMMAND_IFC_RET_STATUS_RESOURCE_BUSY  = 0X06, /**< Resource busy */
+    COMMAND_IFC_RET_STATUS_EXCEED_LIM     = 0X08, /**< Exceeds limitation */
+    COMMAND_IFC_RET_STATUS_BAD_RES_STATE  = 0X09, /**< Bad res state */
+    COMMAND_IFC_RET_STATUS_BAD_INDEX      = 0X0A, /**< Bad index */
+    COMMAND_IFC_RET_STATUS_BAD_NVMEM      = 0X0B, /**< Bad NVMEM */
+    COMMAND_IFC_RET_STATUS_BAD_PKT        = 0X30, /**< Bad packet */
+    COMMAND_IFC_RET_STATUS_MIN            = COMMAND_IFC_RET_STATUS_OK, /**< Minimum enum value */
+    COMMAND_IFC_RET_STATUS_MAX            = COMMAND_IFC_RET_STATUS_BAD_PKT /**< Maximum enum value */
 };
 
 /**
@@ -787,11 +787,11 @@ enum hpkt_action {
  * paths in HTGT register.
  */
 enum htgt_path {
-    HTGT_LOCAL_PATH = 0,    /**< Local path */
+    HTGT_LOCAL_PATH    = 0, /**< Local path */
     HTGT_STACKING_PATH = 1, /**< Stacking path */
-    HTGT_DR_PATH = 2,       /**< Directed route path */
-    HTGT_ETH_PATH = 3,      /**< Ethernet path */
-    HTGT_NULL_PATH = 0xF     /**< NULL path */
+    HTGT_DR_PATH       = 2, /**< Directed route path */
+    HTGT_ETH_PATH      = 3, /**< Ethernet path */
+    HTGT_NULL_PATH     = 0xF /**< NULL path */
 };
 
 typedef uint8_t sxd_boolean_t;
@@ -800,10 +800,10 @@ typedef uint8_t sxd_boolean_t;
  * sxd_port_ib_link_width_t enumerated type is used to store IB link width
  */
 typedef enum sxd_port_ib_link_width {
-    SXD_PORT_IB_LINK_WIDTH_1X = (1 << 0),
-    SXD_PORT_IB_LINK_WIDTH_2X = (1 << 1),
-    SXD_PORT_IB_LINK_WIDTH_4X = (1 << 2),
-    SXD_PORT_IB_LINK_WIDTH_8X = (1 << 3),
+    SXD_PORT_IB_LINK_WIDTH_1X  = (1 << 0),
+    SXD_PORT_IB_LINK_WIDTH_2X  = (1 << 1),
+    SXD_PORT_IB_LINK_WIDTH_4X  = (1 << 2),
+    SXD_PORT_IB_LINK_WIDTH_8X  = (1 << 3),
     SXD_PORT_IB_LINK_WIDTH_12X = (1 << 4),
 } sxd_port_ib_link_width_t;
 
@@ -863,15 +863,15 @@ typedef enum sxd_port_connector_type {
  */
 typedef enum sxd_port_eth_proto {
     SXD_PORT_ETH_PROTOCOL_1000_BASE_CX_SGMII = (1 << 0),
-    SXD_PORT_ETH_PROTOCOL_1000_BASE_KX = (1 << 1),
-    SXD_PORT_ETH_PROTOCOL_10G_BASE_CX4_XAUI = (1 << 2),
-    SXD_PORT_ETH_PROTOCOL_10G_BASE_KX4 = (1 << 3),
-    SXD_PORT_ETH_PROTOCOL_10G_BASE_KR4 = (1 << 4),
-    SXD_PORT_ETH_PROTOCOL_20G_BASE_KR2 = (1 << 5),
-    SXD_PORT_ETH_PROTOCOL_40G_BASE_CR4 = (1 << 6),
-    SXD_PORT_ETH_PROTOCOL_40G_BASE_KR4 = (1 << 7),
-    SXD_PORT_ETH_PROTOCOL_56G_BASE_KR4 = (1 << 8),
-    SXD_PORT_ETH_PROTOCOL_56G_BASE_KX4 = (1 << 9),
+    SXD_PORT_ETH_PROTOCOL_1000_BASE_KX       = (1 << 1),
+    SXD_PORT_ETH_PROTOCOL_10G_BASE_CX4_XAUI  = (1 << 2),
+    SXD_PORT_ETH_PROTOCOL_10G_BASE_KX4       = (1 << 3),
+    SXD_PORT_ETH_PROTOCOL_10G_BASE_KR4       = (1 << 4),
+    SXD_PORT_ETH_PROTOCOL_20G_BASE_KR2       = (1 << 5),
+    SXD_PORT_ETH_PROTOCOL_40G_BASE_CR4       = (1 << 6),
+    SXD_PORT_ETH_PROTOCOL_40G_BASE_KR4       = (1 << 7),
+    SXD_PORT_ETH_PROTOCOL_56G_BASE_KR4       = (1 << 8),
+    SXD_PORT_ETH_PROTOCOL_56G_BASE_KX4       = (1 << 9),
 } sxd_port_eth_proto_t;
 
 /**
@@ -890,14 +890,14 @@ typedef enum sxd_port_fc_proto {
  * InfiniBand protocol.
  */
 typedef enum sxd_port_ib_proto {
-    SXD_PORT_IB_PROTOCOL_SDR = (1 << 0),
-    SXD_PORT_IB_PROTOCOL_DDR = (1 << 1),
-    SXD_PORT_IB_PROTOCOL_QDR = (1 << 2),
-    SXD_PORT_IB_PROTOCOL_FDR10 = (1 << 3),
-    SXD_PORT_IB_PROTOCOL_FDR = (1 << 4),
-    SXD_PORT_IB_PROTOCOL_EDR = (1 << 5),
-    SXD_PORT_IB_PROTOCOL_HDR = (1 << 6),
-    SXD_PORT_IB_PROTOCOL_NDR = (1 << 7),
+    SXD_PORT_IB_PROTOCOL_SDR      = (1 << 0),
+    SXD_PORT_IB_PROTOCOL_DDR      = (1 << 1),
+    SXD_PORT_IB_PROTOCOL_QDR      = (1 << 2),
+    SXD_PORT_IB_PROTOCOL_FDR10    = (1 << 3),
+    SXD_PORT_IB_PROTOCOL_FDR      = (1 << 4),
+    SXD_PORT_IB_PROTOCOL_EDR      = (1 << 5),
+    SXD_PORT_IB_PROTOCOL_HDR      = (1 << 6),
+    SXD_PORT_IB_PROTOCOL_NDR      = (1 << 7),
     SXD_PORT_IB_PROTOCOL_FDR_8_10 = (1 << 8)
 } sxd_port_ib_proto_t;
 
@@ -915,46 +915,46 @@ typedef enum sxd_prcr_op_type {
  * Counter set type
  */
 typedef enum sxd_counter_set_type {
-    SXD_COUNTER_SET_TYPE_NO_COUNT = 0x0,
-    SXD_COUNTER_SET_TYPE_PACKET = 0x1,
-    SXD_COUNTER_SET_TYPE_BYTE = 0x2,
-    SXD_COUNTER_SET_TYPE_PACKET_AND_BYTE = 0x3,
-    SXD_COUNTER_SET_TYPE_BYTE_STATISTICAL = 0x4,
+    SXD_COUNTER_SET_TYPE_NO_COUNT                    = 0x0,
+    SXD_COUNTER_SET_TYPE_PACKET                      = 0x1,
+    SXD_COUNTER_SET_TYPE_BYTE                        = 0x2,
+    SXD_COUNTER_SET_TYPE_PACKET_AND_BYTE             = 0x3,
+    SXD_COUNTER_SET_TYPE_BYTE_STATISTICAL            = 0x4,
     SXD_COUNTER_SET_TYPE_PACKET_AND_BYTE_STATISTICAL = 0x5,
-    SXD_COUNTER_SET_TYPE_RIF = 0x8,
-    SXD_COUNTER_SET_TYPE_RIF_BASIC = 0x9,
-    SXD_COUNTER_SET_TYPE_RIF_ENHANCED = 0xA,
-    SXD_COUNTER_SET_TYPE_RIF_MIXED_1 = 0xB,
-    SXD_COUNTER_SET_TYPE_RIF_MIXED_2 = 0xC,
+    SXD_COUNTER_SET_TYPE_RIF                         = 0x8,
+    SXD_COUNTER_SET_TYPE_RIF_BASIC                   = 0x9,
+    SXD_COUNTER_SET_TYPE_RIF_ENHANCED                = 0xA,
+    SXD_COUNTER_SET_TYPE_RIF_MIXED_1                 = 0xB,
+    SXD_COUNTER_SET_TYPE_RIF_MIXED_2                 = 0xC,
 } sxd_counter_set_type_t;
 
 /**
  * sxd_tunnel_type enumerated type is used to match tunnel type.
  */
 typedef enum sxd_tunnel_type {
-    SXD_TUNNEL_TYPE_NVGRE = 0,
-    SXD_TUNNEL_TYPE_VXLAN = 1,
-    SXD_TUNNEL_TYPE_MPLS = 2,
+    SXD_TUNNEL_TYPE_NVGRE  = 0,
+    SXD_TUNNEL_TYPE_VXLAN  = 1,
+    SXD_TUNNEL_TYPE_MPLS   = 2,
     SXD_TUNNEL_TYPE_IPINIP = 3,
-    SXD_TUNNEL_TYPE_GRE = 4,
-    SXD_TUNNEL_TYPE_NONE = 5,
+    SXD_TUNNEL_TYPE_GRE    = 4,
+    SXD_TUNNEL_TYPE_NONE   = 5,
 } sxd_tunnel_type_t;
 
 /**
  * sxd_nve_tubbel_type enumerated type is used to match tunnel type.
  */
 typedef enum sxd_nve_tunnel_type {
-    SXD_NVE_TUNNEL_TYPE_VXLAN = (1 << 0),
+    SXD_NVE_TUNNEL_TYPE_VXLAN  = (1 << 0),
     SXD_NVE_TUNNEL_TYPE_GENEVE = (1 << 1),
-    SXD_NVE_TUNNEL_TYPE_GRE = (1 << 2),
-    SXD_NVE_TUNNEL_TYPE_NVGRE = (1 << 3),
+    SXD_NVE_TUNNEL_TYPE_GRE    = (1 << 2),
+    SXD_NVE_TUNNEL_TYPE_NVGRE  = (1 << 3),
 } sxd_nve_tunnel_type_t;
 
 enum ku_queue_type {
     KU_QUEUE_TYPE_TAIL_DROP = 0,    /**< Head Drop */
     KU_QUEUE_TYPE_HEAD_DROP = 1,  /**< Tail Drop */
-    KU_QUEUE_TYPE_MIN = KU_QUEUE_TYPE_TAIL_DROP,         /**< Minimum enum value */
-    KU_QUEUE_TYPE_MAX = KU_QUEUE_TYPE_HEAD_DROP         /**< Maximum enum value */
+    KU_QUEUE_TYPE_MIN       = KU_QUEUE_TYPE_TAIL_DROP,   /**< Minimum enum value */
+    KU_QUEUE_TYPE_MAX       = KU_QUEUE_TYPE_HEAD_DROP   /**< Maximum enum value */
 };
 
 /**
@@ -976,10 +976,10 @@ typedef struct sxd_counter_set {
  */
 typedef enum ku_port_vlan_params_type {
     KU_PORT_VLAN_PARAMS_TYPE_GLOBAL = 0,
-    KU_PORT_VLAN_PARAMS_TYPE_PORT = 1,
-    KU_PORT_VLAN_PARAMS_TYPE_LAG = 2,
-    KU_PORT_VLAN_PARAMS_TYPE_VLAN = 3,
-    KU_PORT_VLAN_PARAMS_TYPE_NONE = 4,
+    KU_PORT_VLAN_PARAMS_TYPE_PORT   = 1,
+    KU_PORT_VLAN_PARAMS_TYPE_LAG    = 2,
+    KU_PORT_VLAN_PARAMS_TYPE_VLAN   = 3,
+    KU_PORT_VLAN_PARAMS_TYPE_NONE   = 4,
 } ku_port_vlan_params_type_t;
 
 /**
@@ -998,34 +998,34 @@ enum {
  * ku_res_id_t is used to match the resource id type.
  */
 typedef enum mlxsw_res_id {
-    KU_RES_ID_KVD_SIZE = 0x1001,
-    KU_RES_ID_KVD_SINGLE_MIN_SIZE = 0x1002,
-    KU_RES_ID_KVD_DOUBLE_MIN_SIZE = 0x1003,
-    KU_RES_ID_CAP_MAX_SWIDS = 0x2001,
-    KU_RES_ID_CAP_MAX_SWITCH_PORTS = 0x2002,
-    KU_RES_ID_MAX_TRAP_GROUPS = 0x2201,
-    KU_RES_ID_COUNTER_POOL_SIZE = 0x2410,
-    KU_RES_ID_MAX_SPAN = 0x2420,
+    KU_RES_ID_KVD_SIZE                   = 0x1001,
+    KU_RES_ID_KVD_SINGLE_MIN_SIZE        = 0x1002,
+    KU_RES_ID_KVD_DOUBLE_MIN_SIZE        = 0x1003,
+    KU_RES_ID_CAP_MAX_SWIDS              = 0x2001,
+    KU_RES_ID_CAP_MAX_SWITCH_PORTS       = 0x2002,
+    KU_RES_ID_MAX_TRAP_GROUPS            = 0x2201,
+    KU_RES_ID_COUNTER_POOL_SIZE          = 0x2410,
+    KU_RES_ID_MAX_SPAN                   = 0x2420,
     KU_RES_ID_COUNTER_SIZE_PACKETS_BYTES = 0x2443,
-    KU_RES_ID_COUNTER_SIZE_ROUTER_BASIC = 0x2449,
-    KU_RES_ID_CAP_PTP_FRC_RATE = 0x2460,
-    KU_RES_ID_MAX_SYSTEM_PORT = 0x2502,
-    KU_RES_ID_MAX_LAG = 0x2520,
-    KU_RES_ID_MAX_LAG_MEMBERS = 0x2521,
-    KU_RES_ID_MAX_BUFFER_SIZE = 0x2802,
-    KU_RES_ID_CELL_SIZE = 0x2803,
-    KU_RES_ID_ACL_MAX_TCAM_REGIONS = 0x2901,
-    KU_RES_ID_ACL_MAX_TCAM_RULES = 0x2902,
-    KU_RES_ID_ACL_MAX_REGIONS = 0x2903,
-    KU_RES_ID_ACL_MAX_GROUPS = 0x2904,
-    KU_RES_ID_ACL_MAX_GROUP_SIZE = 0x2905,
-    KU_RES_ID_ACL_FLEX_KEYS = 0x2910,
-    KU_RES_ID_ACL_MAX_ACTION_PER_RULE = 0x2911,
-    KU_RES_ID_ACL_ACTIONS_PER_SET = 0x2912,
-    KU_RES_ID_MAX_CPU_POLICERS = 0x2A13,
-    KU_RES_ID_MAX_VRS = 0x2C01,
-    KU_RES_ID_MAX_RIFS = 0x2C02,
-    KU_RES_ID_MAX_LPM_TREES = 0x2C30,
+    KU_RES_ID_COUNTER_SIZE_ROUTER_BASIC  = 0x2449,
+    KU_RES_ID_CAP_PTP_FRC_RATE           = 0x2460,
+    KU_RES_ID_MAX_SYSTEM_PORT            = 0x2502,
+    KU_RES_ID_MAX_LAG                    = 0x2520,
+    KU_RES_ID_MAX_LAG_MEMBERS            = 0x2521,
+    KU_RES_ID_MAX_BUFFER_SIZE            = 0x2802,
+    KU_RES_ID_CELL_SIZE                  = 0x2803,
+    KU_RES_ID_ACL_MAX_TCAM_REGIONS       = 0x2901,
+    KU_RES_ID_ACL_MAX_TCAM_RULES         = 0x2902,
+    KU_RES_ID_ACL_MAX_REGIONS            = 0x2903,
+    KU_RES_ID_ACL_MAX_GROUPS             = 0x2904,
+    KU_RES_ID_ACL_MAX_GROUP_SIZE         = 0x2905,
+    KU_RES_ID_ACL_FLEX_KEYS              = 0x2910,
+    KU_RES_ID_ACL_MAX_ACTION_PER_RULE    = 0x2911,
+    KU_RES_ID_ACL_ACTIONS_PER_SET        = 0x2912,
+    KU_RES_ID_MAX_CPU_POLICERS           = 0x2A13,
+    KU_RES_ID_MAX_VRS                    = 0x2C01,
+    KU_RES_ID_MAX_RIFS                   = 0x2C02,
+    KU_RES_ID_MAX_LPM_TREES              = 0x2C30,
 
     /* Internal resources.
      *   * Determined by the SW, not queried from the HW.
@@ -1047,7 +1047,7 @@ typedef enum {
 } ku_mgmt_board_t;
 
 enum sx_netdev_user_channel_type {
-    USER_CHANNEL_L3_NETDEV = 0,
+    USER_CHANNEL_L3_NETDEV       = 0,
     USER_CHANNEL_LOG_PORT_NETDEV = 1,
     USER_CHANNEL_PHY_PORT_NETDEV = 2,
     NUM_OF_NET_DEV_TYPE
@@ -1075,20 +1075,20 @@ struct ku_dpt_i2c_info {
 };
 
 typedef enum sxd_chip_types {
-    SXD_CHIP_TYPE_UNKNOWN = 0,
-    SXD_CHIP_TYPE_SWITCHX_A2 = 1,
-    SXD_CHIP_TYPE_SWITCHX_A1 = 3,
-    SXD_CHIP_TYPE_SWITCHX_A0 = 4,
-    SXD_CHIP_TYPE_SWITCH_IB = 5,
-    SXD_CHIP_TYPE_SPECTRUM = 6,
-    SXD_CHIP_TYPE_SWITCH_IB2 = 7,
+    SXD_CHIP_TYPE_UNKNOWN     = 0,
+    SXD_CHIP_TYPE_SWITCHX_A2  = 1,
+    SXD_CHIP_TYPE_SWITCHX_A1  = 3,
+    SXD_CHIP_TYPE_SWITCHX_A0  = 4,
+    SXD_CHIP_TYPE_SWITCH_IB   = 5,
+    SXD_CHIP_TYPE_SPECTRUM    = 6,
+    SXD_CHIP_TYPE_SWITCH_IB2  = 7,
     SXD_CHIP_TYPE_SPECTRUM_A1 = 8,
-    SXD_CHIP_TYPE_SPECTRUM2 = 9,
-    SXD_CHIP_TYPE_QUANTUM = 10,
-    SXD_CHIP_TYPE_SPECTRUM3 = 11,
-    SXD_CHIP_TYPE_QUANTUM2 = 12,
-    SXD_CHIP_TYPE_SPECTRUM4 = 13,
-    SXD_CHIP_TYPES_MAX = SXD_CHIP_TYPE_SPECTRUM4,        /*SPC4 does not support FW dump me */
+    SXD_CHIP_TYPE_SPECTRUM2   = 9,
+    SXD_CHIP_TYPE_QUANTUM     = 10,
+    SXD_CHIP_TYPE_SPECTRUM3   = 11,
+    SXD_CHIP_TYPE_QUANTUM2    = 12,
+    SXD_CHIP_TYPE_SPECTRUM4   = 13,
+    SXD_CHIP_TYPES_MAX        = SXD_CHIP_TYPE_SPECTRUM4, /*SPC4 does not support FW dump me */
     /* Do not change this value, it can break ISSU !*/
     SXD_CHIP_TYPES_MAX_ISSU = SXD_CHIP_TYPE_SPECTRUM3 /* need to check this !!! */
 } sxd_chip_types_t;
@@ -1191,14 +1191,14 @@ struct ku_timespec {
 
 enum {
     /* following values are taken from PRM: */
-    SXD_TS_TYPE_CQE_NONE = 0,
-    SXD_TS_TYPE_CQE_FRC = 1,
-    SXD_TS_TYPE_CQE_UTC = 2,
+    SXD_TS_TYPE_CQE_NONE       = 0,
+    SXD_TS_TYPE_CQE_FRC        = 1,
+    SXD_TS_TYPE_CQE_UTC        = 2,
     SXD_TS_TYPE_CQE_MIRROR_UTC = 3,
-    SXD_TS_TYPE_CQE_MAX = SXD_TS_TYPE_CQE_MIRROR_UTC,
+    SXD_TS_TYPE_CQE_MAX        = SXD_TS_TYPE_CQE_MIRROR_UTC,
 
     /* internal driver values */
-    SXD_TS_TYPE_NONE = SXD_TS_TYPE_CQE_NONE,
+    SXD_TS_TYPE_NONE  = SXD_TS_TYPE_CQE_NONE,
     SXD_TS_TYPE_LINUX = SXD_TS_TYPE_CQE_MAX + 1
 };
 
@@ -1405,9 +1405,9 @@ struct rdq_properties {
 };
 enum sxd_chip_rev {
     SXD_CHIP_REV_UNKNOWN = 0,
-    SXD_CHIP_REV_A0 = 1 << 1,
-    SXD_CHIP_REV_A1 = 1 << 2,
-    SXD_CHIP_REV_A2 = 1 << 3,
+    SXD_CHIP_REV_A0      = 1 << 1,
+    SXD_CHIP_REV_A1      = 1 << 2,
+    SXD_CHIP_REV_A2      = 1 << 3,
 };
 struct sxd_chip_ver {
     enum sxd_chip_types chip_type;
@@ -1700,12 +1700,12 @@ struct ku_ptys_reg {
  * mhsr_health_mode enumerated type is used to note the MHSR health state.
  */
 enum mhsr_health_mode {
-    MHSR_HEALTH_MODE_FAILURE = 0,
-    MHSR_HEALTH_MODE_RESERVED = 1,
+    MHSR_HEALTH_MODE_FAILURE          = 0,
+    MHSR_HEALTH_MODE_RESERVED         = 1,
     MHSR_HEALTH_MODE_NORMAL_OPERATION = 2,
-    MHSR_HEALTH_MODE_DEFAULT_STATE = 3,      /*boot/init*/
-    MHSR_HEALTH_MODE_MIN = MHSR_HEALTH_MODE_FAILURE,
-    MHSR_HEALTH_MODE_MAX = MHSR_HEALTH_MODE_DEFAULT_STATE,
+    MHSR_HEALTH_MODE_DEFAULT_STATE    = 3,   /*boot/init*/
+    MHSR_HEALTH_MODE_MIN              = MHSR_HEALTH_MODE_FAILURE,
+    MHSR_HEALTH_MODE_MAX              = MHSR_HEALTH_MODE_DEFAULT_STATE,
 };
 
 /**
@@ -1720,16 +1720,16 @@ struct ku_mhsr_reg {
  */
 enum profile_flood_mode_type {
     PROFILE_FLOOD_MODE_TYPE_SINGLE_ENTRY = 0,
-    PROFILE_FLOOD_MODE_TYPE_USE_FID = 1,
-    PROFILE_FLOOD_MODE_TYPE_USE_VID = 2,
-    PROFILE_FLOOD_MODE_TYPE_MIXED_MODE = 3,
+    PROFILE_FLOOD_MODE_TYPE_USE_FID      = 1,
+    PROFILE_FLOOD_MODE_TYPE_USE_VID      = 2,
+    PROFILE_FLOOD_MODE_TYPE_MIXED_MODE   = 3,
     PROFILE_FLOOD_MODE_TYPE_CONTROL_MODE = 4,
     PROFILE_FLOOD_MODE_TYPE_MAX,
 };
 
 typedef enum sxd_sftr_table_type {
     SXD_SFTR_TABLE_TYPE_ANY_TYPE_E = 0x0,
-    SXD_SFTR_TABLE_TYPE_FID_E = 0x4
+    SXD_SFTR_TABLE_TYPE_FID_E      = 0x4
 } sxd_sftr_table_type_t;
 
 /**
@@ -1769,14 +1769,14 @@ enum svpe_virtual_port_enable {
  * flush type.
  */
 enum fdb_flush_type {
-    FDB_FLUSH_TYPE_SWID = 0,
-    FDB_FLUSH_TYPE_FID = 1,
-    FDB_FLUSH_TYPE_PORT = 2,
+    FDB_FLUSH_TYPE_SWID     = 0,
+    FDB_FLUSH_TYPE_FID      = 1,
+    FDB_FLUSH_TYPE_PORT     = 2,
     FDB_FLUSH_TYPE_PORT_FID = 3,
-    FDB_FLUSH_TYPE_LAG = 4,
-    FDB_FLUSH_TYPE_LAG_FID = 5,
-    FDB_FLUSH_TYPE_NVE = 6,
-    FDB_FLUSH_TYPE_NVE_FID = 7
+    FDB_FLUSH_TYPE_LAG      = 4,
+    FDB_FLUSH_TYPE_LAG_FID  = 5,
+    FDB_FLUSH_TYPE_NVE      = 6,
+    FDB_FLUSH_TYPE_NVE_FID  = 7
 };
 
 /**
@@ -1827,7 +1827,7 @@ struct ku_spfsr_reg {
  */
 enum ku_smid_reg_op {
     SXD_SMID_OP_UPDATE = 0,
-    SXD_SMID_OP_WRITE = 1,
+    SXD_SMID_OP_WRITE  = 1,
 };
 
 /**
@@ -1876,10 +1876,10 @@ struct ku_spvmlr_reg {
  * PFCA operation.
  */
 enum sxd_flow_counter_op {
-    SXD_PFCA_OP_NOP = 0,
+    SXD_PFCA_OP_NOP      = 0,
     SXD_PFCA_OP_ALLOCATE = 1,
-    SXD_PFCA_OP_TEST = 2,
-    SXD_PFCA_OP_FREE = 3,
+    SXD_PFCA_OP_TEST     = 2,
+    SXD_PFCA_OP_FREE     = 3,
 };
 
 
@@ -1887,9 +1887,9 @@ enum sxd_flow_counter_op {
  * spgt_operation enumerated type is used to note the SPGT operation.
  */
 enum spgt_operation {
-    SPGT_OPERATION_ADD = 0,
+    SPGT_OPERATION_ADD    = 0,
     SPGT_OPERATION_DELETE = 1,
-    SPGT_OPERATION_EDIT = 2,
+    SPGT_OPERATION_EDIT   = 2,
 };
 
 /**
@@ -1906,12 +1906,12 @@ struct ku_spgt_reg {
  * sfn_type enumerated type is used to note the SFN data type.
  */
 enum sfn_type {
-    SFN_TYPE_LEARNT_MAC = 5,
-    SFN_TYPE_LEARNT_MAC_LAG = 6,
+    SFN_TYPE_LEARNT_MAC            = 5,
+    SFN_TYPE_LEARNT_MAC_LAG        = 6,
     SFN_TYPE_LEARNT_UNICAST_TUNNEL = 0xD,
-    SFN_TYPE_AGED_MAC = 7,
-    SFN_TYPE_AGED_MAC_LAG = 8,
-    SFN_TYPE_AGED_UNICAST_TUNNEL = 0xE,
+    SFN_TYPE_AGED_MAC              = 7,
+    SFN_TYPE_AGED_MAC_LAG          = 8,
+    SFN_TYPE_AGED_UNICAST_TUNNEL   = 0xE,
 };
 
 /**
@@ -2033,43 +2033,43 @@ enum sfd_rec_type {
  * sfd_type_t enumerated type is used to note the SFD data type.
  */
 enum sfd_type {
-    SFD_TYPE_UNICAST = 0,
-    SFD_TYPE_UNICAST_LAG = 1,
-    SFD_TYPE_MULTICAST = 2,
-    SFD_TYPE_LEARNT_MAC_E = 5,
-    SFD_TYPE_LEARNT_MAC_LAG_E = 6,
-    SFD_TYPE_AGED_MAC_E = 7,
-    SFD_TYPE_AGED_MAC_LAG_E = 8,
-    SFD_TYPE_UNICAST_TUNNEL = 0xC,
+    SFD_TYPE_UNICAST             = 0,
+    SFD_TYPE_UNICAST_LAG         = 1,
+    SFD_TYPE_MULTICAST           = 2,
+    SFD_TYPE_LEARNT_MAC_E        = 5,
+    SFD_TYPE_LEARNT_MAC_LAG_E    = 6,
+    SFD_TYPE_AGED_MAC_E          = 7,
+    SFD_TYPE_AGED_MAC_LAG_E      = 8,
+    SFD_TYPE_UNICAST_TUNNEL      = 0xC,
     SFD_TYPE_LEARNT_MAC_TUNNEL_E = 0xD,
-    SFD_TYPE_AGED_MAC_TUNNEL_E = 0xE,
-    SFD_TYPE_MULTICAST_TUNNEL = 0xF,
+    SFD_TYPE_AGED_MAC_TUNNEL_E   = 0xE,
+    SFD_TYPE_MULTICAST_TUNNEL    = 0xF,
 };
 
 /**
  * sfd_operation enumerated type is used to note the SFD operation.
  */
 enum sfd_operation {
-    SFD_OPERATION_DUMP_FDB = 0,
-    SFD_OPERATION_QUERY = 1,
+    SFD_OPERATION_DUMP_FDB                 = 0,
+    SFD_OPERATION_QUERY                    = 1,
     SXD_OPERATION_QUERY_AND_CLEAR_ACTIVITY = 2,
-    SFD_OPERATION_TEST = 0,
-    SFD_OPERATION_ADD = 1,
-    SFD_OPERATION_DELETE = 2,
-    SXD_OPERATION_REMOVE_NOTIFICATION = 3,
+    SFD_OPERATION_TEST                     = 0,
+    SFD_OPERATION_ADD                      = 1,
+    SFD_OPERATION_DELETE                   = 2,
+    SXD_OPERATION_REMOVE_NOTIFICATION      = 3,
 };
 
 /**
  * sfd_policy enumerated type is used to note the SFD data replace policy.
  */
 enum sfd_policy {
-    SFD_POLICY_STATIC = 0,
-    SFD_POLICY_DYNAMIC_REMOTE = 1,
-    SFD_POLICY_DYNAMIC_LEARN = 1,   /**< Applicable for MC and MC tunnel records only, while it is equal to
+    SFD_POLICY_STATIC          = 0,
+    SFD_POLICY_DYNAMIC_REMOTE  = 1,
+    SFD_POLICY_DYNAMIC_LEARN   = 1, /**< Applicable for MC and MC tunnel records only, while it is equal to
                                      *    SFD_POLICY_DYNAMIC_REMOTE, applibs does not require updates,
                                      *    and POLICY_TO_MAC_TYPE can be used */
     SFD_POLICY_DYNAMIC_AGEABLE = 3,
-    SFD_POLICY_INVALID = -1,
+    SFD_POLICY_INVALID         = -1,
 };
 
 /**
@@ -2077,13 +2077,13 @@ enum sfd_policy {
  * action.
  */
 enum sfd_action {
-    SFD_ACTION_FORWARD_ONLY = 0,
-    SFD_ACTION_FORWARD_AND_TRAP = 1,
-    SFD_ACTION_TRAP_ONLY = 2,
+    SFD_ACTION_FORWARD_ONLY         = 0,
+    SFD_ACTION_FORWARD_AND_TRAP     = 1,
+    SFD_ACTION_TRAP_ONLY            = 2,
     SFD_ACTION_FORWARD_TO_IP_ROUTER = 3,
-    SFD_ACTION_FORWARD_TO_FCF = 4,
-    SFD_ACTION_DISCARD = 15,
-    SFD_ACTION_INVALID = -1,
+    SFD_ACTION_FORWARD_TO_FCF       = 4,
+    SFD_ACTION_DISCARD              = 15,
+    SFD_ACTION_INVALID              = -1,
 };
 
 /**
@@ -2326,7 +2326,7 @@ struct ku_sgcr_reg {
 };
 enum spms_mstp_state {
     SPMS_MSTP_STATE_DISCARDING = 1,
-    SPMS_MSTP_STATE_LEARNING = 2,
+    SPMS_MSTP_STATE_LEARNING   = 2,
     SPMS_MSTP_STATE_FORWARDING = 3,
 };
 
@@ -2427,7 +2427,7 @@ struct ku_mpat_reg {
 
 typedef enum sxd_span_sbib_buff_status {
     SXD_SBIB_MIRROR_BUFF_STATUS_NOT_REACH_SIZE_E = 0,
-    SXD_SBIB_MIRROR_BUFF_STATUS_REACH_SIZE_E = 1
+    SXD_SBIB_MIRROR_BUFF_STATUS_REACH_SIZE_E     = 1
 } sxd_span_sbib_buff_status_t;
 
 /**
@@ -2481,10 +2481,10 @@ struct ku_slcr_reg {
  */
 
 typedef enum slcr_v2_hash_type {
-    SXD_SLCR_V2_HASH_TYPE_CRC = 0,
-    SXD_SLCR_V2_HASH_TYPE_XOR = 1,
+    SXD_SLCR_V2_HASH_TYPE_CRC    = 0,
+    SXD_SLCR_V2_HASH_TYPE_XOR    = 1,
     SXD_SLCR_V2_HASH_TYPE_RANDOM = 2,
-    SXD_SLCR_V2_HASH_TYPE_CRC2 = 3,   /* For Spectrum-2 and on */
+    SXD_SLCR_V2_HASH_TYPE_CRC2   = 3, /* For Spectrum-2 and on */
 } slcr_v2_hash_type_e;
 
 typedef struct ku_slcr_v2_reg {
@@ -2501,12 +2501,12 @@ typedef struct ku_slcr_v2_reg {
 } ku_slcr_v2_reg_t;
 
 enum sldr_operation {
-    SLDR_OPERATION_CREATE_LAG = 0,
-    SLDR_OPERATION_DESTROY_LAG = 1,
-    SLDR_OPERATION_ADD_PORT_LIST = 2,
-    SLDR_OPERATION_DEL_PORT_LIST = 3,
-    SLDR_OPERATION_LAG_REDIRECT = 4,
-    SLDR_OPERATION_FINE_GRAIN_LAG_ENABLE = 5,
+    SLDR_OPERATION_CREATE_LAG             = 0,
+    SLDR_OPERATION_DESTROY_LAG            = 1,
+    SLDR_OPERATION_ADD_PORT_LIST          = 2,
+    SLDR_OPERATION_DEL_PORT_LIST          = 3,
+    SLDR_OPERATION_LAG_REDIRECT           = 4,
+    SLDR_OPERATION_FINE_GRAIN_LAG_ENABLE  = 5,
     SLDR_OPERATION_FINE_GRAIN_LAG_DISABLE = 6,
 };
 
@@ -2878,7 +2878,7 @@ struct ku_access_qhll_reg {
  * PVGT operation type.
  */
 typedef enum sxd_pvgt_operation {
-    SXD_PVGT_OP_ADD_VLAN_E = 0,
+    SXD_PVGT_OP_ADD_VLAN_E    = 0,
     SXD_PVGT_OP_REMOVE_VLAN_E = 1,
 } sxd_pvgt_operation_t;
 
@@ -2904,10 +2904,10 @@ struct ku_msci_reg {
  * sxd_mrsr_command enumerated type is used to note the MRSR command type
  */
 enum sxd_mrsr_command {
-    SXD_MRSR_CMD_DO_NOTHING = 0,
-    SXD_MRSR_CMD_SW_RESET = 1,
+    SXD_MRSR_CMD_DO_NOTHING      = 0,
+    SXD_MRSR_CMD_SW_RESET        = 1,
     SXD_MRSR_CMD_ENCLOSURE_RESET = 3,
-    SXD_MRSR_CMD_SHUTDOWN = 4
+    SXD_MRSR_CMD_SHUTDOWN        = 4
 };
 
 /**
@@ -2942,7 +2942,7 @@ typedef struct ku_pprr_reg {
  * PAGT operation type.
  */
 typedef enum sxd_pagt_operation {
-    SXD_PAGT_OP_CREATE_E = 0,
+    SXD_PAGT_OP_CREATE_E     = 0,
     SXD_PAGT_OP_DEALLOCATE_E = 1,
 } sxd_pagt_operation_t;
 
@@ -2970,7 +2970,7 @@ typedef struct ku_pagt_reg {
  * PVBT operation type.
  */
 typedef enum sxd_pvbt_operation {
-    SXD_PVBT_OP_BIND_E = 0,
+    SXD_PVBT_OP_BIND_E   = 0,
     SXD_PVBT_OP_UNBIND_E = 1,
 } sxd_pvbt_operation_t;
 
@@ -2991,38 +2991,38 @@ typedef struct ku_pvbt_reg {
  * PPBT operation type.
  */
 typedef enum sxd_ppbt_operation {
-    SXD_PPBT_OP_BIND_E = 0,
+    SXD_PPBT_OP_BIND_E   = 0,
     SXD_PPBT_OP_UNBIND_E = 1,
 } sxd_ppbt_operation_t;
 
 typedef enum sxd_flex_acl_action_type {
-    SXD_ACTION_TYPE_NULL_E = 0,
-    SXD_ACTION_TYPE_MAC_E = 1,
-    SXD_ACTION_TYPE_VLAN_E = 2,
-    SXD_ACTION_TYPE_TRAP_E = 3,
-    SXD_ACTION_TYPE_TRAP_W_USER_DEF_VAL_E = 4,
-    SXD_ACTION_TYPE_PORT_FILTER_E = 5,
-    SXD_ACTION_TYPE_QOS_E = 6,
-    SXD_ACTION_TYPE_FORWARD_E = 7,
-    SXD_ACTION_TYPE_POLICING_COUNTING_E = 8,
-    SXD_ACTION_TYPE_META_DATA_E = 9,
-    SXD_ACTION_TYPE_UC_ROUTER_AND_MPLS_E = 10,
-    SXD_ACTION_TYPE_VXLAN_E = 11,
-    SXD_ACTION_TYPE_MPLS_E = 12,
-    SXD_ACTION_TYPE_HASH_E = 13,
-    SXD_ACTION_TYPE_VIRTUAL_FORWARDING_E = 14,
-    SXD_ACTION_TYPE_IGNORE_E = 15,
-    SXD_ACTION_TYPE_MC_E = 16,
-    SXD_ACTION_TYPE_SIP_DIP_E = 17,
-    SXD_ACTION_TYPE_L4_PORT_E = 18,
-    SXD_ACTION_TYPE_MIRROR_SAMPLER_E = 19,
-    SXD_ACTION_TYPE_UNDEFINDED_E = 20,
-    SXD_ACTION_TYPE_PORT_FILTER_EXT_E = 21,
-    SXD_ACTION_TYPE_CUSTOM_BYTES_ALU_IMM_E = 24,
-    SXD_ACTION_TYPE_CUSTOM_BYTES_ALU_REG_E = 25,
+    SXD_ACTION_TYPE_NULL_E                   = 0,
+    SXD_ACTION_TYPE_MAC_E                    = 1,
+    SXD_ACTION_TYPE_VLAN_E                   = 2,
+    SXD_ACTION_TYPE_TRAP_E                   = 3,
+    SXD_ACTION_TYPE_TRAP_W_USER_DEF_VAL_E    = 4,
+    SXD_ACTION_TYPE_PORT_FILTER_E            = 5,
+    SXD_ACTION_TYPE_QOS_E                    = 6,
+    SXD_ACTION_TYPE_FORWARD_E                = 7,
+    SXD_ACTION_TYPE_POLICING_COUNTING_E      = 8,
+    SXD_ACTION_TYPE_META_DATA_E              = 9,
+    SXD_ACTION_TYPE_UC_ROUTER_AND_MPLS_E     = 10,
+    SXD_ACTION_TYPE_VXLAN_E                  = 11,
+    SXD_ACTION_TYPE_MPLS_E                   = 12,
+    SXD_ACTION_TYPE_HASH_E                   = 13,
+    SXD_ACTION_TYPE_VIRTUAL_FORWARDING_E     = 14,
+    SXD_ACTION_TYPE_IGNORE_E                 = 15,
+    SXD_ACTION_TYPE_MC_E                     = 16,
+    SXD_ACTION_TYPE_SIP_DIP_E                = 17,
+    SXD_ACTION_TYPE_L4_PORT_E                = 18,
+    SXD_ACTION_TYPE_MIRROR_SAMPLER_E         = 19,
+    SXD_ACTION_TYPE_UNDEFINDED_E             = 20,
+    SXD_ACTION_TYPE_PORT_FILTER_EXT_E        = 21,
+    SXD_ACTION_TYPE_CUSTOM_BYTES_ALU_IMM_E   = 24,
+    SXD_ACTION_TYPE_CUSTOM_BYTES_ALU_REG_E   = 25,
     SXD_ACTION_TYPE_CUSTOM_BYTES_ALU_FIELD_E = 26,
-    SXD_ACTION_TYPE_CUSTOM_BYTES_MOVE_E = 27,
-    SXD_ACTION_TYPE_LAST_E = 28
+    SXD_ACTION_TYPE_CUSTOM_BYTES_MOVE_E      = 27,
+    SXD_ACTION_TYPE_LAST_E                   = 28
 } sxd_flex_acl_action_type_t;
 
 /**
@@ -3030,9 +3030,9 @@ typedef enum sxd_flex_acl_action_type {
  * PPBT congestion type.
  */
 typedef enum sxd_ppbt_cong {
-    SXD_PPBT_CONG_MAIN_BINDING = 0,
+    SXD_PPBT_CONG_MAIN_BINDING  = 0,
     SXD_PPBT_CONG_FALSE_BINDING = 1,
-    SXD_PPBT_CONG_BINDING = 2
+    SXD_PPBT_CONG_BINDING       = 2
 } sxd_ppbt_cong_t;
 
 /**
@@ -3053,7 +3053,7 @@ typedef struct ku_ppbt_reg {
  * note the PTCE action type.
  */
 typedef enum sxd_acl_ptce_action_type {
-    SXD_PTCE_ACTION_TYPE_DEFAULT_E = 0,
+    SXD_PTCE_ACTION_TYPE_DEFAULT_E  = 0,
     SXD_PTCE_ACTION_TYPE_EXTENDED_E = 1,
 } sxd_acl_ptce_action_type_t;
 
@@ -3062,12 +3062,12 @@ typedef enum sxd_acl_ptce_action_type {
  * the PTCE key type.
  */
 typedef enum sxd_acl_ptce_key_type {
-    SXD_PTCE_KEY_TYPE_IPV4_FULL_E = 0,
-    SXD_PTCE_KEY_TYPE_IPV6_FULL_E = 1,
-    SXD_PTCE_KEY_TYPE_MAC_FULL_E = 2,
+    SXD_PTCE_KEY_TYPE_IPV4_FULL_E     = 0,
+    SXD_PTCE_KEY_TYPE_IPV6_FULL_E     = 1,
+    SXD_PTCE_KEY_TYPE_MAC_FULL_E      = 2,
     SXD_PTCE_KEY_TYPE_MAC_IPV4_FULL_E = 3,
-    SXD_PTCE_KEY_TYPE_MAC_SHORT_E = 5,
-    SXD_PTCE_KEY_TYPE_FCOE_FULL_E = 32
+    SXD_PTCE_KEY_TYPE_MAC_SHORT_E     = 5,
+    SXD_PTCE_KEY_TYPE_FCOE_FULL_E     = 32
 } sxd_acl_ptce_key_type_t;
 
 /**
@@ -3075,11 +3075,11 @@ typedef enum sxd_acl_ptce_key_type {
  * the PTCE action trap action type.
  */
 typedef enum sxd_ptce_trap_action {
-    SXD_PTCE_TRAP_ACTION_PERMIT_E = 0,
-    SXD_PTCE_TRAP_ACTION_SOFT_DROP_E = 1,
-    SXD_PTCE_TRAP_ACTION_TRAP_E = 2,
+    SXD_PTCE_TRAP_ACTION_PERMIT_E         = 0,
+    SXD_PTCE_TRAP_ACTION_SOFT_DROP_E      = 1,
+    SXD_PTCE_TRAP_ACTION_TRAP_E           = 2,
     SXD_PTCE_TRAP_ACTION_SOFT_DROP_TRAP_E = 3,
-    SXD_PTCE_TRAP_ACTION_DENY_E = 4,
+    SXD_PTCE_TRAP_ACTION_DENY_E           = 4,
 } sxd_ptce_trap_action_t;
 
 /**
@@ -3087,11 +3087,11 @@ typedef enum sxd_ptce_trap_action {
  * the PTCE action vlan action type.
  */
 typedef enum sxd_ptce_vlan_action {
-    SXD_PTCE_VLAN_ACTION_NOP_E = 0,
-    SXD_PTCE_VLAN_ACTION_PUSH_VID_KEEP_PRIO_E = 0x8,
-    SXD_PTCE_VLAN_ACTION_PUSH_VLAN_E = 0xC,
+    SXD_PTCE_VLAN_ACTION_NOP_E                   = 0,
+    SXD_PTCE_VLAN_ACTION_PUSH_VID_KEEP_PRIO_E    = 0x8,
+    SXD_PTCE_VLAN_ACTION_PUSH_VLAN_E             = 0xC,
     SXD_PTCE_VLAN_ACTION_REPLACE_VID_KEEP_PRIO_E = 0x18,
-    SXD_PTCE_VLAN_ACTION_REPLACE_VID_PRIO_E = 0x1c,
+    SXD_PTCE_VLAN_ACTION_REPLACE_VID_PRIO_E      = 0x1c,
 } sxd_ptce_vlan_action_t;
 
 /**
@@ -3141,12 +3141,12 @@ typedef struct sxd_ptce_ipv6_full_key {
  * op type.
  */
 typedef enum sxd_ptce_operation {
-    SXD_PTCE_OP_WRITE = 0,
-    SXD_PTCE_OP_READ = 0,
-    SXD_PTCE_OP_CLEAR_ON_READ = 1,
-    SXD_PTCE_OP_UPDATE = 1,
+    SXD_PTCE_OP_WRITE          = 0,
+    SXD_PTCE_OP_READ           = 0,
+    SXD_PTCE_OP_CLEAR_ON_READ  = 1,
+    SXD_PTCE_OP_UPDATE         = 1,
     SXD_PTCE_OP_CLEAR_ACTIVITY = 2,
-    SXD_PTCE_OP_WRITE_CLEAR = 3
+    SXD_PTCE_OP_WRITE_CLEAR    = 3
 } sxd_ptce_operation_t;
 
 
@@ -3314,74 +3314,74 @@ typedef enum sxd_flex_defer {
 typedef enum sxd_flex_acl_l2_dmac_type_ {
     SXD_FLEX_ACL_L2_DMAC_TYPE_MULTICAST = 0,
     SXD_FLEX_ACL_L2_DMAC_TYPE_BROADCAST = 1,
-    SXD_FLEX_ACL_L2_DMAC_TYPE_UNICAST = 2,
+    SXD_FLEX_ACL_L2_DMAC_TYPE_UNICAST   = 2,
 } sxd_flex_acl_l2_dmac_type_t;
 
 typedef enum sxd_flex_acl_l3_type_ {
-    SXD_FLEX_ACL_L3_TYPE_IPV4 = 0,
-    SXD_FLEX_ACL_L3_TYPE_IPV6 = 1,
-    SXD_FLEX_ACL_L3_TYPE_ARP = 2,
+    SXD_FLEX_ACL_L3_TYPE_IPV4  = 0,
+    SXD_FLEX_ACL_L3_TYPE_IPV6  = 1,
+    SXD_FLEX_ACL_L3_TYPE_ARP   = 2,
     SXD_FLEX_ACL_L3_TYPE_OTHER = 3,
 } sxd_flex_acl_l3_type_t;
 
 typedef enum sxd_flex_acl_l4_type_ {
-    SXD_FLEX_ACL_L4_TYPE_TCP = 1 << 0,
-        SXD_FLEX_ACL_L4_TYPE_UDP = 1 << 1,
-        SXD_FLEX_ACL_L4_TYPE_RESERVED = 1 << 2,
-        SXD_FLEX_ACL_L4_TYPE_OTHER = 1 << 3,
+    SXD_FLEX_ACL_L4_TYPE_TCP      = 1 << 0,
+    SXD_FLEX_ACL_L4_TYPE_UDP      = 1 << 1,
+    SXD_FLEX_ACL_L4_TYPE_RESERVED = 1 << 2,
+    SXD_FLEX_ACL_L4_TYPE_OTHER    = 1 << 3,
 } sxd_flex_acl_l4_type_t;
 
 typedef enum sxd_flex_acl_discard_state_ {
-    SXD_FLEX_ACL_DISCARD_STATE_FORWARD = 0,
+    SXD_FLEX_ACL_DISCARD_STATE_FORWARD            = 0,
     SXD_FLEX_ACL_DISCARD_STATE_SOFT_DISCARD_ERROR = 1,
-    SXD_FLEX_ACL_DISCARD_STATE_DISCARD = 2,
-    SXD_FLEX_ACL_DISCARD_STATE_DICARD_ERROR = 3,
+    SXD_FLEX_ACL_DISCARD_STATE_DISCARD            = 2,
+    SXD_FLEX_ACL_DISCARD_STATE_DICARD_ERROR       = 3,
     SXD_FLEX_ACL_DISCARD_STATE_LAST,
 } sxd_flex_acl_discard_state_t;
 
 typedef enum sxd_flex_acl_l4_type_extended_ {
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_NONE = 0,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_OTHERS = 1,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_TCP = 2,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_UDP = 3,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_BTH = 4,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_NONE    = 0,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_OTHERS  = 1,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_TCP     = 2,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_UDP     = 3,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_BTH     = 4,
     SXD_FLEX_ACL_L4_TYPE_EXTENDED_BTHOUDP = 5,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_ICMP = 6,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_IGMP = 7,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_AH = 8,
-    SXD_FLEX_ACL_L4_TYPE_EXTENDED_ESP = 9,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_ICMP    = 6,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_IGMP    = 7,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_AH      = 8,
+    SXD_FLEX_ACL_L4_TYPE_EXTENDED_ESP     = 9,
 } sxd_flex_acl_l4_type_extended_t;
 
 typedef enum sxd_flex_acl_nd_sll_or_tll_valid_ {
     SXD_FLEX_ACL_NO_ND_SLL_OR_TTL = 0,
-    SXD_FLEX_ACL_ND_SLL = 1,
-    SXD_FLEX_ACL_ND_TLL = 2,
+    SXD_FLEX_ACL_ND_SLL           = 1,
+    SXD_FLEX_ACL_ND_TLL           = 2,
 } sxd_flex_acl_nd_sll_or_tll_valid;
 
 typedef enum sxd_flex_acl_mc_bc_or_flood_type_ {
-    SXD_FLEX_ACL_MC_TYPE_FLOOD_FOR_UC = 1 << 0,
-        SXD_FLEX_ACL_MC_TYPE_BC = 1 << 1,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_NON_IP = 1 << 2,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV4 = 1 << 3,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV4_LINK_LOCAL = 1 << 4,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV6 = 1 << 5,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV6_NODES_LOCAL = 1 << 6,
-        SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_ROCE_V1 = 1 << 7,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_FOR_UC              = 1 << 0,
+    SXD_FLEX_ACL_MC_TYPE_BC                        = 1 << 1,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_NON_IP           = 1 << 2,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV4             = 1 << 3,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV4_LINK_LOCAL  = 1 << 4,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV6             = 1 << 5,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_IPV6_NODES_LOCAL = 1 << 6,
+    SXD_FLEX_ACL_MC_TYPE_FLOOD_MC_ROCE_V1          = 1 << 7,
 } sxd_flex_acl_mc_bc_or_flood_type;
 
 typedef enum sxd_flex_acl_ipv6_extension_headers_ {
-    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_ROUTING = 0,
-    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_FRAGMENT = 1,
+    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_ROUTING             = 0,
+    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_FRAGMENT            = 1,
     SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_DESTINATION_OPTIONS = 2,
-    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_AUTHENTICATION = 3,
-    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_ESP = 4,
-    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_MOBILITY = 5,
+    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_AUTHENTICATION      = 3,
+    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_ESP                 = 4,
+    SXD_FLEX_ACL_IPV6_EXTENSION_HEADER_MOBILITY            = 5,
 } sxd_flex_acl_ipv6_extension_headers_t;
 
 typedef enum sxd_flex_ttl_cmd_ {
-    SXD_FLEX_TTL_CMD_DO_NOTHING_E = 0,
+    SXD_FLEX_TTL_CMD_DO_NOTHING_E    = 0,
     SXD_FLEX_TTL_CMD_SET_TTL_VALUE_E = 1,
-    SXD_FLEX_TTL_CMD_DECREMENT_E = 2,
+    SXD_FLEX_TTL_CMD_DECREMENT_E     = 2,
     SXD_FLEX_TTL_CMD_LAST_E,
 } sxd_flex_ttl_cmd_t;
 
@@ -3505,9 +3505,9 @@ typedef struct sxd_port_filter_ext_flex_action {
 } sxd_port_filter_ext_flex_action_t;
 
 typedef enum sxd_flex_dscp_cmd {
-    SXD_FLEX_DSCP_CMD_TYPE_DO_NOTHING_E = 0,
-    SXD_FLEX_DSCP_CMD_TYPE_SET_3_LSB_BITS_E = 1,
-    SXD_FLEX_DSCP_CMD_TYPE_SET_3_MSB_BITS_E = 2,
+    SXD_FLEX_DSCP_CMD_TYPE_DO_NOTHING_E      = 0,
+    SXD_FLEX_DSCP_CMD_TYPE_SET_3_LSB_BITS_E  = 1,
+    SXD_FLEX_DSCP_CMD_TYPE_SET_3_MSB_BITS_E  = 2,
     SXD_FLEX_DSCP_CMD_TYPE_SET_DSCP_6_BITS_E = 3,
     SXD_FLEX_DSCP_CMD_TYPE_LAST_E,
 } sxd_flex_dscp_cmd_t;
@@ -3523,14 +3523,14 @@ typedef enum sxd_flex_ecn_cmd {
 } sxd_flex_ecn_cmd_t;
 
 typedef enum sxd_flex_switch_prio_cmd {
-    SXD_FLEX_SWITCH_PRIO_CMD_TYPE_DO_NOTHING_E = 0,
+    SXD_FLEX_SWITCH_PRIO_CMD_TYPE_DO_NOTHING_E          = 0,
     SXD_FLEX_SWITCH_PRIO_CMD_TYPE_SET_SWITCH_PRIORITY_E = 1,
     SXD_FLEX_SWITCH_PRIO_CMD_TYPE_LAST,
 } sxd_flex_switch_prio_cmd_t;
 
 typedef enum sxd_flex_color_cmd {
     SXD_FLEX_COLOR_CMD_TYPE_DO_NOTHING_E = 0,
-    SXD_FLEX_COLOR_CMD_TYPE_SET_COLOR_E = 1,
+    SXD_FLEX_COLOR_CMD_TYPE_SET_COLOR_E  = 1,
     SXD_FLEX_COLOR_CMD_TYPE_LAST_E,
 } sxd_flex_color_cmd_t;
 
@@ -3556,14 +3556,14 @@ typedef enum sxd_flex_traffic_class_cmd {
 
 typedef enum sxd_ptce2_next_type {
     SXD_FLEX_NEXT_POINTER_RECORD_E = 0,
-    SXD_FLEX_GOTO_RECORD_E = 1,
+    SXD_FLEX_GOTO_RECORD_E         = 1,
 } sxd_ptce2_next_type_t;
 
 typedef enum sxd_binding_cmd {
-    SXD_FLEX_BINDING_NONE_E = 0,
-    SXD_FLEX_BINDING_JUMP_E = 1,
-    SXD_FLEX_BINDING_CALL_E = 2,
-    SXD_FLEX_BINDING_BREAK_E = 3,
+    SXD_FLEX_BINDING_NONE_E      = 0,
+    SXD_FLEX_BINDING_JUMP_E      = 1,
+    SXD_FLEX_BINDING_CALL_E      = 2,
+    SXD_FLEX_BINDING_BREAK_E     = 3,
     SXD_FLEX_BINDING_TERMINATE_E = 4,
 } sxd_binding_cmd_t;
 
@@ -3718,38 +3718,38 @@ typedef enum sxd_hash_flex_action_cmd {
     SXD_HASH_FLEX_ACTION_CMD_LAST_E
 } sxd_hash_flex_action_cmd_t;
 typedef enum sxd_hash_flex_action_hash_fields {
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SMAC_31_0_E = 0,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DMAC_31_0_E = 1,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DMAC_SMAC_47_32_E = 2,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SMAC_DMAC_47_32_E = 3,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_31_0_E = 4,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_63_32_E = 5,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_95_64_E = 6,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_127_96_E = 7,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_31_0_E = 8,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_63_32_E = 9,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_95_64_E = 10,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_127_96_E = 11,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_IP_PROTO_E = 14,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_L4_SPORT_DPORT_E = 15,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_L4_DPORT_SPORT_E = 16,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_SPI_E = 17,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_31_0_E = 18,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_63_32_E = 19,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_95_64_E = 20,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_127_96_E = 21,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_31_0_E = 22,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_63_32_E = 23,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_95_64_E = 24,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_127_96_E = 25,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_IP_PROTO_E = 28,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SMAC_31_0_E            = 0,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DMAC_31_0_E            = 1,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DMAC_SMAC_47_32_E      = 2,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SMAC_DMAC_47_32_E      = 3,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_31_0_E             = 4,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_63_32_E            = 5,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_95_64_E            = 6,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SIP_127_96_E           = 7,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_31_0_E             = 8,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_63_32_E            = 9,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_95_64_E            = 10,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_DIP_127_96_E           = 11,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_IP_PROTO_E             = 14,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_L4_SPORT_DPORT_E       = 15,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_L4_DPORT_SPORT_E       = 16,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_SPI_E                  = 17,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_31_0_E       = 18,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_63_32_E      = 19,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_95_64_E      = 20,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_SIP_127_96_E     = 21,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_31_0_E       = 22,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_63_32_E      = 23,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_95_64_E      = 24,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_DIP_127_96_E     = 25,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_IP_PROTO_E       = 28,
     SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_L4_SPORT_DPORT_E = 29,
     SXD_HASH_FLEX_ACTION_HASH_FIELD_INNER_L4_DPORT_SPORT_E = 30,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_1_0_E = 31,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_3_2_E = 32,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_5_4_E = 33,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_7_6_E = 34,
-    SXD_HASH_FLEX_ACTION_HASH_FIELD_HASH_VALUE_E = 35,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_1_0_E      = 31,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_3_2_E      = 32,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_5_4_E      = 33,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_GP_REGISTER_7_6_E      = 34,
+    SXD_HASH_FLEX_ACTION_HASH_FIELD_HASH_VALUE_E           = 35,
     SXD_HASH_FLEX_ACTION_HASH_FIELD_LAST_E,
 } sxd_hash_flex_action_hash_fields_t;
 
@@ -3812,10 +3812,10 @@ typedef enum sxd_group_or_acl_binding_type {
 } sxd_group_or_acl_binding_type_t;
 
 typedef enum sxd_mc_flex_action_rpf_action_type {
-    SXD_MC_FLEX_ACTION_RPF_ACTION_NOP_E = 0,
-    SXD_MC_FLEX_ACTION_RPF_ACTION_RPF_TRAP_E = 1,
+    SXD_MC_FLEX_ACTION_RPF_ACTION_NOP_E             = 0,
+    SXD_MC_FLEX_ACTION_RPF_ACTION_RPF_TRAP_E        = 1,
     SXD_MC_FLEX_ACTION_RPF_ACTION_RPF_DISCARD_ERR_E = 3,
-    SXD_MC_FLEX_ACTION_RPF_ACTION_ASSERT_TRAP_E = 6,
+    SXD_MC_FLEX_ACTION_RPF_ACTION_ASSERT_TRAP_E     = 6,
     SXD_MC_FLEX_ACTION_RPF_ACTION_LAST_E,
 } sxd_mc_flex_action_rpf_action_type_t;
 
@@ -3837,7 +3837,7 @@ typedef struct sxd_mc_flex_action {
 
 typedef enum sxd_sip_dip_flex_action_direction {
     SXD_SIP_DIP_FLEX_ACTION_DIRECTION_DESTINATION_E = 0,
-    SXD_SIP_DIP_FLEX_ACTION_DIRECTION_SOURCE_E = 1,
+    SXD_SIP_DIP_FLEX_ACTION_DIRECTION_SOURCE_E      = 1,
     SXD_SIP_DIP_FLEX_ACTION_DIRECTION_TYPE_LAST_E,
 } sxd_sip_dip_flex_action_direction_t;
 
@@ -3856,15 +3856,15 @@ typedef struct sxd_sip_dip_flex_action {
 } sxd_sip_dip_flex_action_t;
 
 typedef enum sxd_l4_port_flex_action_direction {
-    SXD_L4_PORT_FLEX_ACTION_DIRECTION_SOURCE_E = 0,
+    SXD_L4_PORT_FLEX_ACTION_DIRECTION_SOURCE_E      = 0,
     SXD_L4_PORT_FLEX_ACTION_DIRECTION_DESTINATION_E = 1,
     SXD_L4_PORT_FLEX_ACTION_DIRECTION_TYPE_LAST_E,
 } sxd_l4_port_flex_action_direction_t;
 
 typedef enum sxd_l4_port_flex_action_hash {
-    SXD_L4_PORT_FLEX_ACTION_HASH_NONE_E = 0,
+    SXD_L4_PORT_FLEX_ACTION_HASH_NONE_E   = 0,
     SXD_L4_PORT_FLEX_ACTION_HASH_ROUTER_E = 1,
-    SXD_L4_PORT_FLEX_ACTION_HASH_LAG_E = 2,
+    SXD_L4_PORT_FLEX_ACTION_HASH_LAG_E    = 2,
     SXD_L4_PORT_FLEX_ACTION_HASH_TYPE_LAST_E,
 } sxd_l4_port_flex_action_hash_t;
 
@@ -3879,7 +3879,7 @@ typedef enum sxd_custom_bytes_alu_imm_action_opcode {
     SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_SET_E = 0,
     SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_ADD_E = 1,
     SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_AND_E = 2,
-    SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_OR_E = 3,
+    SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_OR_E  = 3,
     SXD_CUSTOM_BYTES_ALU_IMM_ACTION_OPCODE_TYPE_LAST_E,
 } sxd_custom_bytes_alu_imm_action_opcode_t;
 
@@ -3891,12 +3891,12 @@ typedef struct sxd_custom_bytes_alu_imm_flex_action {
 } sxd_custom_bytes_alu_imm_flex_action_t;
 
 typedef enum sxd_custom_bytes_alu_reg_action_opcode {
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_SET_E = 0,
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_ADD_E = 1,
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_AND_E = 2,
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_OR_E = 3,
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_SUB_E = 4,
-    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_XOR_E = 5,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_SET_E  = 0,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_ADD_E  = 1,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_AND_E  = 2,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_OR_E   = 3,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_SUB_E  = 4,
+    SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_XOR_E  = 5,
     SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_ADDC_E = 6,
     SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_SUBC_E = 7,
     SXD_CUSTOM_BYTES_ALU_REG_ACTION_OPCODE_TYPE_LAST_E,
@@ -3911,60 +3911,60 @@ typedef struct sxd_custom_bytes_alu_reg_flex_action {
 } sxd_custom_bytes_alu_reg_flex_action_t;
 
 typedef enum sxd_custom_bytes_flex_action_field_select {
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_ECMP_HASH_E = 1,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_LAG_HASH_E = 2,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_RANDOM_E = 3,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_IP_LENGTH_E = 4,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VID_E = 6,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_ECMP_HASH_E  = 1,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_LAG_HASH_E   = 2,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_RANDOM_E     = 3,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_IP_LENGTH_E  = 4,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VID_E        = 6,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_USER_TOKEN_E = 7,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_TTL_E = 24,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_TTL_E        = 24,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DMAC_15_0_E = 25,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DMAC_15_0_E  = 25,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DMAC_31_16_E = 26,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DMAC_47_32_E = 27,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SMAC_15_0_E = 28,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SMAC_15_0_E  = 28,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SMAC_31_16_E = 29,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SMAC_47_32_E = 30,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_15_0_E = 31,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_31_16_E = 32,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_47_32_E = 33,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_63_48_E = 34,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_79_64_E = 35,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_95_80_E = 36,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_111_96_E = 37,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_15_0_E    = 31,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_31_16_E   = 32,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_47_32_E   = 33,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_63_48_E   = 34,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_79_64_E   = 35,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_95_80_E   = 36,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_111_96_E  = 37,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_DIP_127_112_E = 38,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_15_0_E = 39,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_31_16_E = 40,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_47_32_E = 41,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_63_48_E = 42,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_79_64_E = 43,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_95_80_E = 44,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_111_96_E = 45,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_15_0_E    = 39,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_31_16_E   = 40,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_47_32_E   = 41,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_63_48_E   = 42,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_79_64_E   = 43,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_95_80_E   = 44,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_111_96_E  = 45,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_SIP_127_112_E = 46,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_L4_SOURCE_PORT_E = 47,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_L4_SOURCE_PORT_E      = 47,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_L4_DESTINATION_PORT_E = 48,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VNI_15_0_E = 49,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VNI_15_0_E  = 49,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VNI_31_16_E = 50,
 
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_FID_E = 51,
-    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VRID_E = 52,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_FID_E           = 51,
+    SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_VRID_E          = 52,
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_PORT_USER_MEM_E = 54,
 
     SXD_CUSTOM_BYTES_FLEX_ACTION_FIELD_TYPE_LAST_E,
 } sxd_custom_bytes_flex_action_field_select_t;
 
 typedef enum sxd_custom_bytes_alu_field_action_opcode {
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_SET_E = 0,
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_ADD_E = 1,
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_AND_E = 2,
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_OR_E = 3,
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_SUB_E = 4,
-    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_XOR_E = 5,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_SET_E  = 0,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_ADD_E  = 1,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_AND_E  = 2,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_OR_E   = 3,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_SUB_E  = 4,
+    SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_XOR_E  = 5,
     SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_ADDC_E = 6,
     SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_SUBC_E = 7,
     SXD_CUSTOM_BYTES_ALU_FIELD_ACTION_OPCODE_TYPE_LAST_E,
@@ -3979,8 +3979,8 @@ typedef struct sxd_custom_bytes_alu_field_flex_action {
 } sxd_custom_bytes_alu_field_flex_action_t;
 
 typedef enum sxd_custom_bytes_move_action_opcode {
-    SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_MOVE_E = 0,
-    SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_LOAD_E = 1,
+    SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_MOVE_E  = 0,
+    SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_LOAD_E  = 1,
     SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_STORE_E = 2,
     SXD_CUSTOM_BYTES_MOVE_ACTION_OPCODE_TYPE_LAST_E,
 } sxd_custom_bytes_move_action_opcode_t;
@@ -4107,8 +4107,8 @@ typedef struct ku_prbt_reg {
  * sxd_pefa_ca_operation enumerates type of clear activity operation.
  */
 typedef enum sxd_pefa_ca_operation {
-    SXD_PEFA_CA_OP_SET = 0,
-    SXD_PEFA_CA_OP_CLEAR = 1,
+    SXD_PEFA_CA_OP_SET      = 0,
+    SXD_PEFA_CA_OP_CLEAR    = 1,
     SXD_PEFA_CA_OP_MAINTAIN = 2,
 } sxd_pefa_ca_operation_t;
 
@@ -4176,9 +4176,9 @@ typedef struct sxd_pemb_recorde_multicast_egress {
 } sxd_pemb_recorde_multicast_egress_t;
 
 typedef enum ku_pemb_entry_type {
-    KU_PEMB_ENTRY_TYPE_SPREADING_E = 0x1,
+    KU_PEMB_ENTRY_TYPE_SPREADING_E            = 0x1,
     KU_PEMB_ENTRY_TYPE_EGRESS_ACL_MULTICAST_E = 0x2,
-    KU_PEMB_ENTRY_TYPE_RESERVED_E = 0x3
+    KU_PEMB_ENTRY_TYPE_RESERVED_E             = 0x3
 } ku_pemb_entry_type_t;
 
 typedef struct ku_pemb_reg {
@@ -4207,7 +4207,7 @@ typedef struct ku_prcr_reg {
  */
 typedef enum sxd_acl_pacl_acl_type {
     SXD_PACL_ACL_TYPE_ALL = 0,
-    SXD_PACL_ACL_TYPE_L3 = 1,
+    SXD_PACL_ACL_TYPE_L3  = 1,
 } sxd_acl_pacl_acl_type_t;
 
 /**
@@ -4226,9 +4226,9 @@ typedef struct ku_pacl_reg {
  * PTAR operation.
  */
 typedef enum sxd_acl_ptar_op {
-    SXD_PTAR_OP_ALLOCATE_E = 0,
-    SXD_PTAR_OP_RESIZE_E = 1,
-    SXD_PTAR_OP_DEALLOCATE_E = 2,
+    SXD_PTAR_OP_ALLOCATE_E      = 0,
+    SXD_PTAR_OP_RESIZE_E        = 1,
+    SXD_PTAR_OP_DEALLOCATE_E    = 2,
     SXD_PTAR_OP_TEST_ALLOCATE_E = 3,
 } sxd_acl_ptar_op_t;
 
@@ -4238,10 +4238,10 @@ typedef enum sxd_acl_ptar_op {
  * note the PTAR action type.
  */
 typedef enum sxd_acl_ptar_action_type {
-    SXD_PTAR_DEFAULT_ACTION_E = 0,
+    SXD_PTAR_DEFAULT_ACTION_E  = 0,
     SXD_PTAR_EXTENDED_ACTION_E = 1,
-    SXD_PTAR_FLEX_ACTION_E = 2,
-    SXD_PTAR_FLEX_2_ACTION_E = 2
+    SXD_PTAR_FLEX_ACTION_E     = 2,
+    SXD_PTAR_FLEX_2_ACTION_E   = 2
 } sxd_acl_ptar_action_type_t;
 
 
@@ -4250,15 +4250,15 @@ typedef enum sxd_acl_ptar_action_type {
  * note the PTAR action type.
  */
 typedef enum sxd_acl_ptar_key_type {
-    SXD_PTAR_KEY_IPv4_FULL_E = 0,
-    SXD_PTAR_KEY_IPv6_FULL_E = 1,
-    SXD_PTAR_KEY_MAC_FULL_E = 2,
-    SXD_PTAR_KEY_MAC_IPv4_FULL_E = 3,
-    SXD_PTAR_KEY_MAC_SHORT_E = 4,
+    SXD_PTAR_KEY_IPv4_FULL_E         = 0,
+    SXD_PTAR_KEY_IPv6_FULL_E         = 1,
+    SXD_PTAR_KEY_MAC_FULL_E          = 2,
+    SXD_PTAR_KEY_MAC_IPv4_FULL_E     = 3,
+    SXD_PTAR_KEY_MAC_SHORT_E         = 4,
     SXD_PTAR_KEY_CONFIGURABLE_FULL_E = 16,
-    SXD_PTAR_KEY_FCOE_FULL_E = 32,
-    SXD_PTAR_KEY_FLEX_KEY_E = 0x50,
-    SXD_PTAR_KEY_FLEX_2_KEY_E = 0x51
+    SXD_PTAR_KEY_FCOE_FULL_E         = 32,
+    SXD_PTAR_KEY_FLEX_KEY_E          = 0x50,
+    SXD_PTAR_KEY_FLEX_2_KEY_E        = 0x51
 } sxd_acl_ptar_key_type_t;
 
 /**
@@ -4266,10 +4266,10 @@ typedef enum sxd_acl_ptar_key_type {
  * optimization mode.
  */
 typedef enum sxd_ptar_optimization_type {
-    SXD_PTAR_TCAM_NO_OPTIMIZATION_E = 0,
+    SXD_PTAR_TCAM_NO_OPTIMIZATION_E   = 0,
     SXD_PTAR_TCAM_SOFT_OPTIMIZATION_E = 1,
     SXD_PTAR_TCAM_HARD_OPTIMIZATION_E = 2,
-    SXD_PTAR_TCAM_RESERVED_E = 3,
+    SXD_PTAR_TCAM_RESERVED_E          = 3,
 } sxd_ptar_optimization_type_t;
 
 /**
@@ -4277,7 +4277,7 @@ typedef enum sxd_ptar_optimization_type {
  * for TCAM optimization mode. Granularity is 5%. Duplication number is used.
  */
 typedef enum sxd_ptar_packet_rate {
-    SXD_PTAR_PACKET_RATE_0_PCT = 0,
+    SXD_PTAR_PACKET_RATE_0_PCT  = 0,
     SXD_PTAR_PACKET_RATE_10_PCT = 2,
     SXD_PTAR_PACKET_RATE_20_PCT = 4,
     SXD_PTAR_PACKET_RATE_40_PCT = 8,
@@ -4286,7 +4286,7 @@ typedef enum sxd_ptar_packet_rate {
 
 typedef enum sxd_acl_ptar_direction {
     SXD_PTAR_ACL_DIRECTION_INGRESS_E = 0,
-    SXD_PTAR_ACL_DIRECTION_EGRESS_E = 1
+    SXD_PTAR_ACL_DIRECTION_EGRESS_E  = 1
 } sxd_acl_ptar_direction_t;
 
 /**
@@ -4336,11 +4336,11 @@ typedef struct ku_puet_reg {
  * operation.
  */
 typedef enum sxd_router_arp_operation {
-    SXD_ROUTER_ARP_OPERATION_ALLOCATE = 0,
-    SXD_ROUTER_ARP_OPERATION_WRITE = 1,
-    SXD_ROUTER_ARP_OPERATION_DEALLOCATE = 2,
+    SXD_ROUTER_ARP_OPERATION_ALLOCATE        = 0,
+    SXD_ROUTER_ARP_OPERATION_WRITE           = 1,
+    SXD_ROUTER_ARP_OPERATION_DEALLOCATE      = 2,
     SXD_ROUTER_ARP_OPERATION_WRITE_A_CLEARED = 3,
-    SXD_ROUTER_ARP_OPERATION_CLEAR_A = 2
+    SXD_ROUTER_ARP_OPERATION_CLEAR_A         = 2
 } sxd_router_arp_operation_t;
 
 /**
@@ -4413,10 +4413,10 @@ typedef struct ku_mpls_adj_parameters {
  * Underlay Destination IP Types
  */
 typedef enum sxd_udip_type {
-    SXD_UDIP_TYPE_IPV4 = 0,
-    SXD_UDIP_TYPE_IPV6 = 1,
+    SXD_UDIP_TYPE_IPV4                     = 0,
+    SXD_UDIP_TYPE_IPV6                     = 1,
     SXD_UDIP_TYPE_AUTO_TUNNEL_IPV6_TO_IPV4 = 2,
-    SXD_UDIP_TYPE_AUTO_TUNNEL_ISATAP = 3,
+    SXD_UDIP_TYPE_AUTO_TUNNEL_ISATAP       = 3,
 } sxd_udip_type_e;
 
 /**
@@ -4447,12 +4447,12 @@ typedef union ku_adj_parameters {
  * operation.
  */
 typedef enum sxd_router_adjacency_table_type {
-    ETHERNET = 0,
+    ETHERNET             = 0,
     PKEY_UNI_WITHOUT_GRH = 1,
-    PKEY_UNI_WITH_GRH = 2,
-    PKEY_MULTI = 3,
-    MPLS = 4,
-    L3_TUNNEL_ENCAP = 5,
+    PKEY_UNI_WITH_GRH    = 2,
+    PKEY_MULTI           = 3,
+    MPLS                 = 4,
+    L3_TUNNEL_ENCAP      = 5,
 } sxd_router_adjacency_table_type_t;
 
 /**
@@ -4460,11 +4460,11 @@ typedef enum sxd_router_adjacency_table_type {
  */
 
 typedef enum sxd_router_adjacency_table {
-    ETHERNET_UNICAST_ADJACENCY = 0,
+    ETHERNET_UNICAST_ADJACENCY            = 0,
     IPoIB_UNICAST_AND_MULTICAST_ADJACENCY = 1,
-    IPoIB_ALL_ROUTERS_ADJACENCY = 2,
-    IPoIB_IP_BROADCAST_ADJACENCY = 3,
-    IB_ALGO_ROUTING = 4,
+    IPoIB_ALL_ROUTERS_ADJACENCY           = 2,
+    IPoIB_IP_BROADCAST_ADJACENCY          = 3,
+    IB_ALGO_ROUTING                       = 4,
 } sxd_router_adjacency_table_t;
 
 /**
@@ -4473,7 +4473,7 @@ typedef enum sxd_router_adjacency_table {
  */
 typedef enum sxd_router_adjacency_validate {
     SXD_ROUTE_ADJECENCY_DELETE = 0,
-    SXD_ROUTE_ADJECENCY_WRITE = 1,
+    SXD_ROUTE_ADJECENCY_WRITE  = 1,
 } sxd_router_adjacency_validate_t;
 
 /**
@@ -4490,36 +4490,36 @@ typedef uint16_t sxd_rif_t;
  * sxd_router_route_action_t enumerated type is used to note the route action.
  */
 typedef enum sxd_router_action_type {
-    SXD_ROUTER_ROUTE_ACTION_PERMIT = 0,
-    SXD_ROUTER_ROUTE_ACTION_SOFT_DROP = 1,
-    SXD_ROUTER_ROUTE_ACTION_TRAP = 2,
+    SXD_ROUTER_ROUTE_ACTION_PERMIT         = 0,
+    SXD_ROUTER_ROUTE_ACTION_SOFT_DROP      = 1,
+    SXD_ROUTER_ROUTE_ACTION_TRAP           = 2,
     SXD_ROUTER_ROUTE_ACTION_SOFT_DROP_TRAP = 3,
-    SXD_ROUTER_ROUTE_ACTION_DENY = 4,
+    SXD_ROUTER_ROUTE_ACTION_DENY           = 4,
 } sxd_router_route_action_t;
 
 /**
  * sxd_router_en_route_action_t enumerated type is used to note the route action in RouterEN.
  */
 typedef enum sxd_router_en_action {
-    SXD_ROUTER_EN_ACTION_NOP = 0,
-    SXD_ROUTER_EN_ACTION_TRAP = 1,
+    SXD_ROUTER_EN_ACTION_NOP           = 0,
+    SXD_ROUTER_EN_ACTION_TRAP          = 1,
     SXD_ROUTER_EN_ACTION_MIRROR_TO_CPU = 2,
-    SXD_ROUTER_EN_ACTION_MIRROR = 3,
+    SXD_ROUTER_EN_ACTION_MIRROR        = 3,
     SXD_ROUTER_EN_ACTION_DISCARD_ERROR = 4,
-    SXD_ROUTER_EN_ACTION_MIN = SXD_ROUTER_EN_ACTION_NOP,
-    SXD_ROUTER_EN_ACTION_MAX = SXD_ROUTER_EN_ACTION_DISCARD_ERROR,
+    SXD_ROUTER_EN_ACTION_MIN           = SXD_ROUTER_EN_ACTION_NOP,
+    SXD_ROUTER_EN_ACTION_MAX           = SXD_ROUTER_EN_ACTION_DISCARD_ERROR,
 } sxd_router_en_action_t;
 
 /**
  * sxd_forward_action_t enumerated type is used to note the forward action in NHLFE.
  */
 typedef enum sxd_forward_action {
-    SXD_FORWARD_ACTION_ETH = 0,
-    SXD_FORWARD_ACTION_IP_ROUTER = 1,
+    SXD_FORWARD_ACTION_ETH              = 0,
+    SXD_FORWARD_ACTION_IP_ROUTER        = 1,
     SXD_FORWARD_ACTION_CONTINUE_LOOKUPS = 2,
-    SXD_FORWARD_ACTION_NEXT_NHLFE = 3,
-    SXD_FORWARD_ACTION_MIN = SXD_FORWARD_ACTION_ETH,
-    SXD_FORWARD_ACTION_MAX = SXD_FORWARD_ACTION_NEXT_NHLFE,
+    SXD_FORWARD_ACTION_NEXT_NHLFE       = 3,
+    SXD_FORWARD_ACTION_MIN              = SXD_FORWARD_ACTION_ETH,
+    SXD_FORWARD_ACTION_MAX              = SXD_FORWARD_ACTION_NEXT_NHLFE,
 } sxd_forward_action_t;
 
 /**
@@ -4545,7 +4545,7 @@ struct ku_ratr_reg {
  * operation for RATRAD
  */
 typedef enum sxd_ratrad_operation {
-    SXD_RATRAD_OP_READ_ACTIVITY = 0,
+    SXD_RATRAD_OP_READ_ACTIVITY       = 0,
     SXD_RATRAD_OP_READ_CLEAR_ACTIVITY = 1,
 } sxd_ratrad_operation_t;
 
@@ -4580,19 +4580,19 @@ typedef struct sxd_fc_addr {
  * route type.
  */
 typedef enum sxd_router_route_type {
-    SXD_ROUTER_ROUTE_TYPE_IPV4 = 0,
-    SXD_ROUTER_ROUTE_TYPE_IPV6 = 1,
+    SXD_ROUTER_ROUTE_TYPE_IPV4              = 0,
+    SXD_ROUTER_ROUTE_TYPE_IPV6              = 1,
     SXD_ROUTER_ROUTE_TYPE_IB_GID_SITE_LOCAL = 2,
 } sxd_router_route_type_t;
 
 typedef enum sxd_router_tcam_write_operation {
     /*On write register*/
-    SXD_ROUTER_TCAM_WRITE = 0,
-    SXD_ROUTER_TCAM_UPDATE = 1,
+    SXD_ROUTER_TCAM_WRITE          = 0,
+    SXD_ROUTER_TCAM_UPDATE         = 1,
     SXD_ROUTER_TCAM_CLEAR_ACTIVITY = 2,
-    SXD_ROUTER_TCAM_WRITE_CLEAR = 3,
+    SXD_ROUTER_TCAM_WRITE_CLEAR    = 3,
     /*On read register*/
-    SXD_ROUTER_TCAM_READ = 0,
+    SXD_ROUTER_TCAM_READ              = 0,
     SXD_ROUTER_ACTIVITY_CLEAR_ON_READ = 1,
 } sxd_router_tcam_write_operation_t;
 
@@ -4604,13 +4604,13 @@ typedef enum sxd_kvd_hash_operation {
     SXD_KVD_HASH_OPERATION_DELETE,
     SXD_KVD_HASH_OPERATION_DELETE_ALL,
     /*On read register*/
-    SXD_KVD_HASH_OPERATION_READ = 0,
+    SXD_KVD_HASH_OPERATION_READ       = 0,
     SXD_KVD_HASH_OPERATION_READ_CLEAR = 1,
 } sxd_kvd_hash_operation_t;
 
 typedef enum sxd_fcf_tcam_write_operation {
-    SXD_FCF_TCAM_WRITE = 0,
-    SXD_FCF_TCAM_UPDATE = 1,
+    SXD_FCF_TCAM_WRITE          = 0,
+    SXD_FCF_TCAM_UPDATE         = 1,
     SXD_FCF_TCAM_CLEAR_ACTIVITY = 2,
 } sxd_fcf_tcam_write_operation_t;
 
@@ -4620,24 +4620,24 @@ typedef enum sxd_fcf_tcam_write_operation {
  */
 typedef enum {
     SXD_ROUTER_QOS_MAP_PRIO_FROM_DSCP = 0,
-    SXD_ROUTER_QOS_PRESERVE_PRIO = 1,
+    SXD_ROUTER_QOS_PRESERVE_PRIO      = 1,
 } sxd_router_qos_t;
 
 /*
  * Egress Port Type for Fibre Channel protocols
  */
 typedef enum sxd_ept {
-    SXD_FCF_FCOE_VF_PORT = 0,
-    SXD_FCF_FCOE_VE_PORT = 1,
-    SXD_FCF_FC_VF_PORT = 2,
-    SXD_FCF_FC_VE_PORT = 3,
+    SXD_FCF_FCOE_VF_PORT  = 0,
+    SXD_FCF_FCOE_VE_PORT  = 1,
+    SXD_FCF_FC_VF_PORT    = 2,
+    SXD_FCF_FC_VE_PORT    = 3,
     SXD_FCF_FCOIB_VF_PORT = 4,
     SXD_FCF_FCOIB_VE_PORT = 5,
 } sxd_ept_t;
 
 typedef enum sxd_counter_opcode {
-    SXD_COUNTER_OPCODE_NOP = 0,
-    SXD_COUNTER_OPCODE_ADD_COUNTERS = 1,
+    SXD_COUNTER_OPCODE_NOP            = 0,
+    SXD_COUNTER_OPCODE_ADD_COUNTERS   = 1,
     SXD_COUNTER_OPCODE_FLUSH_COUNTERS = 2,
     SXD_COUNTER_OPCODE_CLEAR_COUNTERS = 8,
 } sxd_counter_opcode_t;
@@ -4722,14 +4722,14 @@ struct ku_rauht_reg {
  */
 typedef enum sxd_rauhtd_filter_fields {
     SXD_RAUHTD_FILTER_ACTIVE = 1 << 0,
-        SXD_RAUHTD_FILTER_RIF = 1 << 3,
+    SXD_RAUHTD_FILTER_RIF    = 1 << 3,
 } sxd_rauhtd_filter_fields_t;
 
 /**
  * operation for RAUHTD
  */
 typedef enum sxd_rauhtd_operation {
-    SXD_RAUHTD_OP_DUMP_ENTRIES = 0,
+    SXD_RAUHTD_OP_DUMP_ENTRIES   = 0,
     SXD_RAUHTD_OP_CLEAR_ACTIVITY = 1,
 } sxd_rauhtd_operation_t;
 
@@ -4796,9 +4796,9 @@ enum sxd_rmft_ttl_cmd {
  * in RMFT.
  */
 typedef enum sxd_rmft_rpf_action {
-    SXD_RMFT_RPF_ACTION_NONE = 0,
-    SXD_RMFT_RPF_ACTION_DISCARD = 1,
-    SXD_RMFT_RPF_ACTION_TRAP = 2,
+    SXD_RMFT_RPF_ACTION_NONE        = 0,
+    SXD_RMFT_RPF_ACTION_DISCARD     = 1,
+    SXD_RMFT_RPF_ACTION_TRAP        = 2,
     SXD_RMFT_RPF_ACTION_DIRECTIONAL = 4,
 } sxd_rmft_rpf_action_t;
 
@@ -4876,8 +4876,8 @@ struct ku_ptcead_reg {
  * type.
  */
 typedef enum sxd_router_ecmp_hash_type {
-    SXD_ROUTER_ECMP_HASH_TYPE_CRC = 0,
-    SXD_ROUTER_ECMP_HASH_TYPE_XOR = 1,
+    SXD_ROUTER_ECMP_HASH_TYPE_CRC    = 0,
+    SXD_ROUTER_ECMP_HASH_TYPE_XOR    = 1,
     SXD_ROUTER_ECMP_HASH_TYPE_RANDOM = 2,
 } sxd_router_ecmp_hash_type_t;
 
@@ -4911,10 +4911,10 @@ struct ku_recr_v2_reg {
  * sxd_router_tcam_type_t enumerated type is used to note the TCAM type.
  */
 typedef enum sxd_router_tcam_type {
-    SXD_ROUTER_TCAM_TYPE_IPV4_UNICAST = 0,
-    SXD_ROUTER_TCAM_TYPE_IPV4_MULTICAST = 1,
-    SXD_ROUTER_TCAM_TYPE_IPV6_UNICAST = 2,
-    SXD_ROUTER_TCAM_TYPE_IPV6_MULTICAST = 3,
+    SXD_ROUTER_TCAM_TYPE_IPV4_UNICAST    = 0,
+    SXD_ROUTER_TCAM_TYPE_IPV4_MULTICAST  = 1,
+    SXD_ROUTER_TCAM_TYPE_IPV6_UNICAST    = 2,
+    SXD_ROUTER_TCAM_TYPE_IPV6_MULTICAST  = 3,
     SXD_ROUTER_TCAM_TYPE_IPV4_HOST_TABLE = 4,
     SXD_ROUTER_TCAM_TYPE_IPV6_HOST_TABLE = 5,
     SXD_ROUTER_TCAM_TYPE_INVALID
@@ -4925,10 +4925,10 @@ typedef enum sxd_router_tcam_type {
  * operation.
  */
 typedef enum sxd_router_tcam_operation {
-    SXD_ROUTER_TCAM_OPERATION_ALLOCATE = 0,
-    SXD_ROUTER_TCAM_OPERATION_RESIZE = 1,
+    SXD_ROUTER_TCAM_OPERATION_ALLOCATE   = 0,
+    SXD_ROUTER_TCAM_OPERATION_RESIZE     = 1,
     SXD_ROUTER_TCAM_OPERATION_DEALLOCATE = 2,
-    SXD_ROUTER_TCAM_OPERATION_TEST = 3,
+    SXD_ROUTER_TCAM_OPERATION_TEST       = 3,
 } sxd_router_tcam_operation_t;
 
 /**
@@ -4936,10 +4936,10 @@ typedef enum sxd_router_tcam_operation {
  * optimization mode.
  */
 typedef enum sxd_router_optimization_type_ {
-    SXD_ROUTER_TCAM_NO_OPTIMIZATION = 0,
+    SXD_ROUTER_TCAM_NO_OPTIMIZATION   = 0,
     SXD_ROUTER_TCAM_SOFT_OPTIMIZATION = 1,
     SXD_ROUTER_TCAM_HARD_OPTIMIZATION = 2,
-    SXD_ROUTER_TCAM_RESERVED = 3,
+    SXD_ROUTER_TCAM_RESERVED          = 3,
 } sxd_router_optimization_type_t;
 
 
@@ -4981,10 +4981,10 @@ typedef union ku_rif_list {
  * sxd_rigr_op_t enumerated type is used to indicates the encoding of the router_interface_list field
  */
 typedef enum sxd_rigr_op {
-    RIGR_OP_ADD_RIF = 1,
-    RIGR_OP_REMOVE_RIF = 2,
+    RIGR_OP_ADD_RIF         = 1,
+    RIGR_OP_REMOVE_RIF      = 2,
     RIGR_OP_REMOVE_ALL_RIFS = 3,
-    RIGR_OP_UPDATE_RIF = 4,
+    RIGR_OP_UPDATE_RIF      = 4,
 } sxd_rigr_op_t;
 
 /**
@@ -4992,7 +4992,7 @@ typedef enum sxd_rigr_op {
  * encoding of the router_interface_list field
  */
 typedef enum sxd_rigr_encoding {
-    ETH_ONLY = 0,
+    ETH_ONLY     = 0,
     ETH_AND_PKEY = 1,
 } sxd_rigr_encoding_t;
 
@@ -5012,10 +5012,10 @@ struct ku_rigr_reg {
  * type of egress rif list encoded in the register
  */
 typedef enum sxd_rigr_v2_list_type {
-    RIGR_V2_ERIF_LIST = 0,
+    RIGR_V2_ERIF_LIST  = 0,
     RIGR_V2_BIT_VECTOR = 1,
     RIGR_V2_MPLS_ENCAP = 2,
-    RIGR_V2_NVE_DECAP = 3,
+    RIGR_V2_NVE_DECAP  = 3,
     RIGR_V2_IPIP_ENCAP = 4,
 } sxd_rigr_v2_list_type_t;
 
@@ -5224,16 +5224,16 @@ typedef union ku_rif_properties {
  *       Thus, backward compatibility is achieved provided the parser is also updated.
  */
 typedef enum sxd_router_interface_type {
-    VLAN_INTERFACE = 0,
-    IB_SWID_INTERFACE = 1,
-    FID_INTERFACE = 2,
+    VLAN_INTERFACE         = 0,
+    IB_SWID_INTERFACE      = 1,
+    FID_INTERFACE          = 2,
     IB_SWID_PORT_INTERFACE = 3,
-    SUB_PORT_INTERFACE = 4,
-    IB_PORT_INTERFACE = 5,
-    LOOPBACK_INTERFACE = 6,
-    PKEY_INTERFACE = 8,
-    INTERFACE_MIN = VLAN_INTERFACE,
-    INTERFACE_MAX = PKEY_INTERFACE
+    SUB_PORT_INTERFACE     = 4,
+    IB_PORT_INTERFACE      = 5,
+    LOOPBACK_INTERFACE     = 6,
+    PKEY_INTERFACE         = 8,
+    INTERFACE_MIN          = VLAN_INTERFACE,
+    INTERFACE_MAX          = PKEY_INTERFACE
 } sxd_router_interface_type_t;
 
 /**
@@ -5241,7 +5241,7 @@ typedef enum sxd_router_interface_type {
  */
 typedef enum sxd_router_interface_op {
     INTERFACE_CREATE_OR_EDIT = 0,
-    INTERFACE_DELETE = 1
+    INTERFACE_DELETE         = 1
 } sxd_router_interface_op_t;
 
 /**
@@ -5280,8 +5280,8 @@ struct ku_ritr_reg {
  * sxd_ritr_loopback_protocol_t enumerated type is used to note the possible loopback protocols.
  */
 typedef enum sxd_ritr_loopback_protocol {
-    SXD_ROUTER_LOOPBACK_PROTOCOL_IPV4 = 0,
-    SXD_ROUTER_LOOPBACK_PROTOCOL_IPV6 = 1,
+    SXD_ROUTER_LOOPBACK_PROTOCOL_IPV4    = 0,
+    SXD_ROUTER_LOOPBACK_PROTOCOL_IPV6    = 1,
     SXD_ROUTER_LOOPBACK_PROTOCOL_GENERIC = 2,
 } sxd_ritr_loopback_protocol_t;
 
@@ -5289,8 +5289,8 @@ typedef enum sxd_ritr_loopback_protocol {
  * sxd_ritr_ipinip_tunnel_encap_type_t enumerated type is used to note the possible encapsulation types.
  */
 typedef enum sxd_ritr_ipinip_tunnel_encap_type {
-    SXD_TUNNEL_ENCAP_TYPE_IP_IN_IP = 0,            /**< Tunnel is IPinIP */
-    SXD_TUNNEL_ENCAP_TYPE_IP_IN_GRE_IN_IP = 1,     /**< Tunnel is GRE, no key */
+    SXD_TUNNEL_ENCAP_TYPE_IP_IN_IP            = 0, /**< Tunnel is IPinIP */
+    SXD_TUNNEL_ENCAP_TYPE_IP_IN_GRE_IN_IP     = 1, /**< Tunnel is GRE, no key */
     SXD_TUNNEL_ENCAP_TYPE_IP_IN_GRE_KEY_IN_IP = 2, /**< Tunnel is GRE, with a key */
 } sxd_ritr_ipinip_tunnel_encap_type_t;
 
@@ -5300,7 +5300,7 @@ typedef enum sxd_ritr_ipinip_tunnel_encap_type {
  * Note: should be used only when encapsulation type is TUNNEL_ENCAP_TYPE_IP_IN_GRE_KEY_IN_IP.
  */
 typedef enum sxd_ritr_ipinip_tunnel_options {
-    SXD_TUNNEL_KEY_GRE_KEY = 0,           /**< The key is defined by gre_key */
+    SXD_TUNNEL_KEY_GRE_KEY           = 0, /**< The key is defined by gre_key */
     SXD_TUNNEL_KEY_GRE_KEY_FROM_HASH = 1, /**< The 24msbs of the key are set by ipip_gre_key_for_hash */
 } sxd_ritr_ipinip_tunnel_options_t;
 
@@ -5308,18 +5308,18 @@ typedef enum sxd_ritr_ipinip_tunnel_options {
  * sxd_router_interface_type_t enumerated type is used to indicates the router interface type
  */
 typedef enum sxd_rgcr_rpf_mode {
-    SXD_RGCR_RPF_MODE_ENABLE = 0,
+    SXD_RGCR_RPF_MODE_ENABLE  = 0,
     SXD_RGCR_RPF_MODE_DISABLE = 1,
 } sxd_rgcr_rpf_mode_t;
 
 typedef enum sxd_rgcr_pcp_rw_mode {
     SXD_RGCR_PCP_RW_MODE_PRESERVE = 0,
-    SXD_RGCR_PCP_RW_MODE_DISABLE = 2,
-    SXD_RGCR_PCP_RW_MODE_ENABLE = 3,
+    SXD_RGCR_PCP_RW_MODE_DISABLE  = 2,
+    SXD_RGCR_PCP_RW_MODE_ENABLE   = 3,
 } sxd_rgcr_pcp_rw_mode_t;
 
 typedef enum sxd_rgcr_usp_mode {
-    SXD_RGCR_USP_MODE_PRESERVE = 0,
+    SXD_RGCR_USP_MODE_PRESERVE    = 0,
     SXD_RGCR_USP_MODE_RECALCULATE = 1,
 } sxd_rgcr_usp_mode_t;
 
@@ -5327,7 +5327,7 @@ typedef enum sxd_rgcr_op_type {
     SXD_RGCR_OP_TYPE_OPTIMIZATION_NONE = 0,
     SXD_RGCR_OP_TYPE_OPTIMIZATION_SOFT = 1,
     SXD_RGCR_OP_TYPE_OPTIMIZATION_HARD = 2,
-    SXD_RGCR_OP_TYPE_RESERVED = 3,
+    SXD_RGCR_OP_TYPE_RESERVED          = 3,
 } sxd_rgcr_op_type_t;
 
 /**
@@ -5335,7 +5335,7 @@ typedef enum sxd_rgcr_op_type {
  * for TCAM optimization mode. Granularity is 5%. Duplication number is used.
  */
 typedef enum sxd_rgcr_packet_rate {
-    SXD_RGCR_PACKET_RATE_0_PCT = 0,
+    SXD_RGCR_PACKET_RATE_0_PCT  = 0,
     SXD_RGCR_PACKET_RATE_10_PCT = 2,
     SXD_RGCR_PACKET_RATE_20_PCT = 4,
     SXD_RGCR_PACKET_RATE_40_PCT = 8,
@@ -5343,13 +5343,13 @@ typedef enum sxd_rgcr_packet_rate {
 } sxd_rgcr_packet_rate_t;
 
 typedef enum sxd_rgcr_activity_dis {
-    SXD_RGCR_ACTIVITY_ENABLED = 0,
+    SXD_RGCR_ACTIVITY_ENABLED  = 0,
     SXD_RGCR_ACTIVITY_DISABLED = 1,
 } sxd_rgcr_activity_dis_t;
 
 typedef enum sxd_rgcr_mpls_enable {
     SXD_RGCR_MPLS_DISABLE = 0,
-    SXD_RGCR_MPLS_ENABLE = 1,
+    SXD_RGCR_MPLS_ENABLE  = 1,
 } sxd_rgcr_mpls_enable_t;
 
 /**
@@ -5415,10 +5415,10 @@ struct ku_rrcr_reg {
  * Set operation.
  */
 typedef enum sxd_router_counter_operation {
-    SXD_ROUTER_COUNTER_OPERATION_NOP = 0,
+    SXD_ROUTER_COUNTER_OPERATION_NOP      = 0,
     SXD_ROUTER_COUNTER_OPERATION_ALLOCATE = 1,
-    SXD_ROUTER_COUNTER_OPERATION_TEST = 2,
-    SXD_ROUTER_COUNTER_OPERATION_FREE = 3,
+    SXD_ROUTER_COUNTER_OPERATION_TEST     = 2,
+    SXD_ROUTER_COUNTER_OPERATION_FREE     = 3,
 } sxd_router_counter_operation_t;
 
 /**
@@ -5452,7 +5452,7 @@ struct ku_ricnt_reg {
  * RALTA operation
  */
 typedef enum sxd_ralta_operation {
-    SXD_RALTA_OPERATION_ALLOCATE = 0,
+    SXD_RALTA_OPERATION_ALLOCATE   = 0,
     SXD_RALTA_OPERATION_DEALLOCATE = 1,
 } sxd_ralta_operation_t;
 
@@ -5517,8 +5517,8 @@ struct ku_raltb_reg {
  */
 typedef enum sxd_ralue_action_type {
     SXD_RALUE_ACTION_TYPE_REMOTE = 0,
-    SXD_RALUE_ACTION_TYPE_LOCAL = 1,
-    SXD_RALUE_ACTION_TYPE_IP2ME = 2,
+    SXD_RALUE_ACTION_TYPE_LOCAL  = 1,
+    SXD_RALUE_ACTION_TYPE_IP2ME  = 2,
 } sxd_ralue_action_type_t;
 
 /**
@@ -5526,8 +5526,8 @@ typedef enum sxd_ralue_action_type {
  * type of RALUE register.
  */
 typedef enum sxd_ralue_type {
-    SXD_RALUE_TYPE_MARKER = 1,
-    SXD_RALUE_TYPE_ROUTE = 2,
+    SXD_RALUE_TYPE_MARKER       = 1,
+    SXD_RALUE_TYPE_ROUTE        = 2,
     SXD_RALUE_TYPE_ROUTE_MARKER = 3,
 } sxd_ralue_type_t;
 
@@ -5656,9 +5656,9 @@ struct ku_rtca_reg {
  * sxd_tca_log_pstate_type_t enumerated type is used to indicates the TCA logical port state type
  */
 typedef enum sxd_tca_log_pstate_type {
-    SXD_TCA_LOG_PSTATE_DOWN = 0,
-    SXD_TCA_LOG_PSTATE_INIT = 1,
-    SXD_TCA_LOG_PSTATE_ARM = 2,
+    SXD_TCA_LOG_PSTATE_DOWN   = 0,
+    SXD_TCA_LOG_PSTATE_INIT   = 1,
+    SXD_TCA_LOG_PSTATE_ARM    = 2,
     SXD_TCA_LOG_PSTATE_ACTIVE = 3,
 } sxd_tca_log_pstate_type_t;
 
@@ -5666,9 +5666,9 @@ typedef enum sxd_tca_log_pstate_type {
  * sxd_tca_ phy_pstate_type_t enumerated type is used to indicates the TCA physical port state type
  */
 typedef enum sxd_tca_phy_pstate_type {
-    SXD_TCA_PHY_PSTATE_DOWN = 0,
+    SXD_TCA_PHY_PSTATE_DOWN    = 0,
     SXD_TCA_PHY_PSTATE_POLLING = 1,
-    SXD_TCA_PHY_PSTATE_UP = 2,
+    SXD_TCA_PHY_PSTATE_UP      = 2,
 } sxd_tca_phy_pstate_type_t;
 
 /**
@@ -6329,17 +6329,17 @@ struct ku_pmpe_reg {
  * MFGD enum is used for opcode in the MFGD register parameters
  */
 typedef enum sxd_mfgd_fatal_mode {
-    SXD_MFGD_MODE_FW_NO_FATAL_CHECK_E = 0,
+    SXD_MFGD_MODE_FW_NO_FATAL_CHECK_E   = 0,
     SXD_MFGD_MODE_FW_FATAL_N_CONTINUE_E = 1, /* If fatal cause is found by the FW MFDE event is sent and FW continue normally */
-    SXD_MFGD_MODE_FW_FATAL_N_HALT_E = 2,     /* If fatal cause is found by the FW MFDE event is sent and FW halt */
+    SXD_MFGD_MODE_FW_FATAL_N_HALT_E     = 2, /* If fatal cause is found by the FW MFDE event is sent and FW halt */
 } sxd_mfgd_mode_t;
 
 typedef enum sxd_mfgd_test {
-    SXD_MFGD_TEST_NONE_E = 0,
-    SXD_MFGD_TEST_TRIGGER_TEST_E = 1,        /* trigger FW fatal event */
+    SXD_MFGD_TEST_NONE_E               = 0,
+    SXD_MFGD_TEST_TRIGGER_TEST_E       = 1,  /* trigger FW fatal event */
     SXD_MFGD_TEST_TRIGGER_TEST_STORM_E = 2, /* trigger test storm */
-    SXD_MFGD_TEST_ASSERT_E = 4,             /* trigger FW assert */
-    SXD_MFGD_TEST_TILE_ASSERT_E = 8,             /* trigger FW assert */
+    SXD_MFGD_TEST_ASSERT_E             = 4, /* trigger FW assert */
+    SXD_MFGD_TEST_TILE_ASSERT_E        = 8,      /* trigger FW assert */
 } sxd_mfgd_test_t;
 
 
@@ -6424,6 +6424,7 @@ struct ku_mfde_reg {
             uint32_t assert_var4;
             uint32_t assert_existptr;
             uint32_t assert_callra;
+            uint8_t  test;
             uint8_t  tile;
             uint16_t ext_synd;
         } fw_assert;
@@ -6476,8 +6477,8 @@ struct ku_mlcr_reg {
  * mpgcr_mpls_et
  */
 typedef enum mpgcr_mpls_et {
-    MPGCR_ET8847 = 1,
-    MPGCR_ET8848 = 2,
+    MPGCR_ET8847        = 1,
+    MPGCR_ET8848        = 2,
     MPGCR_ET8847_ET8848 = 3,
 } mpgcr_mpls_et_t;
 
@@ -6486,8 +6487,8 @@ typedef enum mpgcr_mpls_et {
  */
 typedef enum mpgcr_pcp_rw {
     MPGCR_PCPRW_PRESERVE = 0,
-    MPGCR_PCPRW_DISABLE = 2,
-    MPGCR_PCPRW_ENABLE = 3
+    MPGCR_PCPRW_DISABLE  = 2,
+    MPGCR_PCPRW_ENABLE   = 3
 } mpgcr_pcp_rw_t;
 
 /**
@@ -6495,7 +6496,7 @@ typedef enum mpgcr_pcp_rw {
  */
 typedef enum mpgcr_ler_exp_rw {
     MPGCR_LER_EXP_DISABLE = 2,
-    MPGCR_LER_EXP_ENABLE = 3
+    MPGCR_LER_EXP_ENABLE  = 3
 } mpgcr_ler_exp_rw_t;
 
 /**
@@ -6503,7 +6504,7 @@ typedef enum mpgcr_ler_exp_rw {
  */
 typedef enum mpgcr_lsr_egress_ttl {
     MPGCR_LSR_EGRESS_TTL_POPPED = 1,
-    MPGCR_LSR_EGRESS_TTL_MIN = 2,
+    MPGCR_LSR_EGRESS_TTL_MIN    = 2,
 } mpgcr_lsr_egress_ttl_t;
 
 /**
@@ -6511,15 +6512,15 @@ typedef enum mpgcr_lsr_egress_ttl {
  */
 typedef enum mpgcr_egress_ler_ttl {
     MPGCR_EGRESS_LER_TTL_PRESERVE = 0,
-    MPGCR_EGRESS_LER_TTL_POPPED = 1,
-    MPGCR_EGRESS_LER_TTL_MIN = 2,
+    MPGCR_EGRESS_LER_TTL_POPPED   = 1,
+    MPGCR_EGRESS_LER_TTL_MIN      = 2,
 } mpgcr_egress_ler_ttl_t;
 
 /**
  * mpgcr_ingress_ler_ttl
  */
 typedef enum mpgcr_ingress_ler_ttl {
-    MPGCR_INGRESS_LER_TTL_IP = 0,
+    MPGCR_INGRESS_LER_TTL_IP     = 0,
     MPGCR_INGRESS_LER_TTL_CONFIG = 1,
 } mpgcr_ingress_ler_ttl_t;
 
@@ -6527,7 +6528,7 @@ typedef enum mpgcr_ingress_ler_ttl {
  * mpgcr_activity_dis_mpnhlfe
  */
 typedef enum mpgcr_activity_dis_mpnhlfe {
-    MPGCR_ACTIVITY_MPNHLFE_ENABLE = 0,
+    MPGCR_ACTIVITY_MPNHLFE_ENABLE  = 0,
     MPGCR_ACTIVITY_MPNHLFE_DISABLE = 1,
 } mpgcr_activity_dis_mpnhlfe_t;
 
@@ -6580,18 +6581,18 @@ struct ku_mpibe_reg {
  */
 typedef enum    nhlfe_dscp_or_exp_rw {
     NHLFE_DSCP_RE_PRESERVE = 0,
-    NHLFE_DSCP_RE_SET = 1,
-    NHLFE_DSCP_RE_CLEAR = 2
+    NHLFE_DSCP_RE_SET      = 1,
+    NHLFE_DSCP_RE_CLEAR    = 2
 } nhlfe_dscp_or_exp_rw_t;
 
 /**
  * nhlfe_label_action_t structure enumerates types how to handle push action
  */
 typedef enum nhlfe_label_action {
-    NHLFE_LABEL_ACTION_NO_PHP = 0,
-    NHLFE_LABEL_ACTION_PHP = 1,
-    NHLFE_LABEL_ACTION_PUSH_LABEL = 2,
-    NHLFE_LABEL_ACTION_PUSH_ENTROPY_LABEL = 3,
+    NHLFE_LABEL_ACTION_NO_PHP                       = 0,
+    NHLFE_LABEL_ACTION_PHP                          = 1,
+    NHLFE_LABEL_ACTION_PUSH_LABEL                   = 2,
+    NHLFE_LABEL_ACTION_PUSH_ENTROPY_LABEL           = 3,
     NHLFE_LABEL_ACTION_PUSH_ENTROPY_LABEL_AND_LABEL = 4
 } nhlfe_label_action_t;
 
@@ -6763,7 +6764,7 @@ struct ku_pbsr_reg {
  * sxd_sbpr_mode_e enumerated mode used in SBPR register event field
  */
 typedef enum sxd_sbpr_mode {
-    SXD_SBPR_MODE_STATIC_E = 0,
+    SXD_SBPR_MODE_STATIC_E  = 0,
     SXD_SBPR_MODE_DYNAMIC_E = 1,
 } sxd_sbpr_mode_e;
 
@@ -7659,23 +7660,23 @@ typedef enum sxd_init_rr {
 } sxd_init_rr_t;
 
 typedef enum sxd_rr_status {
-    SXD_RR_STATUS_NONE = 0,
+    SXD_RR_STATUS_NONE    = 0,
     SXD_RR_STATUS_ONGOING = 1
 } sxd_rr_status_t;
 
 typedef enum sxd_iedr_resource_type {
-    SXD_IEDR_RESOURCE_TYPE_ADJACENCY_E = 0x21,
-    SXD_IEDR_RESOURCE_TYPE_NVE_DECAP_E = 0x21,
-    SXD_IEDR_RESOURCE_TYPE_IPINIP_DECAP_E = 0x21,
-    SXD_IEDR_RESOURCE_TYPE_MPLS_NHLFE_E = 0x22,
-    SXD_IEDR_RESOURCE_TYPE_ACL_ACTION_SET_E = 0x23,
-    SXD_IEDR_RESOURCE_TYPE_PBS_E = 0x24,
-    SXD_IEDR_RESOURCE_TYPE_CPU_SEND_MC_IDS_E = 0x24,
-    SXD_IEDR_RESOURCE_TYPE_MPLS_ILM_E = 0x25,
-    SXD_IEDR_RESOURCE_TYPE_RIGRV2_E = 0x26,
+    SXD_IEDR_RESOURCE_TYPE_ADJACENCY_E             = 0x21,
+    SXD_IEDR_RESOURCE_TYPE_NVE_DECAP_E             = 0x21,
+    SXD_IEDR_RESOURCE_TYPE_IPINIP_DECAP_E          = 0x21,
+    SXD_IEDR_RESOURCE_TYPE_MPLS_NHLFE_E            = 0x22,
+    SXD_IEDR_RESOURCE_TYPE_ACL_ACTION_SET_E        = 0x23,
+    SXD_IEDR_RESOURCE_TYPE_PBS_E                   = 0x24,
+    SXD_IEDR_RESOURCE_TYPE_CPU_SEND_MC_IDS_E       = 0x24,
+    SXD_IEDR_RESOURCE_TYPE_MPLS_ILM_E              = 0x25,
+    SXD_IEDR_RESOURCE_TYPE_RIGRV2_E                = 0x26,
     SXD_IEDR_RESOURCE_TYPE_MC_EXPECTED_IRIF_LIST_E = 0x27,
-    SXD_IEDR_RESOURCE_TYPE_IPV6_E = 0x28,
-    SXD_IEDR_RESOURCE_TYPE_TNUMT_E = 0x29
+    SXD_IEDR_RESOURCE_TYPE_IPV6_E                  = 0x28,
+    SXD_IEDR_RESOURCE_TYPE_TNUMT_E                 = 0x29
 } sxd_iedr_resource_type_e;
 
 typedef enum sxd_iedr_delete_mode {
@@ -7684,7 +7685,7 @@ typedef enum sxd_iedr_delete_mode {
 } sxd_iedr_delete_mode_e;
 
 typedef enum sxd_ieds_bg_delete_status {
-    SXD_IEDS_BG_DELETE_NONE_E = 0,
+    SXD_IEDS_BG_DELETE_NONE_E    = 0,
     SXD_IEDS_BG_DELETE_ONGOING_E = 1
 } sxd_ieds_bg_delete_status_e;
 
@@ -7961,8 +7962,8 @@ struct ku_access_sbdcm_reg {
  * sxd_sbctc_event_t enumerated type used in SBCTC register event field
  */
 typedef enum sxd_sbctc_event {
-    SXD_SBCTC_EVENT_NO_EVENT = 0,
-    SXD_SBCTC_EVENT_EVENTS = 1,
+    SXD_SBCTC_EVENT_NO_EVENT     = 0,
+    SXD_SBCTC_EVENT_EVENTS       = 1,
     SXD_SBCTC_EVENT_SINGLE_EVENT = 2,
 } sxd_sbctc_event_t;
 
@@ -8413,7 +8414,7 @@ struct ku_vid2ip_data {
  * sxd_tunnel_flc_type_t enumerated flow label copy type.
  */
 typedef enum sxd_tunnel_flc_type {
-    SXD_TUNNEL_FLC_CALCULATE = 0,
+    SXD_TUNNEL_FLC_CALCULATE     = 0,
     SXD_TUNNEL_FLC_COPY_FROM_PKT = 1
 } sxd_tunnel_flc_type_t;
 
@@ -8421,7 +8422,7 @@ typedef enum sxd_tunnel_flc_type {
  * sxd_tunnel_flc_type_t enumerated tigcr flow label type.
  */
 typedef enum sxd_tunnel_flh_type {
-    SXD_TUNNEL_FLH_NO_LABEL = 0,
+    SXD_TUNNEL_FLH_NO_LABEL  = 0,
     SXD_TUNNEL_FLH_CALCULATE = 1
 } sxd_tunnel_flh_type_t;
 
@@ -8429,7 +8430,7 @@ typedef enum sxd_tunnel_flh_type {
  * sxd_tunnel_sport_type_t enumerated udp sport type.
  */
 typedef enum sxd_tunnel_sport_type {
-    SXD_TUNNEL_SPORT_SET_ZERO = 0,
+    SXD_TUNNEL_SPORT_SET_ZERO  = 0,
     SXD_TUNNEL_SPORT_CALCULATE = 1,
 } sxd_tunnel_sport_type_t;
 
@@ -8437,10 +8438,10 @@ typedef enum sxd_tunnel_sport_type {
  * sxd_tca_log_pstate_type_t enumerated type is used to indicates the TCA logical port state type
  */
 typedef enum sxd_tunnel_nve_type {
-    SXD_TUNNEL_NVE_VXLAN = 0,
+    SXD_TUNNEL_NVE_VXLAN     = 0,
     SXD_TUNNEL_NVE_VXLAN_GPE = 1,
-    SXD_TUNNEL_NVE_GENEVE = 2,
-    SXD_TUNNEL_NVE_NVGRE = 3,
+    SXD_TUNNEL_NVE_GENEVE    = 2,
+    SXD_TUNNEL_NVE_NVGRE     = 3,
 } sxd_tunnel_nve_type_t;
 
 
@@ -8449,7 +8450,7 @@ typedef enum sxd_tunnel_nve_type {
  */
 typedef enum sxd_tunnel_enc_set_dscp {
     SXD_TUNNEL_ENC_DSCP_COPY = 0,
-    SXD_TUNNEL_ENC_DSCP_SET = 1
+    SXD_TUNNEL_ENC_DSCP_SET  = 1
 } sxd_tunnel_enc_set_dscp_t;
 
 /**
@@ -8457,7 +8458,7 @@ typedef enum sxd_tunnel_enc_set_dscp {
  */
 typedef enum sxd_tunnel_enc_set_sp {
     SXD_TUNNEL_ENC_SP_PRESERVE = 0,
-    SXD_TUNNEL_ENC_SP_SET = 1
+    SXD_TUNNEL_ENC_SP_SET      = 1
 } sxd_tunnel_enc_set_sp_t;
 
 /**
@@ -8465,7 +8466,7 @@ typedef enum sxd_tunnel_enc_set_sp {
  */
 typedef enum sxd_tunnel_dec_set_dscp {
     SXD_TUNNEL_DEC_DSCP_PRESERVE = 0,
-    SXD_TUNNEL_DEC_DSCP_COPY = 1
+    SXD_TUNNEL_DEC_DSCP_COPY     = 1
 } sxd_tunnel_dec_set_dscp_t;
 
 /**
@@ -8473,7 +8474,7 @@ typedef enum sxd_tunnel_dec_set_dscp {
  */
 typedef enum sxd_tunnel_dec_set_sp {
     SXD_TUNNEL_DEC_SP_PRESERVE = 0,
-    SXD_TUNNEL_DEC_SP_SET = 1
+    SXD_TUNNEL_DEC_SP_SET      = 1
 } sxd_tunnel_dec_set_sp_t;
 
 /**
@@ -8481,7 +8482,7 @@ typedef enum sxd_tunnel_dec_set_sp {
  */
 typedef enum sxd_tunnel_dec_set_pcp {
     SXD_TUNNEL_DEC_PCP_PRESERVE = 0,
-    SXD_TUNNEL_DEC_PCP_COPY = 1
+    SXD_TUNNEL_DEC_PCP_COPY     = 1
 } sxd_tunnel_dec_set_pcp_t;
 
 /**
@@ -8489,8 +8490,8 @@ typedef enum sxd_tunnel_dec_set_pcp {
  */
 typedef enum sxd_tunnel_dscp_rw {
     SXD_TUNNEL_DSCP_RW_PRESERVE = 0,
-    SXD_TUNNEL_DSCP_RW_CLEAR = 2,
-    SXD_TUNNEL_DSCP_RW_SET = 3
+    SXD_TUNNEL_DSCP_RW_CLEAR    = 2,
+    SXD_TUNNEL_DSCP_RW_SET      = 3
 } sxd_tunnel_dscp_rw_t;
 
 /**
@@ -8498,8 +8499,8 @@ typedef enum sxd_tunnel_dscp_rw {
  */
 typedef enum sxd_tunnel_pcp_rw {
     SXD_TUNNEL_PCP_RW_PRESERVE = 0,
-    SXD_TUNNEL_PCP_RW_CLEAR = 2,
-    SXD_TUNNEL_PCP_RW_SET = 3
+    SXD_TUNNEL_PCP_RW_CLEAR    = 2,
+    SXD_TUNNEL_PCP_RW_SET      = 3
 } sxd_tunnel_pcp_rw_t;
 
 /**
@@ -8510,45 +8511,45 @@ typedef enum sxd_tunnel_pcp_rw {
 typedef enum sxd_rm_duplication_table_type {
     SXD_RM_DUPLICATION_TABLE_TYPE_INVALID_E = 0x00,
     /* HASH-BASED */
-    SXD_RM_DUPLICATION_TABLE_TYPE_VID_TO_FID_E = 0x01,
-    SXD_RM_DUPLICATION_TABLE_TYPE_RQ_VID_TO_FID_E = 0x02,
-    SXD_RM_DUPLICATION_TABLE_TYPE_FID_E = 0x03,
-    SXD_RM_DUPLICATION_TABLE_TYPE_NVI_TO_FID_E = 0x04,
+    SXD_RM_DUPLICATION_TABLE_TYPE_VID_TO_FID_E        = 0x01,
+    SXD_RM_DUPLICATION_TABLE_TYPE_RQ_VID_TO_FID_E     = 0x02,
+    SXD_RM_DUPLICATION_TABLE_TYPE_FID_E               = 0x03,
+    SXD_RM_DUPLICATION_TABLE_TYPE_NVI_TO_FID_E        = 0x04,
     SXD_RM_DUPLICATION_TABLE_TYPE_MAC_L2_FORWARDING_E = 0x05,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_HIGH_E = 0x06,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_LOW_E = 0x07,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_LPM0_E = 0x08,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_HIGH_E = 0x09,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_LOW_E = 0x0A,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_LPM0_E = 0x0B,
-    SXD_RM_DUPLICATION_TABLE_TYPE_MPLS_ILM_E = 0x0C,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_HOST_TABLE_E = 0x0D,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_HOST_TABLE_E = 0x0E,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_HIGH_E     = 0x06,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_LOW_E      = 0x07,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_LPM_LPM0_E     = 0x08,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_HIGH_E     = 0x09,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_LOW_E      = 0x0A,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_LPM_LPM0_E     = 0x0B,
+    SXD_RM_DUPLICATION_TABLE_TYPE_MPLS_ILM_E          = 0x0C,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV4_HOST_TABLE_E   = 0x0D,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_HOST_TABLE_E   = 0x0E,
     SXD_RM_DUPLICATION_TABLE_TYPE_TUNNEL_IPV6_LEARN_E = 0x0F,
-    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_1_KEY_E = 0x10,
-    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_2_KEY_E = 0x11,
-    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_4_KEY_E = 0x12,
-    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_6_KEY_E = 0x13,
+    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_1_KEY_E      = 0x10,
+    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_2_KEY_E      = 0x11,
+    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_4_KEY_E      = 0x12,
+    SXD_RM_DUPLICATION_TABLE_TYPE_A_TCAM_6_KEY_E      = 0x13,
 
     /* linear */
-    SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E = 0x21,
-    SXD_RM_DUPLICATION_TABLE_TYPE_NVE_DECAP_E = SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IP_IN_IP_DECAP_E = SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E,
-    SXD_RM_DUPLICATION_TABLE_TYPE_MPLS_NHLFE_E = 0x22,
+    SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E                = 0x21,
+    SXD_RM_DUPLICATION_TABLE_TYPE_NVE_DECAP_E                = SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IP_IN_IP_DECAP_E           = SXD_RM_DUPLICATION_TABLE_TYPE_ADJACENCY_E,
+    SXD_RM_DUPLICATION_TABLE_TYPE_MPLS_NHLFE_E               = 0x22,
     SXD_RM_DUPLICATION_TABLE_TYPE_ACL_ACTION_SET_EXTENSION_E = 0x23,
-    SXD_RM_DUPLICATION_TABLE_TYPE_POLICY_BASED_SWITCHING_E = 0x24,
-    SXD_RM_DUPLICATION_TABLE_TYPE_POLICY_BASED_MPLS_ILM_E = 0x25,
-    SXD_RM_DUPLICATION_TABLE_TYPE_MC_ROUTER_INTF_GROUP_E = 0x26,
-    SXD_RM_DUPLICATION_TABLE_TYPE_MC_EXPECTED_IRIF_LIST_E = 0x27,
-    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_IP_ADDRESS_E = 0x28,
-    SXD_RM_DUPLICATION_TABLE_TYPE_TUNNEL_UNDERLAY_MC_E = 0x29
+    SXD_RM_DUPLICATION_TABLE_TYPE_POLICY_BASED_SWITCHING_E   = 0x24,
+    SXD_RM_DUPLICATION_TABLE_TYPE_POLICY_BASED_MPLS_ILM_E    = 0x25,
+    SXD_RM_DUPLICATION_TABLE_TYPE_MC_ROUTER_INTF_GROUP_E     = 0x26,
+    SXD_RM_DUPLICATION_TABLE_TYPE_MC_EXPECTED_IRIF_LIST_E    = 0x27,
+    SXD_RM_DUPLICATION_TABLE_TYPE_IPV6_IP_ADDRESS_E          = 0x28,
+    SXD_RM_DUPLICATION_TABLE_TYPE_TUNNEL_UNDERLAY_MC_E       = 0x29
 } sxd_rm_duplication_table_type_e;
 
 /**
  * sxd_tunnel_tigcr_ttlc enumerated tigcr ttlc type.
  */
 typedef enum sxd_tunnel_tigcr_ttlc {
-    SXD_TIGCR_TTLC_USE_CONFIG = 0,
+    SXD_TIGCR_TTLC_USE_CONFIG    = 0,
     SXD_TIGCR_TTLC_COPY_FROM_PKT = 1
 } sxd_tunnel_tigcr_ttlc_t;
 
@@ -8556,7 +8557,7 @@ typedef enum sxd_tunnel_tigcr_ttlc {
  * sxd_tunnel_tngcr_ttlc enumerated TNGCR nve_ttlc type.
  */
 typedef enum sxd_tunnel_tngcr_ttlc {
-    SXD_TNGCR_TTLC_USE_CONFIG = 0,
+    SXD_TNGCR_TTLC_USE_CONFIG    = 0,
     SXD_TNGCR_TTLC_COPY_FROM_PKT = 1
 } sxd_tunnel_tngcr_ttlc_t;
 
@@ -8565,8 +8566,8 @@ typedef enum sxd_tunnel_tngcr_ttlc {
  */
 typedef enum sxd_tunnel_tngcr_decap_ttl {
     SXD_TNGCR_NVE_DECAP_TTL_PRESERVE_E = 0,
-    SXD_TNGCR_NVE_DECAP_TTL_COPY_E = 1,
-    SXD_TNGCR_NVE_DECAP_TTL_MINIMUM_E = 2
+    SXD_TNGCR_NVE_DECAP_TTL_COPY_E     = 1,
+    SXD_TNGCR_NVE_DECAP_TTL_MINIMUM_E  = 2
 } sxd_tunnel_tngcr_nve_decap_ttl_t;
 
 /**
@@ -8584,15 +8585,15 @@ struct ku_vrpa_details {
 typedef enum {
     PORT_ACCESS_TYPE_LOCAL_E = 0,
     PORT_ACCESS_TYPE_LABEL_E = 1,
-    PORT_ACCESS_TYPE_PCI_E = 2,
+    PORT_ACCESS_TYPE_PCI_E   = 2,
     PORT_ACCESS_TYPE_LAST_E
 } port_access_type_t;
 
 typedef enum {
-    PDDR_PAGE_OPT_OPR_INFO_E = 0,
+    PDDR_PAGE_OPT_OPR_INFO_E     = 0,
     PDDR_PAGE_OPT_TROUBLESHOOT_E = 1,
-    PDDR_PAGE_OPT_PHY_INFO_E = 2,
-    PDDR_PAGE_OPT_MODULE_INFO_E = 3,
+    PDDR_PAGE_OPT_PHY_INFO_E     = 2,
+    PDDR_PAGE_OPT_MODULE_INFO_E  = 3,
     PDDR_PAGE_OPT_MODULE_LAST_E
 } pddr_page_options_t;
 
@@ -8602,16 +8603,16 @@ typedef enum {
  */
 
 typedef enum {
-    PORT_PROTOCOL_IB_E = (1 << 0),
+    PORT_PROTOCOL_IB_E  = (1 << 0),
     PORT_PROTOCOL_ETH_E = (1 << 2)
 } port_protocol_t;
 
 typedef enum {
-    NEG_MODE_NOT_NEG_E = 0,
-    NEG_MODE_MLPN_REV_0_E = 1,
-    NEG_MODE_CL73_ETH_E = 2,
+    NEG_MODE_NOT_NEG_E         = 0,
+    NEG_MODE_MLPN_REV_0_E      = 1,
+    NEG_MODE_CL73_ETH_E        = 2,
     NEG_MODE_PARALLEL_DETECT_E = 3,
-    NEG_MODE_STANDART_IB_E = 4
+    NEG_MODE_STANDART_IB_E     = 4
 } neg_mode_t;
 
 typedef enum {
@@ -8638,127 +8639,127 @@ typedef enum {
 } autoneg_fsm_state_t;
 
 typedef enum {
-    RETRANSMIT_MODE_NONE_E = 0,
-    RETRANSMIT_MODE_LLR_E = (1 << 0),
-    RETRANSMIT_MODE_PLR_E = (1 << 1),
+    RETRANSMIT_MODE_NONE_E        = 0,
+    RETRANSMIT_MODE_LLR_E         = (1 << 0),
+    RETRANSMIT_MODE_PLR_E         = (1 << 1),
     RETRANSMIT_MODE_LLR_AND_PLR_E = (RETRANSMIT_MODE_LLR_E | RETRANSMIT_MODE_PLR_E)
 } retransmit_mode_t;
 
 typedef enum {
-    LOOPBACK_MODE_PHY_REMOTE_E = 0,
-    LOOPBACK_MODE_LOCAL_E = 2,
+    LOOPBACK_MODE_PHY_REMOTE_E     = 0,
+    LOOPBACK_MODE_LOCAL_E          = 2,
     LOOPBACK_MODE_EXTERNAL_LOCAL_E = 4
 } loopback_mode_t;
 
 typedef enum {
-    FEC_MODE_NONE_E = 0,
-    FEC_MODE_FIRE_CODE_E = 1,
-    FEC_MODE_RS_FEC_E = 2,
-    FEC_LL_RS_E = 3,
+    FEC_MODE_NONE_E        = 0,
+    FEC_MODE_FIRE_CODE_E   = 1,
+    FEC_MODE_RS_FEC_E      = 2,
+    FEC_LL_RS_E            = 3,
     FEC_MLX_STRONG_LL_RS_E = 4,
-    FEC_MLX_LL_RS_E = 5,
-    FEC_ZERO_LATENCY_E = 6
+    FEC_MLX_LL_RS_E        = 5,
+    FEC_ZERO_LATENCY_E     = 6
 } fec_mode_t;
 
 typedef enum {
-    FEC_PROFILE_IB_SPEC_E = 0,
-    FEC_PROFILE_INTERNAL_PORTS_E = (1 << 0),
-    FEC_PROFILE_PASSIVE_COPPER_SHORT_E = (1 << 1),
+    FEC_PROFILE_IB_SPEC_E               = 0,
+    FEC_PROFILE_INTERNAL_PORTS_E        = (1 << 0),
+    FEC_PROFILE_PASSIVE_COPPER_SHORT_E  = (1 << 1),
     FEC_PROFILE_PASSIVE_COPPER_MEDIUM_E = (1 << 2),
-    FEC_PROFILE_PASSIVE_COPPER_LONGE_E = (1 << 3),
-    FEC_PROFILE_ACTIVE_OPTICS_E = (1 << 4),
-    FEC_PROFILE_OPTIC_LONG_REACH_E = (1 << 5),
-    FEC_PROFILE_NO_FEC_E = (1 << 6),
-    FEC_PROFILE_FEC_ONE_E = (1 << 7)
+    FEC_PROFILE_PASSIVE_COPPER_LONGE_E  = (1 << 3),
+    FEC_PROFILE_ACTIVE_OPTICS_E         = (1 << 4),
+    FEC_PROFILE_OPTIC_LONG_REACH_E      = (1 << 5),
+    FEC_PROFILE_NO_FEC_E                = (1 << 6),
+    FEC_PROFILE_FEC_ONE_E               = (1 << 7)
 } profile_fec_in_use_t;
 
 typedef enum {
-    REMOTE_DEVICE_UNKNOWN_E = 0,
-    REMOTE_DEVICE_CX4_E = 1,
-    REMOTE_DEVICE_CX4LX_E = 2,
-    REMOTE_DEVICE_CX5_E = 3,
-    REMOTE_DEVICE_CX5_LX_E = 4,
-    REMOTE_DEVICE_CX6_E = 5,
-    REMOTE_DEVICE_CX6_LX_E = 6,
-    REMOTE_DEVICE_SWITCH_IB_E = 100,
-    REMOTE_DEVICE_SPECTRUM_E = 101,
+    REMOTE_DEVICE_UNKNOWN_E     = 0,
+    REMOTE_DEVICE_CX4_E         = 1,
+    REMOTE_DEVICE_CX4LX_E       = 2,
+    REMOTE_DEVICE_CX5_E         = 3,
+    REMOTE_DEVICE_CX5_LX_E      = 4,
+    REMOTE_DEVICE_CX6_E         = 5,
+    REMOTE_DEVICE_CX6_LX_E      = 6,
+    REMOTE_DEVICE_SWITCH_IB_E   = 100,
+    REMOTE_DEVICE_SPECTRUM_E    = 101,
     REMOTE_DEVICE_SWITCH_IB_2_E = 102,
     REMOTE_DEVICE_SWITCH_IB_3_E = 103,
     REMOTE_DEVICE_SPECTRUME_2_E = 104,
 } remote_device_type_t;
 
 typedef enum {
-    PORT_NOTIF_NONE_E = 0,
+    PORT_NOTIF_NONE_E                      = 0,
     PORT_NOTIF_LINK_PARTNER_ADV_CPBILITY_E = (1 << 0),
-    PORT_NOTIF_SPEED_DECLR_E = (1 << 1)
+    PORT_NOTIF_SPEED_DECLR_E               = (1 << 1)
 } port_notifications_t;
 
 typedef enum {
-    PHY_MGR_DISABLE_MASK_NONE_E = 0,
-    PHY_MGR_DISABLE_MASK_MODULE_NOT_PERESENT_E = (1 << 0),
-    PHY_MGR_DISABLE_MASK_PAOS_COMMANDS_E = (1 << 1),
+    PHY_MGR_DISABLE_MASK_NONE_E                    = 0,
+    PHY_MGR_DISABLE_MASK_MODULE_NOT_PERESENT_E     = (1 << 0),
+    PHY_MGR_DISABLE_MASK_PAOS_COMMANDS_E           = (1 << 1),
     PHY_MGR_DISABLE_MASK_MAD_IB_PORT_INFO_DOWN_CMD = (1 << 2),
-    PHY_MGR_DISABLE_MASK_LONG_RANGE_CABLE_E = (1 << 3),
-    PHY_MGR_DISABLE_MASK_VERIFICATION_COMMAND_E = (1 << 4),
-    PHY_MGR_DISABLE_MASK_EKEY_COMMAND_E = (1 << 5),
-    PHY_MGR_DISABLE_MASK_HIGH_POWER_E = (1 << 6),
-    PHY_MGR_DISABLE_MASK_UNKNOWN_IDNTIFIER_E = (1 << 7),
-    PHY_MGR_DISABLE_MASK_PAOS_UP_ONCE_E = (1 << 8),
-    PHY_MGR_DISABLE_MASK_STAMPING_FAILURE_E = (1 << 9),
-    PHY_MGR_DISABLE_MASK_CALIBRATION_NOT_DONE_E = (1 << 10)
+    PHY_MGR_DISABLE_MASK_LONG_RANGE_CABLE_E        = (1 << 3),
+    PHY_MGR_DISABLE_MASK_VERIFICATION_COMMAND_E    = (1 << 4),
+    PHY_MGR_DISABLE_MASK_EKEY_COMMAND_E            = (1 << 5),
+    PHY_MGR_DISABLE_MASK_HIGH_POWER_E              = (1 << 6),
+    PHY_MGR_DISABLE_MASK_UNKNOWN_IDNTIFIER_E       = (1 << 7),
+    PHY_MGR_DISABLE_MASK_PAOS_UP_ONCE_E            = (1 << 8),
+    PHY_MGR_DISABLE_MASK_STAMPING_FAILURE_E        = (1 << 9),
+    PHY_MGR_DISABLE_MASK_CALIBRATION_NOT_DONE_E    = (1 << 10)
 } phy_mgr_disable_mask_t;
 
 typedef enum {
-    PCS_PHY_STATE_BLOCK_LOCK_E = (1 << 0),
-    PCS_PHY_STATE_AM_LOCK_E = (1 << 1),
-    PCS_PHY_STATE_FEC_LOCK_E = (1 << 2),
+    PCS_PHY_STATE_BLOCK_LOCK_E   = (1 << 0),
+    PCS_PHY_STATE_AM_LOCK_E      = (1 << 1),
+    PCS_PHY_STATE_FEC_LOCK_E     = (1 << 2),
     PCS_PHY_STATE_ALIGN_STATUS_E = (1 << 3),
 } pcs_phy_lock_t;
 
 typedef enum {
-    LINK_DOWN_LANE_NONE = 0,
-    LINK_DOWN_LANE_BLOCK_LOCK_FAILED = (1 << 0),
-    LINK_DOWN_LANE_SKIP_DETECTED = (1 << 1),
-    LINK_DOWN_LANE_FEC_SYNC_FAILED = (1 << 2),
-    LINK_DOWN_LANE_FEC_BLOCK_SYNC_E = (1 << 3),
+    LINK_DOWN_LANE_NONE                  = 0,
+    LINK_DOWN_LANE_BLOCK_LOCK_FAILED     = (1 << 0),
+    LINK_DOWN_LANE_SKIP_DETECTED         = (1 << 1),
+    LINK_DOWN_LANE_FEC_SYNC_FAILED       = (1 << 2),
+    LINK_DOWN_LANE_FEC_BLOCK_SYNC_E      = (1 << 3),
     LINK_DOWN_LANE_FEC_BLOCK_SYNC_LOST_E = (1 << 4)
 } link_down_lane_fec_t;
 
 typedef enum {
-    SPEED_DEG_DB_VALID = (1 << 0),
+    SPEED_DEG_DB_VALID              = (1 << 0),
     SPEED_DEG_DB_SERDES_RX_DB_VALID = (1 << 1),
-    SPEED_DEG_DB_RX_RESERVED = (1 << 2),
-    SPEED_DEG_DB_RX_REVERSAL = (1 << 3),
-    SPEED_DEG_DB_TX_REVERSAL = (1 << 4),
-    SPEED_DEG_DB_FAILED_QDR = (1 << 5),
-    SPEED_DEG_DB_FAILED_EDR = (1 << 6),
-    SPEED_DEG_DB_PEER_TEST = (1 << 7),
-    SPEED_DEG_DB_FIRST_TEST_SPEED = (1 << 8)
+    SPEED_DEG_DB_RX_RESERVED        = (1 << 2),
+    SPEED_DEG_DB_RX_REVERSAL        = (1 << 3),
+    SPEED_DEG_DB_TX_REVERSAL        = (1 << 4),
+    SPEED_DEG_DB_FAILED_QDR         = (1 << 5),
+    SPEED_DEG_DB_FAILED_EDR         = (1 << 6),
+    SPEED_DEG_DB_PEER_TEST          = (1 << 7),
+    SPEED_DEG_DB_FIRST_TEST_SPEED   = (1 << 8)
 } speed_deg_db_t;
 
 typedef enum {
-    KR_FSM_INITIALIZED_E = 0,
-    KR_FSM_SEND_TRAINING_E = 1,
+    KR_FSM_INITIALIZED_E    = 0,
+    KR_FSM_SEND_TRAINING_E  = 1,
     KR_FSM_TRAIN_LOCAL_TX_E = 2,
-    KR_FSM_TRAIN_LOCAL_RX = 3,
-    KR_FSM_TRAIN_REMOTE_E = 4,
-    KR_FSM_LINK_READY_E = 5,
-    KR_FSM_SEND_DATA_E = 6
+    KR_FSM_TRAIN_LOCAL_RX   = 3,
+    KR_FSM_TRAIN_REMOTE_E   = 4,
+    KR_FSM_LINK_READY_E     = 5,
+    KR_FSM_SEND_DATA_E      = 6
 } kr_fsm_t;
 
 typedef enum {
-    ETH_AN_DEBUG_FORCE_LINK_UP_E = (1 << 0),
-    ETH_AN_DEBUG_NO_HCD_E = (1 << 1),
-    ETH_AN_DEBUG_ENTERED_ACK_DETECTED_E = (1 << 2),
-    ETH_AN_DEBUG_ENTERED_GOOD_E = (1 << 3),
-    ETH_AN_DEBUG_ENTERED_GOOD_CHECK_E = (1 << 4),
-    ETH_AN_DEBUG_ENTERED_EXTRA_TUNE_E = (1 << 5),
+    ETH_AN_DEBUG_FORCE_LINK_UP_E         = (1 << 0),
+    ETH_AN_DEBUG_NO_HCD_E                = (1 << 1),
+    ETH_AN_DEBUG_ENTERED_ACK_DETECTED_E  = (1 << 2),
+    ETH_AN_DEBUG_ENTERED_GOOD_E          = (1 << 3),
+    ETH_AN_DEBUG_ENTERED_GOOD_CHECK_E    = (1 << 4),
+    ETH_AN_DEBUG_ENTERED_EXTRA_TUNE_E    = (1 << 5),
     ETH_AN_DEBUG_ENTERED_FIX_REVERSALS_E = (1 << 6),
-    ETH_AN_DEBUG_ENTERED_NEXT_PAGE_E = (1 << 7),
-    ETH_AN_DEBUG_ENTERED_SUB_FSM_FAIL_E = (1 << 8),
-    ETH_AN_DEBUG_TUNING_TIMEOUT_E = (1 << 9),
-    ETH_AN_DEBUG_NO_MARKED_DETECTED = (1 << 10),
-    ETH_AN_DEBUG_DO_KR_STARTUP = (1 << 11),
+    ETH_AN_DEBUG_ENTERED_NEXT_PAGE_E     = (1 << 7),
+    ETH_AN_DEBUG_ENTERED_SUB_FSM_FAIL_E  = (1 << 8),
+    ETH_AN_DEBUG_TUNING_TIMEOUT_E        = (1 << 9),
+    ETH_AN_DEBUG_NO_MARKED_DETECTED      = (1 << 10),
+    ETH_AN_DEBUG_DO_KR_STARTUP           = (1 << 11),
 } eth_an_debug_indication_t;
 
 struct eth_an_debug_indication {
@@ -8767,118 +8768,118 @@ struct eth_an_debug_indication {
 };
 
 typedef enum {
-    KR_DEBUG_INDIC_NONE_E = 0,
-    KR_DEBUG_INDIC_PRBS_LOCK_FAILED_E = (1 << 0),
-    KR_DEBUG_INDIC_SEND_TRAINING_E = (1 << 1),
-    KR_DEBUG_INDIC_ENT_TRAIN_LOCAL_RX_E = (1 << 2),
-    KR_DEBUG_INDIC_ENT_TRAIN_REMOTE_E = (1 << 3),
-    KR_DEBUG_INDIC_ENT_LINK_READY_E = (1 << 4),
-    KR_DEBUG_INDIC_SEND_DATA_E = (1 << 5),
-    KR_DEBUG_INDIC_DIDNT_GET_RECV_READY_E = (1 << 6),
-    KR_DEBUG_INDIC_TUNING_TIMEOUT_E = (1 << 7),
-    KR_DEBUG_INDIC_NO_FRAME_LOCK_E = (1 << 8),
-    KR_DEBUG_INDIC_NO_RESP_FROM_USER_E = (1 << 9),
+    KR_DEBUG_INDIC_NONE_E                       = 0,
+    KR_DEBUG_INDIC_PRBS_LOCK_FAILED_E           = (1 << 0),
+    KR_DEBUG_INDIC_SEND_TRAINING_E              = (1 << 1),
+    KR_DEBUG_INDIC_ENT_TRAIN_LOCAL_RX_E         = (1 << 2),
+    KR_DEBUG_INDIC_ENT_TRAIN_REMOTE_E           = (1 << 3),
+    KR_DEBUG_INDIC_ENT_LINK_READY_E             = (1 << 4),
+    KR_DEBUG_INDIC_SEND_DATA_E                  = (1 << 5),
+    KR_DEBUG_INDIC_DIDNT_GET_RECV_READY_E       = (1 << 6),
+    KR_DEBUG_INDIC_TUNING_TIMEOUT_E             = (1 << 7),
+    KR_DEBUG_INDIC_NO_FRAME_LOCK_E              = (1 << 8),
+    KR_DEBUG_INDIC_NO_RESP_FROM_USER_E          = (1 << 9),
     KR_DEBUG_INDIC_FRAME_LOCK_TUNING_NOT_DONE_E = (1 << 10)
 } kr_debug_indication_t;
 
 typedef enum {
-    STAMPING_REASON_NONE_E = 0,
-    STAMPING_REASON_COM_CODE_IS_ZERO_E = (1 << 0),
+    STAMPING_REASON_NONE_E                    = 0,
+    STAMPING_REASON_COM_CODE_IS_ZERO_E        = (1 << 0),
     STAMPING_REASON_RX_CDR_CHECK_FORCE_MODE_E = (1 << 1),
-    STAMPING_REASON_COM_CODE_COMPLAINCE_E = (1 << 2),
-    STAMPING_REASON_ETH_56G_STAMPED_E = (1 << 3),
-    STAMPING_REASON_NON_MLX_QSFP_TRANC_E = (1 << 4),
-    STAMPING_REASON_NON_MLX_SFP_TRANC_E = (1 << 5),
-    STAMPING_REASON_IB_COMP_CODES_E = (1 << 6),
-    STAMPING_REASON_EDR_COMP_E = (1 << 7),
-    STAMPING_REASON_FDR_COMP_E = (1 << 8)
+    STAMPING_REASON_COM_CODE_COMPLAINCE_E     = (1 << 2),
+    STAMPING_REASON_ETH_56G_STAMPED_E         = (1 << 3),
+    STAMPING_REASON_NON_MLX_QSFP_TRANC_E      = (1 << 4),
+    STAMPING_REASON_NON_MLX_SFP_TRANC_E       = (1 << 5),
+    STAMPING_REASON_IB_COMP_CODES_E           = (1 << 6),
+    STAMPING_REASON_EDR_COMP_E                = (1 << 7),
+    STAMPING_REASON_FDR_COMP_E                = (1 << 8)
 } stamping_reason_t;
 
 typedef enum {
-    HW_LINK_PHY_STATE_SLEEPING_DELAY = 0x10,
-    HW_LINK_PHY_STATE_SLEEPING_QUIET = 0x11,
-    HW_LINK_PHY_STATE_POLLING_ACTIVE = 0x20,
-    HW_LINK_PHY_STATE_POLLING_QUIET = 0x21,
-    HW_LINK_PHY_STATE_DISABLE = 0x30,
-    HW_LINK_PHY_STATE_CONFIG_DEBOUNCE = 0x40,
-    HW_LINK_PHY_STATE_CONFIG_RECEIVER = 0x41,
-    HW_LINK_PHY_STATE_CONFIG_WAIT_REMOTE = 0x42,
-    HW_LINK_PHY_STATE_CONFIG_TX_REVERSE_LANES = 0x43,
-    HW_LINK_PHY_STATE_CONFIG_ENHANCED = 0x44,
+    HW_LINK_PHY_STATE_SLEEPING_DELAY                = 0x10,
+    HW_LINK_PHY_STATE_SLEEPING_QUIET                = 0x11,
+    HW_LINK_PHY_STATE_POLLING_ACTIVE                = 0x20,
+    HW_LINK_PHY_STATE_POLLING_QUIET                 = 0x21,
+    HW_LINK_PHY_STATE_DISABLE                       = 0x30,
+    HW_LINK_PHY_STATE_CONFIG_DEBOUNCE               = 0x40,
+    HW_LINK_PHY_STATE_CONFIG_RECEIVER               = 0x41,
+    HW_LINK_PHY_STATE_CONFIG_WAIT_REMOTE            = 0x42,
+    HW_LINK_PHY_STATE_CONFIG_TX_REVERSE_LANES       = 0x43,
+    HW_LINK_PHY_STATE_CONFIG_ENHANCED               = 0x44,
     HW_LINK_PHY_STATE_HW_LINK_PHY_STATE_CONFIG_TEST = 0x45,
-    HW_LINK_PHY_STATE_CONFIG_WAIT_REMOTE_TEST = 0x46,
-    HW_LINK_PHY_STATE_WAIT_CONFIG_ENAHNCED = 0x47,
-    HW_LINK_PHY_STATE_CONFIG_IDLE = 0x48,
-    HW_LINK_PHY_STATE_LINKUP = 0x50,
-    HW_LINK_PHY_STATE_RECOVER_RETRAIN = 0x60,
-    HW_LINK_PHY_STATE_RECOVER_WAIT_REMOTE = 0x61,
-    HW_LINK_PHY_STATE_RECOVER_IDLE = 0x62,
-    HW_LINK_PHY_STATE_TEST = 0x70,
-    HW_LINK_PHY_STATE_FORCE = 0x80,
-    HW_LINK_PHY_STATE_FORCE_SEND_TS2 = 0x90,
-    HW_LINK_PHY_STATE_FORCE_SENT_IDLE = 0xA2,
-    HW_LINK_PHY_STATE_FORCE_SEND_TS_MLNX = 0xB0,
-    HW_LINK_PHY_STATE_FORCE_SEND_TS3 = 0xC0,
-    HW_LINK_PHY_STATE_FORCE_LINK_UP = 0xD0
+    HW_LINK_PHY_STATE_CONFIG_WAIT_REMOTE_TEST       = 0x46,
+    HW_LINK_PHY_STATE_WAIT_CONFIG_ENAHNCED          = 0x47,
+    HW_LINK_PHY_STATE_CONFIG_IDLE                   = 0x48,
+    HW_LINK_PHY_STATE_LINKUP                        = 0x50,
+    HW_LINK_PHY_STATE_RECOVER_RETRAIN               = 0x60,
+    HW_LINK_PHY_STATE_RECOVER_WAIT_REMOTE           = 0x61,
+    HW_LINK_PHY_STATE_RECOVER_IDLE                  = 0x62,
+    HW_LINK_PHY_STATE_TEST                          = 0x70,
+    HW_LINK_PHY_STATE_FORCE                         = 0x80,
+    HW_LINK_PHY_STATE_FORCE_SEND_TS2                = 0x90,
+    HW_LINK_PHY_STATE_FORCE_SENT_IDLE               = 0xA2,
+    HW_LINK_PHY_STATE_FORCE_SEND_TS_MLNX            = 0xB0,
+    HW_LINK_PHY_STATE_FORCE_SEND_TS3                = 0xC0,
+    HW_LINK_PHY_STATE_FORCE_LINK_UP                 = 0xD0
 } hw_link_phy_state_t;
 
 typedef enum {
-    IB_LAST_LINK_DOWN_HEARTBEAT_ACK_RECVED_E = (1 << 0),
-    IB_LAST_LINK_DOWN_HEARTBEAT_SEND_RECVED_E = (1 << 1),
-    IB_LAST_LINK_DOWN_HEARTBEAT_HEARTBEAT_ERR_E = (1 << 2),
-    IB_LAST_LINK_DOWN_TX_WIDTH_REDUCT_DONE_1X_E = (1 << 3),
+    IB_LAST_LINK_DOWN_HEARTBEAT_ACK_RECVED_E      = (1 << 0),
+    IB_LAST_LINK_DOWN_HEARTBEAT_SEND_RECVED_E     = (1 << 1),
+    IB_LAST_LINK_DOWN_HEARTBEAT_HEARTBEAT_ERR_E   = (1 << 2),
+    IB_LAST_LINK_DOWN_TX_WIDTH_REDUCT_DONE_1X_E   = (1 << 3),
     IB_LAST_LINK_DOWN_RX_WIDTH_REDUCT_DONE_FULL_E = (1 << 4),
-    IB_LAST_LINK_DOWN_RX_WIDTH_REDUC_DONE_1X_E = (1 << 5),
-    IB_LAST_LINK_DOWN_RX_WIDTH_REDUC_DONE_FULL_E = (1 << 6),
-    IB_LAST_LINK_DOWN_WIDTH_REDUC_TIMEOUT_E = (1 << 7),
-    IB_LAST_LINK_DOWN_IBL_LINK_RETAIN_E = (1 << 8),
-    IB_LAST_LINK_DOWN_RX_COMPSKP_TIMEOUT_E = (1 << 9),
-    IB_LAST_LINK_DOWN_FIFO_FULL_ERR_E = (1 << 10),
-    IB_LAST_LINK_DOWN_TS_AT_LINK_UP_E = (1 << 11),
-    IB_LAST_LINK_DOWN_MINOR_THRESHOLD_REACHED_E = (1 << 12),
-    IB_LAST_LINK_DOWN_LINK_FAIL_E = (1 << 13),
-    IB_LAST_LINK_DOWN_RX_EB_FULL_R_E = (1 << 14),
-    IB_LAST_LINK_DOWN_8_10_LANE_ERR_E = (1 << 15),
-    IB_LAST_LINK_DOWN_LLR_LINK_RETRAIN_SET_E = (1 << 16),
-    IB_LAST_LINK_DOWN_FC_TIMEOUT_E = (1 << 17),
-    IB_LAST_LINK_DOWN_PHY_ERR_E = (1 << 18),
-    IB_LAST_LINK_DOWN_LLI_ERR_E = (1 << 19),
-    IB_LAST_LINK_DOWN_EXESSIVE_BUFFER_ERR_E = (1 << 20),
-    IB_LAST_LINK_DOWN_REMOTE_INIT_E = (1 << 21),
+    IB_LAST_LINK_DOWN_RX_WIDTH_REDUC_DONE_1X_E    = (1 << 5),
+    IB_LAST_LINK_DOWN_RX_WIDTH_REDUC_DONE_FULL_E  = (1 << 6),
+    IB_LAST_LINK_DOWN_WIDTH_REDUC_TIMEOUT_E       = (1 << 7),
+    IB_LAST_LINK_DOWN_IBL_LINK_RETAIN_E           = (1 << 8),
+    IB_LAST_LINK_DOWN_RX_COMPSKP_TIMEOUT_E        = (1 << 9),
+    IB_LAST_LINK_DOWN_FIFO_FULL_ERR_E             = (1 << 10),
+    IB_LAST_LINK_DOWN_TS_AT_LINK_UP_E             = (1 << 11),
+    IB_LAST_LINK_DOWN_MINOR_THRESHOLD_REACHED_E   = (1 << 12),
+    IB_LAST_LINK_DOWN_LINK_FAIL_E                 = (1 << 13),
+    IB_LAST_LINK_DOWN_RX_EB_FULL_R_E              = (1 << 14),
+    IB_LAST_LINK_DOWN_8_10_LANE_ERR_E             = (1 << 15),
+    IB_LAST_LINK_DOWN_LLR_LINK_RETRAIN_SET_E      = (1 << 16),
+    IB_LAST_LINK_DOWN_FC_TIMEOUT_E                = (1 << 17),
+    IB_LAST_LINK_DOWN_PHY_ERR_E                   = (1 << 18),
+    IB_LAST_LINK_DOWN_LLI_ERR_E                   = (1 << 19),
+    IB_LAST_LINK_DOWN_EXESSIVE_BUFFER_ERR_E       = (1 << 20),
+    IB_LAST_LINK_DOWN_REMOTE_INIT_E               = (1 << 21),
 } ib_last_link_down_reason_t;
 
 typedef enum {
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_DISABLE = (1 << 0),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_INITIALY = (1 << 1),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_RCVR_CFG = (1 << 2),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_CFG_TEST = (1 << 3),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_WAIT_RMT_TEST = (1 << 4),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_DISABLE           = (1 << 0),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_INITIALY          = (1 << 1),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_RCVR_CFG          = (1 << 2),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_CFG_TEST          = (1 << 3),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_WAIT_RMT_TEST     = (1 << 4),
     IB_PHY_FSM_STATE_TRACE_AN_FSM_WAIT_CFG_ENHANCED = (1 << 5),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_CFG_IDLE = (1 << 6),
-    IB_PHY_FSM_STATE_TRACE_AN_FSM_LINK_UP = (1 << 7),
-    IB_PHY_FSM_STATE_TRACE_FAILED_FROM_CFG_IDLE = (1 << 8),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_CFG_IDLE          = (1 << 6),
+    IB_PHY_FSM_STATE_TRACE_AN_FSM_LINK_UP           = (1 << 7),
+    IB_PHY_FSM_STATE_TRACE_FAILED_FROM_CFG_IDLE     = (1 << 8),
 } ib_phy_fsm_state_trace;
 
 typedef enum {
-    CABLE_TYPE_UNIDENTIFIED_E = 0,
-    CABLE_TYPE_ACTIVE_CABLE_E = 1,
-    CABLE_TYPE_OPTICAL_MODULE = 2,
+    CABLE_TYPE_UNIDENTIFIED_E   = 0,
+    CABLE_TYPE_ACTIVE_CABLE_E   = 1,
+    CABLE_TYPE_OPTICAL_MODULE   = 2,
     CABLE_TYPE_PASSIVE_COPPER_E = 3,
-    CABLE_TYPE_UNPLAGGED_E = 4
+    CABLE_TYPE_UNPLAGGED_E      = 4
 } cable_type_t;
 
 typedef enum {
-    CABLE_VENDOR_OTHER_E = 0,
-    CABLE_VENDOR_MELLANOX_E = 1,
+    CABLE_VENDOR_OTHER_E     = 0,
+    CABLE_VENDOR_MELLANOX_E  = 1,
     CABLE_VENDOR_KNOWN_OUI_E = 2
 } cable_vendor_t;
 
 typedef enum {
-    CABLE_IDENT_OSFP28_E = 0,
-    CABLE_IDENT_OSFP_PLUS_E = 1,
+    CABLE_IDENT_OSFP28_E         = 0,
+    CABLE_IDENT_OSFP_PLUS_E      = 1,
     CABLE_IDENT_SFP28_SFP_PLUS_E = 2,
-    CABLE_IDENT_QSA_E = 3,
-    CABLE_IDENT_BACKPLANE_E = 4
+    CABLE_IDENT_QSA_E            = 3,
+    CABLE_IDENT_BACKPLANE_E      = 4
 } cable_identifier_t;
 
 typedef enum {
@@ -8893,8 +8894,8 @@ typedef enum {
 } cable_power_class_t;
 
 typedef enum {
-    CDR_CAP_NONE = 0,
-    CDR_CAP_BUILD_IN_WITH_ON_OFF_E = 1,
+    CDR_CAP_NONE                      = 0,
+    CDR_CAP_BUILD_IN_WITH_ON_OFF_E    = 1,
     CDR_CAP_BUILD_IN_WITHOUT_ON_OFF_E = 2,
 } cdr_cap_t;
 
@@ -8907,8 +8908,8 @@ typedef enum {
 
 enum {
     SX_EVENT_LIST_SIZE = 2000,
-    ISX_HDR_SIZE = 16,
-    SX_MAX_MSG_SIZE = 10240
+    ISX_HDR_SIZE       = 16,
+    SX_MAX_MSG_SIZE    = 10240
 };
 
 struct pddr_oper_info_resp {
@@ -8944,9 +8945,9 @@ struct pddr_oper_info_resp {
 };
 
 typedef enum {
-    LANE_FAILURE_QDR_E = (1 << 0),
-    LANE_FAILURE_FDR_E = (1 << 1),
-    LANE_FAILURE_EDR_E = (1 << 2),
+    LANE_FAILURE_QDR_E       = (1 << 0),
+    LANE_FAILURE_FDR_E       = (1 << 1),
+    LANE_FAILURE_EDR_E       = (1 << 2),
     LANE_FAILURE_PEER_TEST_E = (1 << 3)
 } lane_failure_t;
 
@@ -9037,53 +9038,53 @@ typedef enum {
 } group_opcode_t;
 
 typedef enum {
-    STATUS_OPCODE_NO_ISSUE = 0,
-    STATUS_OPCODE_PORT_IS_CLOSE_BY_COMMAND = 1,
-    STATUS_OPCODE_AN_NO_PARTNER_DETECTED = 2,
-    STATUS_OPCODE_AN_ACK_NOT_RECEIVED = 3,
-    STATUS_OPCODE_AN_NEXT_PAGE_EXCHANGE_FAILED = 4,
-    STATUS_OPCODE_KR_FRAME_LOCK_NOT_ACQUIREED = 5,
-    STATUS_OPCODE_KR_LINK_INHIBIT_TIMEOUT = 6,
-    STATUS_OPCODE_KR_LINK_PARTNER_DIDNT_SET_RECEIVER_READY = 7,
-    STATUS_OPCODE_KR_TUNING_DIDNT_COMPLETE = 8,
-    STATUS_OPCODE_PCS_DIDNT_ACQUIRE_BLOCK_LOCK = 9,
-    STATUS_OPCODE_PCS_DIDNT_ACQUIRE_AM_LOCK = 10,
-    STATUS_OPCODE_PCS_DIDNT_GET_ALIGN_STATUS = 11,
-    STATUS_OPCODE_FC_FEC_ISNT_LOCKED = 12,
-    STATUS_OPCODE_RS_FEC_ISNT_LOCKED = 13,
-    STATUS_OPCODE_REMOTE_FAULT_RECEIVED = 14,
-    STATUS_OPCODE_BAD_SIGNAL_INTEGRITY = 15,
-    STATUS_OPCODE_CABLE_COMPLIANCE_CODE_MISMATCH = 16,
-    STATUS_OPCODE_LARGE_NUMBER_OF_PHYSICAL_ERRORS = 17,
-    STATUS_OPCODE_STAMPING_OF_NON_MELLANOX_CABLE_MODULE = 20,
-    STATUS_OPCODE_CALIBRATION_FAILURE = 23,
-    STATUS_OPCODE_EDR_STAMPING = 24,
-    STATUS_OPCODE_FDR10_STAMPING = 25,
-    STATUS_OPCODE_ETHERNET_COMPLIANCE_CODE_ZERO = 26,
-    STATUS_OPCODE_56GE_STAMPING = 27,
-    STATUS_OPCODE_NON_MELLANOX_QSFP28 = 28,
-    STATUS_OPCODE_NON_MELLANOX_SFP28 = 29,
-    STATUS_OPCODE_NO_BACKPLANE_ENABLED = 30,
-    STATUS_OPCODE_NO_PASSIVE_PROTOCOL_ENABLED = 31,
-    STATUS_OPCODE_NO_ACTIVE_PROTOCOL_ENABLED = 32,
-    STATUS_OPCODE_NO_PARTNER_DETECTED_DURING_FORCE_MODE = 36,
-    STATUS_OPCODE_PARTIAL_LINK_INDICATION_DURING_FORCE_MODE = 37,
-    STATUS_OPCODE_AN_FEC_MISMATCH_DURING_OVERRIDE = 38,
-    STATUS_OPCODE_AN_NO_HCD = 39,
+    STATUS_OPCODE_NO_ISSUE                                       = 0,
+    STATUS_OPCODE_PORT_IS_CLOSE_BY_COMMAND                       = 1,
+    STATUS_OPCODE_AN_NO_PARTNER_DETECTED                         = 2,
+    STATUS_OPCODE_AN_ACK_NOT_RECEIVED                            = 3,
+    STATUS_OPCODE_AN_NEXT_PAGE_EXCHANGE_FAILED                   = 4,
+    STATUS_OPCODE_KR_FRAME_LOCK_NOT_ACQUIREED                    = 5,
+    STATUS_OPCODE_KR_LINK_INHIBIT_TIMEOUT                        = 6,
+    STATUS_OPCODE_KR_LINK_PARTNER_DIDNT_SET_RECEIVER_READY       = 7,
+    STATUS_OPCODE_KR_TUNING_DIDNT_COMPLETE                       = 8,
+    STATUS_OPCODE_PCS_DIDNT_ACQUIRE_BLOCK_LOCK                   = 9,
+    STATUS_OPCODE_PCS_DIDNT_ACQUIRE_AM_LOCK                      = 10,
+    STATUS_OPCODE_PCS_DIDNT_GET_ALIGN_STATUS                     = 11,
+    STATUS_OPCODE_FC_FEC_ISNT_LOCKED                             = 12,
+    STATUS_OPCODE_RS_FEC_ISNT_LOCKED                             = 13,
+    STATUS_OPCODE_REMOTE_FAULT_RECEIVED                          = 14,
+    STATUS_OPCODE_BAD_SIGNAL_INTEGRITY                           = 15,
+    STATUS_OPCODE_CABLE_COMPLIANCE_CODE_MISMATCH                 = 16,
+    STATUS_OPCODE_LARGE_NUMBER_OF_PHYSICAL_ERRORS                = 17,
+    STATUS_OPCODE_STAMPING_OF_NON_MELLANOX_CABLE_MODULE          = 20,
+    STATUS_OPCODE_CALIBRATION_FAILURE                            = 23,
+    STATUS_OPCODE_EDR_STAMPING                                   = 24,
+    STATUS_OPCODE_FDR10_STAMPING                                 = 25,
+    STATUS_OPCODE_ETHERNET_COMPLIANCE_CODE_ZERO                  = 26,
+    STATUS_OPCODE_56GE_STAMPING                                  = 27,
+    STATUS_OPCODE_NON_MELLANOX_QSFP28                            = 28,
+    STATUS_OPCODE_NON_MELLANOX_SFP28                             = 29,
+    STATUS_OPCODE_NO_BACKPLANE_ENABLED                           = 30,
+    STATUS_OPCODE_NO_PASSIVE_PROTOCOL_ENABLED                    = 31,
+    STATUS_OPCODE_NO_ACTIVE_PROTOCOL_ENABLED                     = 32,
+    STATUS_OPCODE_NO_PARTNER_DETECTED_DURING_FORCE_MODE          = 36,
+    STATUS_OPCODE_PARTIAL_LINK_INDICATION_DURING_FORCE_MODE      = 37,
+    STATUS_OPCODE_AN_FEC_MISMATCH_DURING_OVERRIDE                = 38,
+    STATUS_OPCODE_AN_NO_HCD                                      = 39,
     STATUS_OPCODE_BAD_SI_CABLE_IS_CONFIGURED_TO_NON_OPTIMAL_RATE = 42,
-    STATUS_OPCODE_INFO_NOT_AVAILABLE = 1023,
-    STATUS_OPCODE_CABLE_IS_UNPLUGGED = 1024,
-    STATUS_OPCODE_LONG_RANGE_FOR_NON_MLNX_CABLE = 1025,
-    STATUS_OPCODE_BUS_STUCK = 1026,
-    STATUS_OPCODE_BAD_EEPROM = 1027,
-    STATUS_OPCODE_PART_NUMBER_LIST = 1028,
-    STATUS_OPCODE_UNSUPPORTED_CABLE = 1029,
-    STATUS_OPCODE_MODULE_TEMP_SHUTDOWN = 1030,
-    STATUS_OPCODE_SHORTED_CABLE = 1031,
-    STATUS_OPCODE_POWER_BUDGET_EXCEEDED = 1032,
-    STATUS_OPCODE_MGMT_FORCED_DOWN_THE_PORT = 1033,
-    STATUS_OPCODE_MODULE_DISABLED_BY_COMMAND = 1034,
-    STATUS_OPCODE_MODULE_PMD_TYPE_IS_NOT_ENABLED = 1036
+    STATUS_OPCODE_INFO_NOT_AVAILABLE                             = 1023,
+    STATUS_OPCODE_CABLE_IS_UNPLUGGED                             = 1024,
+    STATUS_OPCODE_LONG_RANGE_FOR_NON_MLNX_CABLE                  = 1025,
+    STATUS_OPCODE_BUS_STUCK                                      = 1026,
+    STATUS_OPCODE_BAD_EEPROM                                     = 1027,
+    STATUS_OPCODE_PART_NUMBER_LIST                               = 1028,
+    STATUS_OPCODE_UNSUPPORTED_CABLE                              = 1029,
+    STATUS_OPCODE_MODULE_TEMP_SHUTDOWN                           = 1030,
+    STATUS_OPCODE_SHORTED_CABLE                                  = 1031,
+    STATUS_OPCODE_POWER_BUDGET_EXCEEDED                          = 1032,
+    STATUS_OPCODE_MGMT_FORCED_DOWN_THE_PORT                      = 1033,
+    STATUS_OPCODE_MODULE_DISABLED_BY_COMMAND                     = 1034,
+    STATUS_OPCODE_MODULE_PMD_TYPE_IS_NOT_ENABLED                 = 1036
 } status_opcode_t;
 
 struct pddr_troubleshooting_info_resp {
@@ -9303,8 +9304,8 @@ struct ku_access_ppbmp_reg {
 };
 
 typedef enum ku_ppbmp_monitor_type {
-    KU_PPBMP_MONITOR_GROUP_RS_PRE_FEC_E = 0,     /**< Pre RS FEC */
-    KU_PPBMP_MONITOR_GROUP_FC_PRE_FEC_E = 1,     /**< Pre FC FEC */
+    KU_PPBMP_MONITOR_GROUP_RS_PRE_FEC_E     = 0, /**< Pre RS FEC */
+    KU_PPBMP_MONITOR_GROUP_FC_PRE_FEC_E     = 1, /**< Pre FC FEC */
     KU_PPBMP_MONITOR_GROUP_NO_FEC_PRE_FEC_E = 2, /**< No FEC/Post FEC */
 } ku_ppbmp_monitor_type_e;
 
@@ -9526,10 +9527,10 @@ struct ku_access_moni_reg {
  * mtutc OPs.
  */
 typedef enum sx_mtutc_op {
-    SX_MTUTC_OP_SET_TIME_NEXT_SEC_E = SXD_MTUTC_OP_SET_TIME_NEXT_SEC,
+    SX_MTUTC_OP_SET_TIME_NEXT_SEC_E  = SXD_MTUTC_OP_SET_TIME_NEXT_SEC,
     SX_MTUTC_OP_SET_TIME_IMMEDIATE_E = SXD_MTUTC_OP_SET_TIME_IMMEDIATE,
-    SX_MTUTC_OP_ADJUST_TIME_E = SXD_MTUTC_OP_ADJUST_TIME,
-    SX_MTUTC_OP_ADJUST_FREQ_E = SXD_MTUTC_OP_ADJUST_FREQ,
+    SX_MTUTC_OP_ADJUST_TIME_E        = SXD_MTUTC_OP_ADJUST_TIME,
+    SX_MTUTC_OP_ADJUST_FREQ_E        = SXD_MTUTC_OP_ADJUST_FREQ,
 } sx_mtutc_op_e;
 
 /**
@@ -9626,62 +9627,62 @@ struct ku_sx_core_db {
 
 typedef enum sxd_trap_id {
     /* GENERAL */
-    SXD_TRAP_ID_GENERAL_FDB = 0x01,
-    SXD_TRAP_ID_GENERAL_DR_IPC = 0x02,
-    SXD_TRAP_ID_GENERAL_DR_RES = 0x04,
+    SXD_TRAP_ID_GENERAL_FDB      = 0x01,
+    SXD_TRAP_ID_GENERAL_DR_IPC   = 0x02,
+    SXD_TRAP_ID_GENERAL_DR_RES   = 0x04,
     SXD_TRAP_ID_GENERAL_ETH_EMAD = 0x05,
-    SXD_TRAP_ID_FDB = 0x06,
+    SXD_TRAP_ID_FDB              = 0x06,
 
     /* EVENTS */
-    SXD_TRAP_ID_PUDE = 0x08,
-    SXD_TRAP_ID_PMPE = 0x09,
-    SXD_TRAP_ID_FLAE = 0x0A,
-    SXD_TRAP_ID_FORE = 0x0B,
-    SXD_TRAP_ID_TMPW = 0x0C,
-    SXD_TRAP_ID_CPUWD = 0x0D,
-    SXD_TRAP_ID_PPMBE = 0x101,           /* Keep for legacy */
-    SXD_TRAP_ID_PPBME = 0x101,
+    SXD_TRAP_ID_PUDE            = 0x08,
+    SXD_TRAP_ID_PMPE            = 0x09,
+    SXD_TRAP_ID_FLAE            = 0x0A,
+    SXD_TRAP_ID_FORE            = 0x0B,
+    SXD_TRAP_ID_TMPW            = 0x0C,
+    SXD_TRAP_ID_CPUWD           = 0x0D,
+    SXD_TRAP_ID_PPMBE           = 0x101, /* Keep for legacy */
+    SXD_TRAP_ID_PPBME           = 0x101,
     SXD_TRAP_ID_PACKET_RECEIVED = 0x103,
-    SXD_TRAP_ID_MFDE = 0x003,
-    SXD_TRAP_ID_MOCS_DONE = 0x106,
-    SXD_TRAP_ID_PPCNT = 0x107,
-    SXD_TRAP_ID_MGPCB = 0x108,
-    SXD_TRAP_ID_PBSR = 0x109,
-    SXD_TRAP_ID_SBSRD = 0x10A,
+    SXD_TRAP_ID_MFDE            = 0x003,
+    SXD_TRAP_ID_MOCS_DONE       = 0x106,
+    SXD_TRAP_ID_PPCNT           = 0x107,
+    SXD_TRAP_ID_MGPCB           = 0x108,
+    SXD_TRAP_ID_PBSR            = 0x109,
+    SXD_TRAP_ID_SBSRD           = 0x10A,
 
     /* ETHERNET L2 */
-    SXD_TRAP_ID_ETH_L2_STP = 0x10,
-    SXD_TRAP_ID_ETH_L2_LACP = 0x11,
+    SXD_TRAP_ID_ETH_L2_STP   = 0x10,
+    SXD_TRAP_ID_ETH_L2_LACP  = 0x11,
     SXD_TRAP_ID_ETH_L2_EAPOL = 0x12,
-    SXD_TRAP_ID_ETH_L2_LLDP = 0x13,
-    SXD_TRAP_ID_ETH_L2_MMRP = 0x14,
-    SXD_TRAP_ID_ETH_L2_MVRP = 0x15,
+    SXD_TRAP_ID_ETH_L2_LLDP  = 0x13,
+    SXD_TRAP_ID_ETH_L2_MMRP  = 0x14,
+    SXD_TRAP_ID_ETH_L2_MVRP  = 0x15,
     SXD_TRAP_ID_ETH_L2_RPVST = 0x16,
 
     /* PTP */
-    SXD_TRAP_ID_PTP_PTP0 = 0x28,
-    SXD_TRAP_ID_PTP_PTP1 = 0x29,
+    SXD_TRAP_ID_PTP_PTP0      = 0x28,
+    SXD_TRAP_ID_PTP_PTP1      = 0x29,
     SXD_TRAP_ID_PTP_ING_EVENT = 0x2D,
     SXD_TRAP_ID_PTP_EGR_EVENT = 0x2E,
 
-    SXD_TRAP_ID_ETH_L2_IGMP_TYPE_QUERY = 0x30,
+    SXD_TRAP_ID_ETH_L2_IGMP_TYPE_QUERY     = 0x30,
     SXD_TRAP_ID_ETH_L2_IGMP_TYPE_V1_REPORT = 0x31,
     SXD_TRAP_ID_ETH_L2_IGMP_TYPE_V2_REPORT = 0x32,
     SXD_TRAP_ID_ETH_L2_IGMP_TYPE_V3_REPORT = 0x34,
-    SXD_TRAP_ID_ETH_L2_IGMP_TYPE_V2_LEAVE = 0x33,
-    SXD_TRAP_ID_ETH_L2_UDLD = 0x18,
-    SXD_TRAP_ID_ETH_L2_DHCP = 0x19,
-    SXD_TRAP_ID_ETH_L2_DHCPV6 = 0x1A,
-    SXD_TRAP_ID_ETH_CONF_TYPE0 = 0x35,
-    SXD_TRAP_ID_ETH_CONF_TYPE1 = 0x36,
-    SXD_TRAP_ID_ETH_L2_PKT_SAMPLE = 0x38,
-    SXD_TRAP_ID_ETH_L2_PACKET_SAMPLING = 0x38,     /* Keep for legacy */
-    SXD_TRAP_ID_FDB_MISS = 0x3a,
-    SXD_TRAP_ID_FDB_MISMATCH = 0x3b,
-    SXD_TRAP_ID_ICMPV6_CONF_TYPE0 = 0x48,
-    SXD_TRAP_ID_ICMPV6_CONF_TYPE1 = 0x49,
-    SXD_TRAP_ID_OVERLAY_ICMPV6_CONF_TYPE = 0x4a,
-    SXD_TRAP_ID_RARP_OPCODES = 0x4f,
+    SXD_TRAP_ID_ETH_L2_IGMP_TYPE_V2_LEAVE  = 0x33,
+    SXD_TRAP_ID_ETH_L2_UDLD                = 0x18,
+    SXD_TRAP_ID_ETH_L2_DHCP                = 0x19,
+    SXD_TRAP_ID_ETH_L2_DHCPV6              = 0x1A,
+    SXD_TRAP_ID_ETH_CONF_TYPE0             = 0x35,
+    SXD_TRAP_ID_ETH_CONF_TYPE1             = 0x36,
+    SXD_TRAP_ID_ETH_L2_PKT_SAMPLE          = 0x38,
+    SXD_TRAP_ID_ETH_L2_PACKET_SAMPLING     = 0x38, /* Keep for legacy */
+    SXD_TRAP_ID_FDB_MISS                   = 0x3a,
+    SXD_TRAP_ID_FDB_MISMATCH               = 0x3b,
+    SXD_TRAP_ID_ICMPV6_CONF_TYPE0          = 0x48,
+    SXD_TRAP_ID_ICMPV6_CONF_TYPE1          = 0x49,
+    SXD_TRAP_ID_OVERLAY_ICMPV6_CONF_TYPE   = 0x4a,
+    SXD_TRAP_ID_RARP_OPCODES               = 0x4f,
 
     /* FCoE */
     SXD_TRAP_ID_FCOE_FIP = 0x20,
@@ -9694,101 +9695,101 @@ typedef enum sxd_trap_id {
     SXD_TRAP_ID_DECAP_ECN1 = 0x41,
 
     /* Router */
-    SXD_TRAP_ID_ARP_REQUEST = 0x50,
-    SXD_TRAP_ID_ARP_RESPONSE = 0x51,
-    SXD_TRAP_ID_ETH_L3_MTUERROR = 0x52,
-    SXD_TRAP_ID_ETH_L3_TTLERROR = 0x53,
-    SXD_TRAP_ID_ETH_L3_LBERROR = 0x54,
-    SXD_TRAP_ID_OSPF = 0x55,
-    SXD_TRAP_ID_RIP_V1 = 0x56,
-    SXD_TRAP_ID_RIP_V2 = 0x57,
-    SXD_TRAP_ID_PIM = 0x58,
-    SXD_TRAP_ID_VRRP = 0x59,
-    SXD_TRAP_ID_VRRP_IPV6 = 0x7a,
-    SXD_TRAP_ID_RESERVED_MC = 0x5A,
-    SXD_TRAP_ID_IPBC = 0x5B,
-    SXD_TRAP_ID_ETH_L3_RPF = 0x5C,
-    SXD_TRAP_ID_ETH_L3_ASSERT = 0x5D,
-    SXD_TRAP_ID_IP2ME = 0x5F,
-    SXD_TRAP_ID_IPTRAP_MIN = 0x1c0,
-    SXD_TRAP_ID_IPTRAP_MAX = 0x1ff,
-    SXD_TRAP_ID_RTR_INGRESS0 = 0x70,
-    SXD_TRAP_ID_RTR_INGRESS1 = 0x71,
-    SXD_TRAP_ID_RTR_INGRESS2 = 0x72,
-    SXD_TRAP_ID_RTR_INGRESS3 = 0x73,
-    SXD_TRAP_ID_RTR_EGRESS0 = 0x80,
-    SXD_TRAP_ID_RTR_EGRESS1 = 0x81,
-    SXD_TRAP_ID_RTR_EGRESS2 = 0x82,
-    SXD_TRAP_ID_RTR_EGRESS3 = 0x83,
-    SXD_TRAP_ID_HOST_MISS_IPV4 = 0x90,
-    SXD_TRAP_ID_HOST_MISS_IPV6 = 0x92,
-    SXD_TRAP_ID_BFD_IPV4 = 0xd0,
-    SXD_TRAP_ID_BFD_IPV6 = 0xd1,
-    SXD_TRAP_ID_SSH_IPV4 = 0xd2,
-    SXD_TRAP_ID_SSH_IPV6 = 0xd3,
-    SXD_TRAP_ID_PING_IPV4 = 0xd4,
-    SXD_TRAP_ID_PING_IPV6 = 0xd5,
-    SXD_TRAP_ID_ROUTER_ALERT_IPV4 = 0xd6,
-    SXD_TRAP_ID_ROUTER_ALERT_IPV6 = 0xd7,
-    SXD_TRAP_ID_IPV4_DHCP = 0x8f,
-    SXD_TRAP_ID_IPV4_SNMP = 0xda,
-    SXD_TRAP_ID_IPV6_SNMP = 0xdb,
-    SXD_TRAP_ID_ROUTER_ARPBC = 0xe0,
-    SXD_TRAP_ID_ROUTER_ARPUC = 0xe1,
+    SXD_TRAP_ID_ARP_REQUEST         = 0x50,
+    SXD_TRAP_ID_ARP_RESPONSE        = 0x51,
+    SXD_TRAP_ID_ETH_L3_MTUERROR     = 0x52,
+    SXD_TRAP_ID_ETH_L3_TTLERROR     = 0x53,
+    SXD_TRAP_ID_ETH_L3_LBERROR      = 0x54,
+    SXD_TRAP_ID_OSPF                = 0x55,
+    SXD_TRAP_ID_RIP_V1              = 0x56,
+    SXD_TRAP_ID_RIP_V2              = 0x57,
+    SXD_TRAP_ID_PIM                 = 0x58,
+    SXD_TRAP_ID_VRRP                = 0x59,
+    SXD_TRAP_ID_VRRP_IPV6           = 0x7a,
+    SXD_TRAP_ID_RESERVED_MC         = 0x5A,
+    SXD_TRAP_ID_IPBC                = 0x5B,
+    SXD_TRAP_ID_ETH_L3_RPF          = 0x5C,
+    SXD_TRAP_ID_ETH_L3_ASSERT       = 0x5D,
+    SXD_TRAP_ID_IP2ME               = 0x5F,
+    SXD_TRAP_ID_IPTRAP_MIN          = 0x1c0,
+    SXD_TRAP_ID_IPTRAP_MAX          = 0x1ff,
+    SXD_TRAP_ID_RTR_INGRESS0        = 0x70,
+    SXD_TRAP_ID_RTR_INGRESS1        = 0x71,
+    SXD_TRAP_ID_RTR_INGRESS2        = 0x72,
+    SXD_TRAP_ID_RTR_INGRESS3        = 0x73,
+    SXD_TRAP_ID_RTR_EGRESS0         = 0x80,
+    SXD_TRAP_ID_RTR_EGRESS1         = 0x81,
+    SXD_TRAP_ID_RTR_EGRESS2         = 0x82,
+    SXD_TRAP_ID_RTR_EGRESS3         = 0x83,
+    SXD_TRAP_ID_HOST_MISS_IPV4      = 0x90,
+    SXD_TRAP_ID_HOST_MISS_IPV6      = 0x92,
+    SXD_TRAP_ID_BFD_IPV4            = 0xd0,
+    SXD_TRAP_ID_BFD_IPV6            = 0xd1,
+    SXD_TRAP_ID_SSH_IPV4            = 0xd2,
+    SXD_TRAP_ID_SSH_IPV6            = 0xd3,
+    SXD_TRAP_ID_PING_IPV4           = 0xd4,
+    SXD_TRAP_ID_PING_IPV6           = 0xd5,
+    SXD_TRAP_ID_ROUTER_ALERT_IPV4   = 0xd6,
+    SXD_TRAP_ID_ROUTER_ALERT_IPV6   = 0xd7,
+    SXD_TRAP_ID_IPV4_DHCP           = 0x8f,
+    SXD_TRAP_ID_IPV4_SNMP           = 0xda,
+    SXD_TRAP_ID_IPV6_SNMP           = 0xdb,
+    SXD_TRAP_ID_ROUTER_ARPBC        = 0xe0,
+    SXD_TRAP_ID_ROUTER_ARPUC        = 0xe1,
     SXD_TRAP_ID_ROUTER_RARP_OPCODES = 0xe2,
 
     /* IPv6 L3 */
     SXD_TRAP_ID_IPV6_UNSPECIFIED_ADDRESS = 0x60,
-    SXD_TRAP_ID_IPV6_UNSPECIFIED_SIP = 0x7b,
-    SXD_TRAP_ID_IPV6_UNSPECIFIED_DIP = 0x7c,
-    SXD_TRAP_ID_IPV6_LINK_LOCAL_DST = 0x61,
-    SXD_TRAP_ID_IPV6_LINK_LOCAL_SRC = 0x62,
-    SXD_TRAP_ID_IPV6_ALL_NODES_LINK = 0x63,
-    SXD_TRAP_ID_IPV6_OSPF = 0x64,
-    SXD_TRAP_ID_IPV6_DHCP = 0x69,
+    SXD_TRAP_ID_IPV6_UNSPECIFIED_SIP     = 0x7b,
+    SXD_TRAP_ID_IPV6_UNSPECIFIED_DIP     = 0x7c,
+    SXD_TRAP_ID_IPV6_LINK_LOCAL_DST      = 0x61,
+    SXD_TRAP_ID_IPV6_LINK_LOCAL_SRC      = 0x62,
+    SXD_TRAP_ID_IPV6_ALL_NODES_LINK      = 0x63,
+    SXD_TRAP_ID_IPV6_OSPF                = 0x64,
+    SXD_TRAP_ID_IPV6_DHCP                = 0x69,
 
     /* IPv6 (SwitchX) */
-    SXD_TRAP_ID_IPV6_ROUTER_SOLICITATION = 0x6a,
-    SXD_TRAP_ID_IPV6_ROUTER_ADVERTISEMENT = 0x6b,
-    SXD_TRAP_ID_IPV6_NEIGHBOR_SOLICITATION = 0x6c,
+    SXD_TRAP_ID_IPV6_ROUTER_SOLICITATION    = 0x6a,
+    SXD_TRAP_ID_IPV6_ROUTER_ADVERTISEMENT   = 0x6b,
+    SXD_TRAP_ID_IPV6_NEIGHBOR_SOLICITATION  = 0x6c,
     SXD_TRAP_ID_IPV6_NEIGHBOR_ADVERTISEMENT = 0x6d,
-    SXD_TRAP_ID_IPV6_REDIRECTION = 0x6e,
+    SXD_TRAP_ID_IPV6_REDIRECTION            = 0x6e,
 
     /* IPv6 (Spectrum) */
-    SXD_TRAP_ID_IPV6_ALL_ROUTERS_LINK = 0x6f,
-    SXD_TRAP_ID_L3_IPV6_ROUTER_SOLICITATION = 0x8a,
-    SXD_TRAP_ID_L3_IPV6_ROUTER_ADVERTISEMENT = 0x8b,
-    SXD_TRAP_ID_L3_IPV6_NEIGHBOR_SOLICITATION = 0x8c,
+    SXD_TRAP_ID_IPV6_ALL_ROUTERS_LINK          = 0x6f,
+    SXD_TRAP_ID_L3_IPV6_ROUTER_SOLICITATION    = 0x8a,
+    SXD_TRAP_ID_L3_IPV6_ROUTER_ADVERTISEMENT   = 0x8b,
+    SXD_TRAP_ID_L3_IPV6_NEIGHBOR_SOLICITATION  = 0x8c,
     SXD_TRAP_ID_L3_IPV6_NEIGHBOR_ADVERTISEMENT = 0x8d,
-    SXD_TRAP_ID_L3_IPV6_REDIRECTION = 0x8e,
+    SXD_TRAP_ID_L3_IPV6_REDIRECTION            = 0x8e,
 
     /* IPv6 L2 */
-    SXD_TRAP_ID_IPV6_MLD_V1_V2 = 0x65,
+    SXD_TRAP_ID_IPV6_MLD_V1_V2     = 0x65,
     SXD_TRAP_ID_IPV6_MLD_V1_REPORT = 0x66,
-    SXD_TRAP_ID_IPV6_MLD_V1_DONE = 0x67,
+    SXD_TRAP_ID_IPV6_MLD_V1_DONE   = 0x67,
     SXD_TRAP_ID_IPV6_MLD_V2_REPORT = 0x68,
 
     /* InfiniBand */
-    SXD_TRAP_ID_INFINIBAND_QP0 = 0xf0,
-    SXD_TRAP_ID_INFINIBAND_QP1 = 0xf1,
-    SXD_TRAP_ID_INFINIBAND_OTHER_QPS = 0xf2,
-    SXD_TRAP_ID_INFINIBAND_EXTERNAL_SMA = 0x5e,
+    SXD_TRAP_ID_INFINIBAND_QP0              = 0xf0,
+    SXD_TRAP_ID_INFINIBAND_QP1              = 0xf1,
+    SXD_TRAP_ID_INFINIBAND_OTHER_QPS        = 0xf2,
+    SXD_TRAP_ID_INFINIBAND_EXTERNAL_SMA     = 0x5e,
     SXD_TRAP_ID_INFINIBAND_IN_NV_ACCESS_REG = 0xf7,
-    SXD_TRAP_ID_INFINIBAND_IB_FMAD_RCV = 0xf8,
-    SXD_TRAP_ID_INFINIBAND_RESET_CMD = 0x102,
+    SXD_TRAP_ID_INFINIBAND_IB_FMAD_RCV      = 0xf8,
+    SXD_TRAP_ID_INFINIBAND_RESET_CMD        = 0x102,
 
     /* ACL */
     SXD_TRAP_ID_ACL_MIN = 0x1c0,
     SXD_TRAP_ID_ACL_MAX = 0x1ef,
 
     /* MPLS */
-    SXD_TRAP_ID_MPLS_ILM_MISS = 0x98,
-    SXD_TRAP_ID_MPLS_LDP = 0x99,
+    SXD_TRAP_ID_MPLS_ILM_MISS    = 0x98,
+    SXD_TRAP_ID_MPLS_LDP         = 0x99,
     SXD_TRAP_ID_MPLS_LB_LSP_PING = 0x9a,
-    SXD_TRAP_ID_MPLS_ILM0 = 0xa0,
-    SXD_TRAP_ID_MPLS_ILM1 = 0xa1,
-    SXD_TRAP_ID_MPLS_NHLFE0 = 0xa8,
-    SXD_TRAP_ID_MPLS_NHLFE1 = 0xa9,
+    SXD_TRAP_ID_MPLS_ILM0        = 0xa0,
+    SXD_TRAP_ID_MPLS_ILM1        = 0xa1,
+    SXD_TRAP_ID_MPLS_NHLFE0      = 0xa8,
+    SXD_TRAP_ID_MPLS_NHLFE1      = 0xa9,
 
     /* BGP */
     SXD_TRAP_ID_IPV4_BGP = 0x88,
@@ -9796,7 +9797,7 @@ typedef enum sxd_trap_id {
 
 
     /* SPAN */
-    SXD_TRAP_ID_MIRROR = 0x3f,
+    SXD_TRAP_ID_MIRROR        = 0x3f,
     SXD_TRAP_ID_MIRROR_AGENT0 = 0x220,
     SXD_TRAP_ID_MIRROR_AGENT1 = 0x221,
     SXD_TRAP_ID_MIRROR_AGENT2 = 0x222,
@@ -9807,86 +9808,86 @@ typedef enum sxd_trap_id {
     SXD_TRAP_ID_MIRROR_AGENT7 = 0x227,
 
     /* Tunneling */
-    SXD_TRAP_ID_DECAP_ENCAP = 0xb0,
-    SXD_TRAP_ID_IPIP_DECAP_ERROR = 0xb1,
-    SXD_TRAP_ID_IPIP_ERROR = 0xb2,
-    SXD_TRAP_ID_NVE_DECAP_IGMP = 0xb6,
-    SXD_TRAP_ID_NVE_DECAP_ARP = 0xb8,
-    SXD_TRAP_ID_NVE_DECAP_TAG_ERROR = 0xb9,
-    SXD_TRAP_ID_NVE_IPV4_DHCP = 0xba,
-    SXD_TRAP_ID_NVE_IPV6_DHCP = 0xbb,
+    SXD_TRAP_ID_DECAP_ENCAP          = 0xb0,
+    SXD_TRAP_ID_IPIP_DECAP_ERROR     = 0xb1,
+    SXD_TRAP_ID_IPIP_ERROR           = 0xb2,
+    SXD_TRAP_ID_NVE_DECAP_IGMP       = 0xb6,
+    SXD_TRAP_ID_NVE_DECAP_ARP        = 0xb8,
+    SXD_TRAP_ID_NVE_DECAP_TAG_ERROR  = 0xb9,
+    SXD_TRAP_ID_NVE_IPV4_DHCP        = 0xba,
+    SXD_TRAP_ID_NVE_IPV6_DHCP        = 0xbb,
     SXD_TRAP_ID_NVE_DECAP_FRAG_ERROR = 0xbc,
-    SXD_TRAP_ID_NVE_ENCAP_ARP = 0xbd,
-    SXD_TRAP_ID_NVE_DECAP_ETH = 0xbe,
-    SXD_TRAP_ID_NVE_DECAP_MLD = 0xbf,
+    SXD_TRAP_ID_NVE_ENCAP_ARP        = 0xbd,
+    SXD_TRAP_ID_NVE_DECAP_ETH        = 0xbe,
+    SXD_TRAP_ID_NVE_DECAP_MLD        = 0xbf,
 
     /* Discards */
-    SXD_TRAP_ID_DISCARD_ING_PACKET = 0x110,
-    SXD_TRAP_ID_DISCARD_ING_SWITCH = 0x111,
-    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH = 0x112,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER = 0x113,
-    SXD_TRAP_ID_DISCARD_ING_LSR = 0x114,
-    SXD_TRAP_ID_DISCARD_ROUTER = 0x115,
-    SXD_TRAP_ID_DISCARD_LSR = 0x116,
-    SXD_TRAP_ID_DISCARD_DEC = 0x117,
+    SXD_TRAP_ID_DISCARD_ING_PACKET     = 0x110,
+    SXD_TRAP_ID_DISCARD_ING_SWITCH     = 0x111,
+    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH  = 0x112,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER     = 0x113,
+    SXD_TRAP_ID_DISCARD_ING_LSR        = 0x114,
+    SXD_TRAP_ID_DISCARD_ROUTER         = 0x115,
+    SXD_TRAP_ID_DISCARD_LSR            = 0x116,
+    SXD_TRAP_ID_DISCARD_DEC            = 0x117,
     SXD_TRAP_ID_DISCARD_OVERLAY_SWITCH = 0x118,
-    SXD_TRAP_ID_DISCARD_ISOLATION = 0x119,
-    SXD_TRAP_ID_DISCARD_NON_ROUTED = 0x11a,
-    SXD_TRAP_ID_DISCARD_EGR_LSR = 0x11b,
-    SXD_TRAP_ID_DISCARD_MC_SCOPE = 0x11c,
-    SXD_TRAP_ID_DISCARD_ROUTER2 = 0x130,
-    SXD_TRAP_ID_DISCARD_ROUTER3 = 0x131,
-    SXD_TRAP_ID_DISCARD_LSR2 = 0x132,
-    SXD_TRAP_ID_DISCARD_LSR3 = 0x133,
+    SXD_TRAP_ID_DISCARD_ISOLATION      = 0x119,
+    SXD_TRAP_ID_DISCARD_NON_ROUTED     = 0x11a,
+    SXD_TRAP_ID_DISCARD_EGR_LSR        = 0x11b,
+    SXD_TRAP_ID_DISCARD_MC_SCOPE       = 0x11c,
+    SXD_TRAP_ID_DISCARD_ROUTER2        = 0x130,
+    SXD_TRAP_ID_DISCARD_ROUTER3        = 0x131,
+    SXD_TRAP_ID_DISCARD_LSR2           = 0x132,
+    SXD_TRAP_ID_DISCARD_LSR3           = 0x133,
 
     /* Extended Discards */
-    SXD_TRAP_ID_DISCARD_ING_PACKET_SMAC_MC = 0x140,
-    SXD_TRAP_ID_DISCARD_ING_PACKET_SMAC_DMAC = 0x141,
-    SXD_TRAP_ID_DISCARD_ING_PACKET_RSV_MAC = 0x142,
-    SXD_TRAP_ID_DISCARD_ING_SWITCH_VTAG_ALLOW = 0x148,
-    SXD_TRAP_ID_DISCARD_ING_SWITCH_VLAN = 0x149,
-    SXD_TRAP_ID_DISCARD_ING_SWITCH_STP = 0x14A,
-    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_UC = 0x150,
-    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_MC_NULL = 0x151,
-    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_LB = 0x152,
+    SXD_TRAP_ID_DISCARD_ING_PACKET_SMAC_MC     = 0x140,
+    SXD_TRAP_ID_DISCARD_ING_PACKET_SMAC_DMAC   = 0x141,
+    SXD_TRAP_ID_DISCARD_ING_PACKET_RSV_MAC     = 0x142,
+    SXD_TRAP_ID_DISCARD_ING_SWITCH_VTAG_ALLOW  = 0x148,
+    SXD_TRAP_ID_DISCARD_ING_SWITCH_VLAN        = 0x149,
+    SXD_TRAP_ID_DISCARD_ING_SWITCH_STP         = 0x14A,
+    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_UC       = 0x150,
+    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_MC_NULL  = 0x151,
+    SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_LB       = 0x152,
     SXD_TRAP_ID_DISCARD_LOOKUP_SWITCH_NO_PORTS = 0x153,
 
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_NO_HDR = 0x160,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_NO_HDR         = 0x160,
     SXD_TRAP_ID_DISCARD_ING_ROUTER_UC_DIP_MC_DMAC = 0x161,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_DIP_LB = 0x162,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_MC = 0x163,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_CLASS_E = 0x164,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_LB = 0x165,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_UNSP = 0x166,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_IP_HDR = 0x167,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_MC_DMAC = 0x168,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_DIP = 0x169,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_BC = 0x16A,
-    SXD_TRAP_ID_DISCARD_ING_ROUTER_DIP_LOCAL_NET = 0x16B,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_DIP_LB         = 0x162,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_MC         = 0x163,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_CLASS_E    = 0x164,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_LB         = 0x165,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_UNSP       = 0x166,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_IP_HDR         = 0x167,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_MC_DMAC        = 0x168,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_DIP        = 0x169,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_BC         = 0x16A,
+    SXD_TRAP_ID_DISCARD_ING_ROUTER_DIP_LOCAL_NET  = 0x16B,
     SXD_TRAP_ID_DISCARD_ING_ROUTER_DIP_LINK_LOCAL = 0x16C,
     SXD_TRAP_ID_DISCARD_ING_ROUTER_SIP_LINK_LOCAL = 0x16D,
 
     SXD_TRAP_ID_DISCARD_ING_LSR_NO_LABEL = 0x170,
-    SXD_TRAP_ID_DISCARD_ING_LSR_UC_ET = 0x171,
-    SXD_TRAP_ID_DISCARD_ING_LSR_MC_DMAC = 0x172,
+    SXD_TRAP_ID_DISCARD_ING_LSR_UC_ET    = 0x171,
+    SXD_TRAP_ID_DISCARD_ING_LSR_MC_DMAC  = 0x172,
 
-    SXD_TRAP_ID_DISCARD_ROUTER_IRIF_EN = 0x178,
-    SXD_TRAP_ID_DISCARD_ROUTER_ERIF_EN = 0x179,
+    SXD_TRAP_ID_DISCARD_ROUTER_IRIF_EN  = 0x178,
+    SXD_TRAP_ID_DISCARD_ROUTER_ERIF_EN  = 0x179,
     SXD_TRAP_ID_DISCARD_ROUTER_ERIF_FWD = 0x17A,
-    SXD_TRAP_ID_DISCARD_ROUTER_LPM4 = 0x17B,
-    SXD_TRAP_ID_DISCARD_ROUTER_LPM6 = 0x17C,
+    SXD_TRAP_ID_DISCARD_ROUTER_LPM4     = 0x17B,
+    SXD_TRAP_ID_DISCARD_ROUTER_LPM6     = 0x17C,
 
     SXD_TRAP_ID_DISCARD_LSR_MIN_LABEL = 0x180,
     SXD_TRAP_ID_DISCARD_LSR_MAX_LABEL = 0x181,
-    SXD_TRAP_ID_DISCARD_LSR_LB = 0x182,
+    SXD_TRAP_ID_DISCARD_LSR_LB        = 0x182,
 
-    SXD_TRAP_ID_DISCARD_DEC_PKT = 0x188,
-    SXD_TRAP_ID_DISCARD_DEC_DIS = 0x189,
-    SXD_TRAP_ID_DISCARD_OVERLAY_SWITCH_SMAC_MC = 0x190,
+    SXD_TRAP_ID_DISCARD_DEC_PKT                  = 0x188,
+    SXD_TRAP_ID_DISCARD_DEC_DIS                  = 0x189,
+    SXD_TRAP_ID_DISCARD_OVERLAY_SWITCH_SMAC_MC   = 0x190,
     SXD_TRAP_ID_DISCARD_OVERLAY_SWITCH_SMAC_DMAC = 0x191,
 
-    SXD_TRAP_ID_DISCARD_EGR_LSR_NO_LABEL = 0x1A8,
-    SXD_TRAP_ID_DISCARD_EGR_LSR_NO_IP = 0x1A9,
+    SXD_TRAP_ID_DISCARD_EGR_LSR_NO_LABEL  = 0x1A8,
+    SXD_TRAP_ID_DISCARD_EGR_LSR_NO_IP     = 0x1A9,
     SXD_TRAP_ID_DISCARD_EGR_LSR_PHP_NO_IP = 0x1AA,
 
     SXD_TRAP_ID_DISCARD_MC_SCOPE_IPV6_0 = 0x1B0,
@@ -9896,14 +9897,14 @@ typedef enum sxd_trap_id {
     SXD_TRAP_ID_IP2ME_CUSTOM0 = 0xc0,
     SXD_TRAP_ID_IP2ME_CUSTOM1 = 0xc1,
     /* Host Configurable Traps */
-    SXD_TRAP_ID_CONFT_SWITCH0 = 0x240,
-    SXD_TRAP_ID_CONFT_SWITCH1 = 0x241,
-    SXD_TRAP_ID_CONFT_SWITCH2 = 0x242,
-    SXD_TRAP_ID_CONFT_SWITCH3 = 0x243,
-    SXD_TRAP_ID_CONFT_ROUTER0 = 0x250,
-    SXD_TRAP_ID_CONFT_ROUTER1 = 0x251,
-    SXD_TRAP_ID_CONFT_ROUTER2 = 0x252,
-    SXD_TRAP_ID_CONFT_ROUTER3 = 0x253,
+    SXD_TRAP_ID_CONFT_SWITCH0     = 0x240,
+    SXD_TRAP_ID_CONFT_SWITCH1     = 0x241,
+    SXD_TRAP_ID_CONFT_SWITCH2     = 0x242,
+    SXD_TRAP_ID_CONFT_SWITCH3     = 0x243,
+    SXD_TRAP_ID_CONFT_ROUTER0     = 0x250,
+    SXD_TRAP_ID_CONFT_ROUTER1     = 0x251,
+    SXD_TRAP_ID_CONFT_ROUTER2     = 0x252,
+    SXD_TRAP_ID_CONFT_ROUTER3     = 0x253,
     SXD_TRAP_ID_CONFT_SWITCH_ENC0 = 0x260,
     SXD_TRAP_ID_CONFT_SWITCH_ENC1 = 0x261,
     SXD_TRAP_ID_CONFT_SWITCH_ENC2 = 0x262,
@@ -9915,31 +9916,31 @@ typedef enum sxd_trap_id {
 
 
     /* SW Generated Events */
-    SXD_TRAP_ID_SIGNAL = 0x400,
-    SXD_TRAP_ID_NEW_DEVICE_ADD = 0x401,                  /**< device add event */
-    SXD_TRAP_ID_MAC_LEARNING_EVENT = 0x402,              /**< mac learning event */
-    SXD_TRAP_ID_MAC_AGING_EVENT = 0x403,                 /**< mac aging event */
-    SXD_TRAP_ID_NEED_TO_RESOLVE_ARP = 0x404,             /**< need to resolve ARP  */
-    SXD_TRAP_ID_NO_NEED_TO_RESOLVE_ARP = 0x405,          /**< no need to resolve ARP  */
-    SXD_TRAP_ID_FDB_EVENT = 0x406,                       /**< FDB event */
+    SXD_TRAP_ID_SIGNAL                       = 0x400,
+    SXD_TRAP_ID_NEW_DEVICE_ADD               = 0x401,    /**< device add event */
+    SXD_TRAP_ID_MAC_LEARNING_EVENT           = 0x402,    /**< mac learning event */
+    SXD_TRAP_ID_MAC_AGING_EVENT              = 0x403,    /**< mac aging event */
+    SXD_TRAP_ID_NEED_TO_RESOLVE_ARP          = 0x404,    /**< need to resolve ARP  */
+    SXD_TRAP_ID_NO_NEED_TO_RESOLVE_ARP       = 0x405,    /**< no need to resolve ARP  */
+    SXD_TRAP_ID_FDB_EVENT                    = 0x406,    /**< FDB event */
     SXD_TRAP_ID_RM_SDK_TABLE_THRESHOLD_EVENT = 0x407,
-    SXD_TRAP_ID_RM_HW_TABLE_THRESHOLD_EVENT = 0x408,
-    SXD_TRAP_ID_FDB_SRC_MISS = 0x409,                    /**< FDB SRC MISS trap */
-    SXD_TRAP_ID_ROUTER_NEIGH_ACTIVITY = 0x40a,
-    SXD_TRAP_ID_ASYNC_API_COMPLETE_EVENT = 0x40b,
-    SXD_TRAP_ID_ROUTER_MC_ACTIVITY = 0x40c,              /**< router mc activity */
-    SXD_TRAP_ID_FDB_IP_ADDR_ACTIVITY = 0x40d,
-    SXD_TRAP_ID_TRANSACTION_ERROR = 0x40e,
-    SXD_TRAP_ID_BFD_TIMEOUT_EVENT = 0x40f,
-    SXD_TRAP_ID_BFD_PACKET_EVENT = 0x410,
-    SXD_TRAP_ID_OBJECT_DELETED_EVENT = 0x411,
-    SXD_TRAP_ID_SDK_HEALTH_EVENT = 0x412,
-    SXD_TRAP_ID_API_LOGGER_EVENT = 0x413,
-    SXD_TRAP_ID_BULK_COUNTER_DONE_EVENT = 0x414,
-    SXD_TRAP_ID_PORT_ADDED = 0x431,
-    SXD_TRAP_ID_PORT_DELETED = 0x432,
-    SXD_TRAP_ID_PORT_ADDED_TO_LAG = 0x433,
-    SXD_TRAP_ID_PORT_REMOVED_FROM_LAG = 0x434,
+    SXD_TRAP_ID_RM_HW_TABLE_THRESHOLD_EVENT  = 0x408,
+    SXD_TRAP_ID_FDB_SRC_MISS                 = 0x409,    /**< FDB SRC MISS trap */
+    SXD_TRAP_ID_ROUTER_NEIGH_ACTIVITY        = 0x40a,
+    SXD_TRAP_ID_ASYNC_API_COMPLETE_EVENT     = 0x40b,
+    SXD_TRAP_ID_ROUTER_MC_ACTIVITY           = 0x40c,    /**< router mc activity */
+    SXD_TRAP_ID_FDB_IP_ADDR_ACTIVITY         = 0x40d,
+    SXD_TRAP_ID_TRANSACTION_ERROR            = 0x40e,
+    SXD_TRAP_ID_BFD_TIMEOUT_EVENT            = 0x40f,
+    SXD_TRAP_ID_BFD_PACKET_EVENT             = 0x410,
+    SXD_TRAP_ID_OBJECT_DELETED_EVENT         = 0x411,
+    SXD_TRAP_ID_SDK_HEALTH_EVENT             = 0x412,
+    SXD_TRAP_ID_API_LOGGER_EVENT             = 0x413,
+    SXD_TRAP_ID_BULK_COUNTER_DONE_EVENT      = 0x414,
+    SXD_TRAP_ID_PORT_ADDED                   = 0x431,
+    SXD_TRAP_ID_PORT_DELETED                 = 0x432,
+    SXD_TRAP_ID_PORT_ADDED_TO_LAG            = 0x433,
+    SXD_TRAP_ID_PORT_REMOVED_FROM_LAG        = 0x434,
 
     SXD_TRAP_ID_MIN = SXD_TRAP_ID_GENERAL_FDB,
     SXD_TRAP_ID_MAX = SXD_TRAP_ID_PORT_REMOVED_FROM_LAG,
@@ -10009,7 +10010,7 @@ typedef struct sxd_bulk_cntr_buffer_layout_common {
     uint32_t type; /**< SXD_BULK_CNTR_KEY_TYPE_PORT_E, SXD_BULK_CNTR_KEY_TYPE_FLOW_E */
     uint32_t buff_size; /**< total buffer size, including this header */
     uint32_t num_of_counters; /**< number of expected counters (registers TLVs) from the operation */
-    uint32_t counters_receved_so_far; /**< number of counters (register TLVs) received so far during the operation */
+    uint32_t counters_received_so_far; /**< number of counters (register TLVs) received so far during the operation */
 } sxd_bulk_cntr_buffer_layout_common_t;
 
 typedef struct sxd_bulk_cntr_buffer_layout_flow {

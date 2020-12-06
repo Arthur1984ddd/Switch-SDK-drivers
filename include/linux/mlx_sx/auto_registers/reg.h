@@ -198,6 +198,10 @@ void mlxsw_reg_pecnee_ctcam_set(char *buf, uint8_t val);
 #define MLXSW_MTMP_ID 0x900a
 #define MLXSW_MTMP_LEN 0x20
 
+uint8_t mlxsw_reg_mtmp_i_get(const char *buf);
+
+void mlxsw_reg_mtmp_i_set(char *buf, uint8_t val);
+
 uint8_t mlxsw_reg_mtmp_slot_index_get(const char *buf);
 
 void mlxsw_reg_mtmp_slot_index_set(char *buf, uint8_t val);
@@ -205,6 +209,8 @@ void mlxsw_reg_mtmp_slot_index_set(char *buf, uint8_t val);
 uint16_t mlxsw_reg_mtmp_sensor_index_get(const char *buf);
 
 void mlxsw_reg_mtmp_sensor_index_set(char *buf, uint16_t val);
+
+uint16_t mlxsw_reg_mtmp_max_operational_temperature_get(const char *buf);
 
 uint16_t mlxsw_reg_mtmp_temperature_get(const char *buf);
 
@@ -216,11 +222,23 @@ uint8_t mlxsw_reg_mtmp_mtr_get(const char *buf);
 
 void mlxsw_reg_mtmp_mtr_set(char *buf, uint8_t val);
 
+uint8_t mlxsw_reg_mtmp_weme_get(const char *buf);
+
+void mlxsw_reg_mtmp_weme_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_mtmp_sdme_get(const char *buf);
+
+void mlxsw_reg_mtmp_sdme_set(char *buf, uint8_t val);
+
 uint16_t mlxsw_reg_mtmp_max_temperature_get(const char *buf);
 
 uint8_t mlxsw_reg_mtmp_tee_get(const char *buf);
 
 void mlxsw_reg_mtmp_tee_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_mtmp_sdee_get(const char *buf);
+
+void mlxsw_reg_mtmp_sdee_set(char *buf, uint8_t val);
 
 uint16_t mlxsw_reg_mtmp_temperature_threshold_hi_get(const char *buf);
 
@@ -2516,10 +2534,6 @@ void mlxsw_reg_xmdr_transaction_set(char *buf, unsigned short index, uint32_t va
 #define MLXSW_MDFCR_ID 0x9101
 #define MLXSW_MDFCR_LEN 0x60
 
-uint8_t mlxsw_reg_mdfcr_slot_index_get(const char *buf);
-
-void mlxsw_reg_mdfcr_slot_index_set(char *buf, uint8_t val);
-
 uint8_t mlxsw_reg_mdfcr_device_type_get(const char *buf);
 
 void mlxsw_reg_mdfcr_device_type_set(char *buf, uint8_t val);
@@ -2684,6 +2698,33 @@ void mlxsw_reg_sfmr_smpe_valid_set(char *buf, uint8_t val);
 uint16_t mlxsw_reg_sfmr_smpe_get(const char *buf);
 
 void mlxsw_reg_sfmr_smpe_set(char *buf, uint16_t val);
+
+/* hrdqt
+ * -----
+ *
+ */
+#define MLXSW_HRDQT_ID 0x7022
+#define MLXSW_HRDQT_LEN 0xc
+
+uint8_t mlxsw_reg_hrdqt_rdq_get(const char *buf);
+
+void mlxsw_reg_hrdqt_rdq_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_hrdqt_tac_en_get(const char *buf);
+
+void mlxsw_reg_hrdqt_tac_en_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_hrdqt_mirror_action_get(const char *buf);
+
+void mlxsw_reg_hrdqt_mirror_action_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_hrdqt_mirror_agent_get(const char *buf);
+
+void mlxsw_reg_hrdqt_mirror_agent_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_hrdqt_host_based_mirror_reason_id_get(const char *buf);
+
+void mlxsw_reg_hrdqt_host_based_mirror_reason_id_set(char *buf, uint8_t val);
 
 /* smpe
  * ----
@@ -2943,6 +2984,17 @@ uint16_t mlxsw_reg_ppbs_multicast_tunnel_ecmp_size_get(const char *buf);
 
 void mlxsw_reg_ppbs_multicast_tunnel_ecmp_size_set(char *buf, uint16_t val);
 
+/* hgcr
+ * ----
+ *
+ */
+#define MLXSW_HGCR_ID 0x7000
+#define MLXSW_HGCR_LEN 0x10
+
+uint16_t mlxsw_reg_hgcr_truncation_size_get(const char *buf);
+
+void mlxsw_reg_hgcr_truncation_size_set(char *buf, uint16_t val);
+
 /* xlkbu
  * -----
  *
@@ -3116,6 +3168,10 @@ void mlxsw_reg_mocs_mocs_sbsrd_cells_set(char *buf, uint8_t val);
 uint8_t mlxsw_reg_mocs_mocs_sbsrd_desc_get(const char *buf);
 
 void mlxsw_reg_mocs_mocs_sbsrd_desc_set(char *buf, uint8_t val);
+
+uint32_t mlxsw_reg_mocs_mocs_ceer_port_mask_get(const char *buf, unsigned short index);
+
+void mlxsw_reg_mocs_mocs_ceer_port_mask_set(char *buf, unsigned short index, uint32_t val);
 
 /* rmftad
  * ------
@@ -3460,6 +3516,45 @@ uint32_t mlxsw_reg_tngcr_header0_bit_set_get(const char *buf);
 
 void mlxsw_reg_tngcr_header0_bit_set_set(char *buf, uint32_t val);
 
+/* hahcr
+ * -----
+ *
+ */
+#define MLXSW_HAHCR_ID 0x7021
+#define MLXSW_HAHCR_LEN 0x38
+
+uint8_t mlxsw_reg_hahcr_sh_get(const char *buf);
+
+void mlxsw_reg_hahcr_sh_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_hahcr_type_get(const char *buf);
+
+void mlxsw_reg_hahcr_type_set(char *buf, uint8_t val);
+
+uint32_t mlxsw_reg_hahcr_general_fields_get(const char *buf);
+
+void mlxsw_reg_hahcr_general_fields_set(char *buf, uint32_t val);
+
+uint16_t mlxsw_reg_hahcr_outer_header_enables_get(const char *buf);
+
+void mlxsw_reg_hahcr_outer_header_enables_set(char *buf, uint16_t val);
+
+uint32_t mlxsw_reg_hahcr_outer_header_fields_enable_get(const char *buf, unsigned short index);
+
+void mlxsw_reg_hahcr_outer_header_fields_enable_set(char *buf, unsigned short index, uint32_t val);
+
+uint16_t mlxsw_reg_hahcr_inner_header_enables_get(const char *buf);
+
+void mlxsw_reg_hahcr_inner_header_enables_set(char *buf, uint16_t val);
+
+uint32_t mlxsw_reg_hahcr_hi_get(const char *buf);
+
+void mlxsw_reg_hahcr_hi_set(char *buf, uint32_t val);
+
+uint32_t mlxsw_reg_hahcr_lo_get(const char *buf);
+
+void mlxsw_reg_hahcr_lo_set(char *buf, uint32_t val);
+
 /* rips
  * ----
  *
@@ -3595,6 +3690,105 @@ void mlxsw_reg_rlcme_l_vector_set(char *buf, uint8_t val);
 uint8_t mlxsw_reg_rlcme_l_value_get(const char *buf);
 
 void mlxsw_reg_rlcme_l_value_set(char *buf, uint8_t val);
+
+/* htacg
+ * -----
+ *
+ */
+#define MLXSW_HTACG_ID 0x7023
+#define MLXSW_HTACG_LEN 0x90
+
+uint8_t mlxsw_reg_htacg_go_get(const char *buf);
+
+void mlxsw_reg_htacg_go_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_grepper_index_get(const char *buf);
+
+void mlxsw_reg_htacg_grepper_index_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_tac_flush_get(const char *buf);
+
+void mlxsw_reg_htacg_tac_flush_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_fields_mirror_reason_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_mirror_reason_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_fields_rdq_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_rdq_set(char *buf, uint8_t val);
+
+uint16_t mlxsw_reg_htacg_fields_trap_id_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_trap_id_set(char *buf, uint16_t val);
+
+uint8_t mlxsw_reg_htacg_fields_mirror_tclass_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_mirror_tclass_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_fields_mirror_tx_acl_system_port_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_mirror_tx_acl_system_port_set(char *buf, uint8_t val);
+
+uint16_t mlxsw_reg_htacg_fields_max_egress_buffer_fill_level_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_max_egress_buffer_fill_level_set(char *buf, uint16_t val);
+
+uint32_t mlxsw_reg_htacg_fields_last_ts_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_last_ts_set(char *buf, uint32_t val);
+
+uint32_t mlxsw_reg_htacg_fields_pkt_count_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_pkt_count_set(char *buf, uint32_t val);
+
+uint8_t mlxsw_reg_htacg_fields_byte_count_high_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_byte_count_high_set(char *buf, uint8_t val);
+
+uint32_t mlxsw_reg_htacg_fields_byte_count_low_get(const char *buf);
+
+void mlxsw_reg_htacg_fields_byte_count_low_set(char *buf, uint32_t val);
+
+uint8_t mlxsw_reg_htacg_mask_mirror_reason_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_mirror_reason_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_mask_rdq_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_rdq_set(char *buf, uint8_t val);
+
+uint16_t mlxsw_reg_htacg_mask_trap_id_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_trap_id_set(char *buf, uint16_t val);
+
+uint8_t mlxsw_reg_htacg_mask_mirror_tclass_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_mirror_tclass_set(char *buf, uint8_t val);
+
+uint8_t mlxsw_reg_htacg_mask_mirror_tx_acl_system_port_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_mirror_tx_acl_system_port_set(char *buf, uint8_t val);
+
+uint16_t mlxsw_reg_htacg_mask_max_egress_buffer_fill_level_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_max_egress_buffer_fill_level_set(char *buf, uint16_t val);
+
+uint32_t mlxsw_reg_htacg_mask_last_ts_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_last_ts_set(char *buf, uint32_t val);
+
+uint32_t mlxsw_reg_htacg_mask_pkt_count_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_pkt_count_set(char *buf, uint32_t val);
+
+uint8_t mlxsw_reg_htacg_mask_byte_count_high_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_byte_count_high_set(char *buf, uint8_t val);
+
+uint32_t mlxsw_reg_htacg_mask_byte_count_low_get(const char *buf);
+
+void mlxsw_reg_htacg_mask_byte_count_low_set(char *buf, uint32_t val);
 
 /* pevpb
  * -----
@@ -4208,6 +4402,10 @@ uint32_t mlxsw_reg_mafri_packets_inc_get(const char *buf, unsigned short index);
 
 uint16_t mlxsw_reg_mcc_time_elapsed_since_last_cmd_get(const char *buf);
 
+uint8_t mlxsw_reg_mcc_activation_delay_sec_get(const char *buf);
+
+void mlxsw_reg_mcc_activation_delay_sec_set(char *buf, uint8_t val);
+
 uint8_t mlxsw_reg_mcc_instruction_get(const char *buf);
 
 void mlxsw_reg_mcc_instruction_set(char *buf, uint8_t val);
@@ -4305,6 +4503,10 @@ void mlxsw_reg_pmtps_module_type_admin_set(char *buf, uint16_t val);
 uint16_t mlxsw_reg_pmtps_module_type_connected_get(const char *buf);
 
 uint32_t mlxsw_reg_pmtps_eth_module_c2m_get(const char *buf);
+
+uint16_t mlxsw_reg_pmtps_ib_width_module_c2m_get(const char *buf);
+
+uint16_t mlxsw_reg_pmtps_ib_speed_module_c2m_get(const char *buf);
 
 /* rxltcc
  * ------

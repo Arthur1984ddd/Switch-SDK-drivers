@@ -37,7 +37,6 @@
 #include "sgmii_internal.h"
 #include "map.h"
 
-#define EMAD_TRAP_ID                     (0x5)
 #define EMAD_FRAME_TRANSACTION_ID_OFFSET (0x18)
 
 static struct sgmii_transaction_db __emad_tr_db;
@@ -401,7 +400,7 @@ int sgmii_emad_init(void)
     }
 
     dummy.dont_care.sysport = SYSPORT_DONT_CARE_VALUE;
-    ret = sx_core_add_synd(0, EMAD_TRAP_ID, L2_TYPE_DONT_CARE, 0, 0, dummy, __sgmii_rx_emad,
+    ret = sx_core_add_synd(0, SXD_TRAP_ID_GENERAL_ETH_EMAD, L2_TYPE_DONT_CARE, 0, 0, dummy, __sgmii_rx_emad,
                            NULL, CHECK_DUP_DISABLED_E, NULL, NULL, 1);
     if (ret) {
         printk(KERN_ERR "failed to register EMAD handler (ret=%d)\n", ret);
@@ -416,5 +415,6 @@ void sgmii_emad_deinit(void)
     union ku_filter_critireas dummy;
 
     dummy.dont_care.sysport = SYSPORT_DONT_CARE_VALUE;
-    sx_core_remove_synd(0, EMAD_TRAP_ID, L2_TYPE_DONT_CARE, 0, dummy, NULL, NULL, __sgmii_rx_emad, NULL, 1);
+    sx_core_remove_synd(0, SXD_TRAP_ID_GENERAL_ETH_EMAD, L2_TYPE_DONT_CARE, 0, dummy, NULL, NULL,
+                        __sgmii_rx_emad, NULL, 1);
 }

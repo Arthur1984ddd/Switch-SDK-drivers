@@ -3751,14 +3751,14 @@ static ssize_t sx_core_write(struct file *filp, const char __user *buf, size_t c
                 write_data.meta.swid = 0;
             } else {
                 for (i = 0; i < NUMBER_OF_SWIDS; i++) {
-                    if (dev->profile.swid_type[i] ==
-                        SX_KU_L2_TYPE_ETH) {
+                    if ((dev->profile.swid_type[i] ==
+                         SX_KU_L2_TYPE_ETH) || (dev->profile.swid_type[i] == SX_KU_L2_TYPE_IB)) {
                         write_data.meta.swid = i;
                         break;
                     }
                 }
 
-                if (i == NUMBER_OF_SWIDS) { /* no ETH swids found */
+                if (i == NUMBER_OF_SWIDS) { /* no ETH or IB swids found */
                     printk(KERN_WARNING PFX "sx_core_write: Err: "
                            "trying to send an emad from "
                            "an IB only system\n");

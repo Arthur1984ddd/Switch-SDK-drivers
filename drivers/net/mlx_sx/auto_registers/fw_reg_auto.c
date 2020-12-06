@@ -102,11 +102,15 @@ static int __MTMP_encode(u8 *inbox, void *ku_reg, void *context)
 {
     struct ku_mtmp_reg *mtmp_reg = (struct ku_mtmp_reg*)ku_reg;
     
+    mlxsw_reg_mtmp_i_set(inbox, mtmp_reg->i);
     mlxsw_reg_mtmp_slot_index_set(inbox, mtmp_reg->slot_index);
     mlxsw_reg_mtmp_sensor_index_set(inbox, mtmp_reg->sensor_index);
     mlxsw_reg_mtmp_mte_set(inbox, mtmp_reg->mte);
     mlxsw_reg_mtmp_mtr_set(inbox, mtmp_reg->mtr);
+    mlxsw_reg_mtmp_weme_set(inbox, mtmp_reg->weme);
+    mlxsw_reg_mtmp_sdme_set(inbox, mtmp_reg->sdme);
     mlxsw_reg_mtmp_tee_set(inbox, mtmp_reg->tee);
+    mlxsw_reg_mtmp_sdee_set(inbox, mtmp_reg->sdee);
     mlxsw_reg_mtmp_temperature_threshold_hi_set(inbox, mtmp_reg->temperature_threshold_hi);
     mlxsw_reg_mtmp_temperature_threshold_lo_set(inbox, mtmp_reg->temperature_threshold_lo);
 
@@ -118,13 +122,18 @@ static int __MTMP_decode(u8 *outbox, void *ku_reg, void *context)
 {
     struct ku_mtmp_reg *mtmp_reg = (struct ku_mtmp_reg*)ku_reg;
     
+    mtmp_reg->i = mlxsw_reg_mtmp_i_get(outbox);
     mtmp_reg->slot_index = mlxsw_reg_mtmp_slot_index_get(outbox);
     mtmp_reg->sensor_index = mlxsw_reg_mtmp_sensor_index_get(outbox);
+    mtmp_reg->max_operational_temperature = mlxsw_reg_mtmp_max_operational_temperature_get(outbox);
     mtmp_reg->temperature = mlxsw_reg_mtmp_temperature_get(outbox);
     mtmp_reg->mte = mlxsw_reg_mtmp_mte_get(outbox);
     mtmp_reg->mtr = mlxsw_reg_mtmp_mtr_get(outbox);
+    mtmp_reg->weme = mlxsw_reg_mtmp_weme_get(outbox);
+    mtmp_reg->sdme = mlxsw_reg_mtmp_sdme_get(outbox);
     mtmp_reg->max_temperature = mlxsw_reg_mtmp_max_temperature_get(outbox);
     mtmp_reg->tee = mlxsw_reg_mtmp_tee_get(outbox);
+    mtmp_reg->sdee = mlxsw_reg_mtmp_sdee_get(outbox);
     mtmp_reg->temperature_threshold_hi = mlxsw_reg_mtmp_temperature_threshold_hi_get(outbox);
     mtmp_reg->temperature_threshold_lo = mlxsw_reg_mtmp_temperature_threshold_lo_get(outbox);
     mtmp_reg->sensor_name_hi = mlxsw_reg_mtmp_sensor_name_hi_get(outbox);
@@ -534,7 +543,6 @@ static int __MDFCR_encode(u8 *inbox, void *ku_reg, void *context)
 {
     struct ku_mdfcr_reg *mdfcr_reg = (struct ku_mdfcr_reg*)ku_reg;
     
-    mlxsw_reg_mdfcr_slot_index_set(inbox, mdfcr_reg->slot_index);
     mlxsw_reg_mdfcr_device_type_set(inbox, mdfcr_reg->device_type);
     mlxsw_reg_mdfcr_all_set(inbox, mdfcr_reg->all);
     mlxsw_reg_mdfcr_device_index_set(inbox, mdfcr_reg->device_index);
@@ -547,7 +555,6 @@ static int __MDFCR_decode(u8 *outbox, void *ku_reg, void *context)
 {
     struct ku_mdfcr_reg *mdfcr_reg = (struct ku_mdfcr_reg*)ku_reg;
     
-    mdfcr_reg->slot_index = mlxsw_reg_mdfcr_slot_index_get(outbox);
     mdfcr_reg->device_type = mlxsw_reg_mdfcr_device_type_get(outbox);
     mdfcr_reg->all = mlxsw_reg_mdfcr_all_get(outbox);
     mdfcr_reg->device_index = mlxsw_reg_mdfcr_device_index_get(outbox);
@@ -792,24 +799,47 @@ static int __MOCS_encode(u8 *inbox, void *ku_reg, void *context)
     mlxsw_reg_mocs_opcode_set(inbox, mocs_reg->opcode);
     mlxsw_reg_mocs_hi_set(inbox, mocs_reg->event_tid.hi);
     mlxsw_reg_mocs_lo_set(inbox, mocs_reg->event_tid.lo);
-    for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
-        mlxsw_reg_mocs_mocs_ppcnt_port_mask_set(inbox, index, mocs_reg->entry.mocs_ppcnt.port_mask[index]);
+    switch (mocs_reg->type) {
+    case SXD_MOCS_TYPE_PPCNT_SES1_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mlxsw_reg_mocs_mocs_ppcnt_port_mask_set(inbox, index, mocs_reg->entry.mocs_ppcnt.port_mask[index]);
+        }
+        for (index = 0; index < SXD_MOCS_GRP_MASK_NUM; index++) {
+            mlxsw_reg_mocs_mocs_ppcnt_grp_mask_set(inbox, index, mocs_reg->entry.mocs_ppcnt.grp_mask[index]);
+        }
+        mlxsw_reg_mocs_mocs_ppcnt_tc_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.tc_mask);
+        mlxsw_reg_mocs_mocs_ppcnt_prio_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.prio_mask);
+        mlxsw_reg_mocs_mocs_ppcnt_rx_buffer_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.rx_buffer_mask);
+        break;
+
+    case SXD_MOCS_TYPE_MGPCB_E:
+        mlxsw_reg_mocs_mocs_mgpcb_num_rec_set(inbox, mocs_reg->entry.mocs_mgpcb.num_rec);
+        mlxsw_reg_mocs_mocs_mgpcb_counter_index_base_set(inbox, mocs_reg->entry.mocs_mgpcb.counter_index_base);
+        break;
+
+    case SXD_MOCS_TYPE_PBSR_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mlxsw_reg_mocs_mocs_pbsr_port_mask_set(inbox, index, mocs_reg->entry.mocs_pbsr.port_mask[index]);
+        }
+        break;
+
+    case SXD_MOCS_TYPE_SBSRD_E:
+        mlxsw_reg_mocs_mocs_sbsrd_curr_set(inbox, mocs_reg->entry.mocs_sbsrd.curr);
+        mlxsw_reg_mocs_mocs_sbsrd_snap_set(inbox, mocs_reg->entry.mocs_sbsrd.snap);
+        mlxsw_reg_mocs_mocs_sbsrd_cells_set(inbox, mocs_reg->entry.mocs_sbsrd.cells);
+        mlxsw_reg_mocs_mocs_sbsrd_desc_set(inbox, mocs_reg->entry.mocs_sbsrd.desc);
+        break;
+
+    case SXD_MOCS_TYPE_CEER_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mlxsw_reg_mocs_mocs_ceer_port_mask_set(inbox, index, mocs_reg->entry.mocs_ceer.port_mask[index]);
+        }
+        break;
+
+    default:
+        /* Other types not supported yet */
+        break;
     }
-    for (index = 0; index < SXD_MOCS_GRP_MASK_NUM; index++) {
-        mlxsw_reg_mocs_mocs_ppcnt_grp_mask_set(inbox, index, mocs_reg->entry.mocs_ppcnt.grp_mask[index]);
-    }
-    mlxsw_reg_mocs_mocs_ppcnt_tc_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.tc_mask);
-    mlxsw_reg_mocs_mocs_ppcnt_prio_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.prio_mask);
-    mlxsw_reg_mocs_mocs_ppcnt_rx_buffer_mask_set(inbox, mocs_reg->entry.mocs_ppcnt.rx_buffer_mask);
-    mlxsw_reg_mocs_mocs_mgpcb_num_rec_set(inbox, mocs_reg->entry.mocs_mgpcb.num_rec);
-    mlxsw_reg_mocs_mocs_mgpcb_counter_index_base_set(inbox, mocs_reg->entry.mocs_mgpcb.counter_index_base);
-    for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
-        mlxsw_reg_mocs_mocs_pbsr_port_mask_set(inbox, index, mocs_reg->entry.mocs_pbsr.port_mask[index]);
-    }
-    mlxsw_reg_mocs_mocs_sbsrd_curr_set(inbox, mocs_reg->entry.mocs_sbsrd.curr);
-    mlxsw_reg_mocs_mocs_sbsrd_snap_set(inbox, mocs_reg->entry.mocs_sbsrd.snap);
-    mlxsw_reg_mocs_mocs_sbsrd_cells_set(inbox, mocs_reg->entry.mocs_sbsrd.cells);
-    mlxsw_reg_mocs_mocs_sbsrd_desc_set(inbox, mocs_reg->entry.mocs_sbsrd.desc);
 
 
     return 0;
@@ -825,24 +855,47 @@ static int __MOCS_decode(u8 *outbox, void *ku_reg, void *context)
     mocs_reg->status = mlxsw_reg_mocs_status_get(outbox);
     mocs_reg->event_tid.hi = mlxsw_reg_mocs_hi_get(outbox);
     mocs_reg->event_tid.lo = mlxsw_reg_mocs_lo_get(outbox);
-    for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
-        mocs_reg->entry.mocs_ppcnt.port_mask[index] = mlxsw_reg_mocs_mocs_ppcnt_port_mask_get(outbox, index);
+    switch (mocs_reg->type) {
+    case SXD_MOCS_TYPE_PPCNT_SES1_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mocs_reg->entry.mocs_ppcnt.port_mask[index] = mlxsw_reg_mocs_mocs_ppcnt_port_mask_get(outbox, index);
+        }
+        for (index = 0; index < SXD_MOCS_GRP_MASK_NUM; index++) {
+            mocs_reg->entry.mocs_ppcnt.grp_mask[index] = mlxsw_reg_mocs_mocs_ppcnt_grp_mask_get(outbox, index);
+        }
+        mocs_reg->entry.mocs_ppcnt.tc_mask = mlxsw_reg_mocs_mocs_ppcnt_tc_mask_get(outbox);
+        mocs_reg->entry.mocs_ppcnt.prio_mask = mlxsw_reg_mocs_mocs_ppcnt_prio_mask_get(outbox);
+        mocs_reg->entry.mocs_ppcnt.rx_buffer_mask = mlxsw_reg_mocs_mocs_ppcnt_rx_buffer_mask_get(outbox);
+        break;
+
+    case SXD_MOCS_TYPE_MGPCB_E:
+        mocs_reg->entry.mocs_mgpcb.num_rec = mlxsw_reg_mocs_mocs_mgpcb_num_rec_get(outbox);
+        mocs_reg->entry.mocs_mgpcb.counter_index_base = mlxsw_reg_mocs_mocs_mgpcb_counter_index_base_get(outbox);
+        break;
+
+    case SXD_MOCS_TYPE_PBSR_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mocs_reg->entry.mocs_pbsr.port_mask[index] = mlxsw_reg_mocs_mocs_pbsr_port_mask_get(outbox, index);
+        }
+        break;
+
+    case SXD_MOCS_TYPE_SBSRD_E:
+        mocs_reg->entry.mocs_sbsrd.curr = mlxsw_reg_mocs_mocs_sbsrd_curr_get(outbox);
+        mocs_reg->entry.mocs_sbsrd.snap = mlxsw_reg_mocs_mocs_sbsrd_snap_get(outbox);
+        mocs_reg->entry.mocs_sbsrd.cells = mlxsw_reg_mocs_mocs_sbsrd_cells_get(outbox);
+        mocs_reg->entry.mocs_sbsrd.desc = mlxsw_reg_mocs_mocs_sbsrd_desc_get(outbox);
+        break;
+
+    case SXD_MOCS_TYPE_CEER_E:
+        for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
+            mocs_reg->entry.mocs_ceer.port_mask[index] = mlxsw_reg_mocs_mocs_ceer_port_mask_get(outbox, index);
+        }
+        break;
+
+    default:
+        /* Other types not supported yet */
+        break;
     }
-    for (index = 0; index < SXD_MOCS_GRP_MASK_NUM; index++) {
-        mocs_reg->entry.mocs_ppcnt.grp_mask[index] = mlxsw_reg_mocs_mocs_ppcnt_grp_mask_get(outbox, index);
-    }
-    mocs_reg->entry.mocs_ppcnt.tc_mask = mlxsw_reg_mocs_mocs_ppcnt_tc_mask_get(outbox);
-    mocs_reg->entry.mocs_ppcnt.prio_mask = mlxsw_reg_mocs_mocs_ppcnt_prio_mask_get(outbox);
-    mocs_reg->entry.mocs_ppcnt.rx_buffer_mask = mlxsw_reg_mocs_mocs_ppcnt_rx_buffer_mask_get(outbox);
-    mocs_reg->entry.mocs_mgpcb.num_rec = mlxsw_reg_mocs_mocs_mgpcb_num_rec_get(outbox);
-    mocs_reg->entry.mocs_mgpcb.counter_index_base = mlxsw_reg_mocs_mocs_mgpcb_counter_index_base_get(outbox);
-    for (index = 0; index < SXD_MOCS_PORT_MASK_NUM; index++) {
-        mocs_reg->entry.mocs_pbsr.port_mask[index] = mlxsw_reg_mocs_mocs_pbsr_port_mask_get(outbox, index);
-    }
-    mocs_reg->entry.mocs_sbsrd.curr = mlxsw_reg_mocs_mocs_sbsrd_curr_get(outbox);
-    mocs_reg->entry.mocs_sbsrd.snap = mlxsw_reg_mocs_mocs_sbsrd_snap_get(outbox);
-    mocs_reg->entry.mocs_sbsrd.cells = mlxsw_reg_mocs_mocs_sbsrd_cells_get(outbox);
-    mocs_reg->entry.mocs_sbsrd.desc = mlxsw_reg_mocs_mocs_sbsrd_desc_get(outbox);
 
 
     return 0;
@@ -1297,6 +1350,7 @@ static int __MCC_encode(u8 *inbox, void *ku_reg, void *context)
 {
     struct ku_mcc_reg *mcc_reg = (struct ku_mcc_reg*)ku_reg;
     
+    mlxsw_reg_mcc_activation_delay_sec_set(inbox, mcc_reg->activation_delay_sec);
     mlxsw_reg_mcc_instruction_set(inbox, mcc_reg->instruction);
     mlxsw_reg_mcc_component_index_set(inbox, mcc_reg->component_index);
     mlxsw_reg_mcc_auto_update_set(inbox, mcc_reg->auto_update);
@@ -1315,6 +1369,7 @@ static int __MCC_decode(u8 *outbox, void *ku_reg, void *context)
     struct ku_mcc_reg *mcc_reg = (struct ku_mcc_reg*)ku_reg;
     
     mcc_reg->time_elapsed_since_last_cmd = mlxsw_reg_mcc_time_elapsed_since_last_cmd_get(outbox);
+    mcc_reg->activation_delay_sec = mlxsw_reg_mcc_activation_delay_sec_get(outbox);
     mcc_reg->instruction = mlxsw_reg_mcc_instruction_get(outbox);
     mcc_reg->component_index = mlxsw_reg_mcc_component_index_get(outbox);
     mcc_reg->update_handle = mlxsw_reg_mcc_update_handle_get(outbox);
